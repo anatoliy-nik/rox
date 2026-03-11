@@ -1,0 +1,13 @@
+@import '_vars.scss';
+@import '_fonts.scss';
+@import '_reset.scss';
+@import '_global.scss';
+
+h1 {
+    font-size: 50px;
+    color: $accent-color;
+    font-family: 'Quicksand-Medium', sans-serif;
+    font-weight: 500;
+}
+
+@import '_media.scss'

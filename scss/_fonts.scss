@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Quicksand-Medium';
+    src: url('../fonts/Quicksand-Medium.woff2') format('woff2');
+    //  url('../fonts/Quicksand-Medium.woff') format('woff');
+    // этого шрифта сейчас нет, но по идее он тоже нужен
+    //  url('../fonts/Quicksand-Medium.ttf') format('ttf');
+    // этот шрифт вроде уже устарел
+    font-style: normal;
+    // font-weight: 500;
+    // толщину здесь убрал, т.к. все равно нужно указывать в main.css
+    font-display: swap;
+}

@@ -1,0 +1,39 @@
+@media (max-width: 1319px) {
+    .rox-container {
+        max-width: 1140px;
+    }
+}
+
+@media (max-width: 1119px) {
+    .rox-container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 991px) {
+    .rox-container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 767px) {
+    .rox-container {
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 563px) {
+    .rox-container {
+        /* padding, когда у .container нет max-width
+        а есть только width: 100%; */
+        padding: 0 12px;
+        max-width: 100%; 
+    }
+}
+
+/* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 
+@media (min-width: 576px) { .container { max-width: 540px; } }
+@media (min-width: 768px) { .container { max-width: 720px; } }
+@media (min-width: 992px) { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+@media (min-width: 1400px) { .container { max-width: 1320px; } } */
