@@ -3,11 +3,54 @@
 @import '_reset.scss';
 @import '_global.scss';
 
+/*---- header ----*/
+.header {
+
+}
+
+/*---- header-top ----*/
+
+/*---- header-contacts ----*/
+.header-contacts {
+    .rox-container {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        column-gap: 40px;
+    }
+}
+
+.phones {
+    display: flex;
+    align-items: center;
+    &__item + .phones__item {
+        margin-left: 32px;
+    }
+    &__link {
+        color: $accent;
+    }
+    &__link:hover {
+        color: $accent-hover;
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    &__item + .social__item {
+        margin-left: 10px;
+    }
+}
+
+
+
+
 h1 {
-    font-size: 50px;
-    color: $accent-color;
-    font-family: 'Quicksand-Medium', sans-serif;
-    font-weight: 500;
+    font-size: 32px;
+    color: $accent;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 135%;
 }
 
 @import '_media.scss'

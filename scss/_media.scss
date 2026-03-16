@@ -1,28 +1,44 @@
-@media (max-width: 1319px) {
+@media (max-width: 1399px) {
     .rox-container {
-        max-width: 1140px;
+    /* max-width: 1140px; 
+    у Бутстрап есть еще padding: 0 12px в контейнере
+    поэтому убираю 24px, т.е 1140px-24px=1116px
+    чтоб получить фактич. ширину контента */
+        max-width: 1116px;
     }
 }
 
-@media (max-width: 1119px) {
+@media (max-width: 1199px) {
     .rox-container {
-        max-width: 960px;
+    /* max-width: 960px; 
+    у Бутстрап есть еще padding: 0 12px в контейнере
+    поэтому убираю 24px, т.е 960px-24px=936px
+    чтоб получить фактич. ширину контента */
+        max-width: 936px;
     }
 }
 
 @media (max-width: 991px) {
     .rox-container {
-        max-width: 720px;
+    /* max-width: 720px; 
+    у Бутстрап есть еще padding: 0 12px в контейнере
+    поэтому убираю 24px, т.е 720px-24px=696px
+    чтоб получить фактич. ширину контента */
+        max-width: 696px;
     }
 }
 
 @media (max-width: 767px) {
     .rox-container {
-        max-width: 540px;
+    /* max-width: 540px; 
+    у Бутстрап есть еще padding: 0 12px в контейнере
+    поэтому убираю 24px, т.е 540px-24px=516px
+    чтоб получить фактич. ширину контента */
+        max-width: 516px;
     }
 }
 
-@media (max-width: 563px) {
+@media (max-width: 539px) {
     .rox-container {
         /* padding, когда у .container нет max-width
         а есть только width: 100%; */

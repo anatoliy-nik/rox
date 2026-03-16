@@ -29,26 +29,43 @@ body {
 
 // others
 
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 135%;
+    color: #120d31;
+}
+
 .rox-container {
-    max-width: 1320px;
+    /* max-width: 1320px; 
+    у Бутстрап есть еще padding: 0 12px в контейнере
+    поэтому убираю 24px, т.е 1320px-24px=1296px
+    чтоб получить фактич. ширину контента */
+    max-width: 1296px;
     width: 100%;
     margin: 0 auto;
     border: 1px dotted #ccc;
+    min-width: 320px;
 }
 
 .accent-btn {
     border: none;
+    border-radius: 60px;
     font-size: 16px;
     line-height: 26px;
     font-family: 'Roboto-Regular', sans-serif;
     font-weight: 400;
-    background-color: red;
-    padding: 15px 35px;
-    text-transform: uppercase;
-    color: #fff;
+    background-color: $accent;
+    padding: 10px 32px;
+    color: $white-text;
     cursor: pointer;
     display: inline-block;
-    box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+    box-shadow: none;
+}
+
+.accent-btn:hover {
+    background-color: $accent-hover;
 }
 
 .section-title {
