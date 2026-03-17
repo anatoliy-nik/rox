@@ -5,7 +5,48 @@
 
 /*---- header ----*/
 .header {
+    height: 860px;
+    padding: 32px 0;
+    border: 1px solid green;
+}
 
+.header {
+    position: relative;
+    /* Высота блока должна быть достаточной, чтобы градиенты не соприкасались */
+    min-height: 400px;  
+    overflow: hidden; /* Обрезает градиенты по краям, если есть border-radius */
+}
+
+/* классы для контента, чтобы он был поверх фона */
+.header-top, .header-middle, .header-bottom  {
+    position: relative;
+    z-index: 1;
+}
+
+/* ВЕРХНИЙ ГРАДИЕНТ (прижат к верху) */
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Высота верхней зоны — например, 30% от высоты блока */
+    height: 30%; 
+    background: linear-gradient(180deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
+    z-index: 0;
+}
+
+/* НИЖНИЙ ГРАДИЕНТ (прижат к низу) */
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* Высота нижней зоны — например, 30% от высоты блока */
+    height: 30%; 
+    background: linear-gradient(0deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
+    z-index: 0;
 }
 
 /*---- header-top ----*/
@@ -28,9 +69,26 @@
     }
     &__link {
         color: $accent;
+        display: flex;
+        align-items: center;
     }
     &__link:hover {
         color: $accent-hover;
+    }
+    svg {
+        width: 22px; 
+        height: 22px;
+        flex-shrink: 0; /* предотвращает сжатие во флекс-контейнерах */
+        margin-right: 32px;
+        path {
+            stroke: $accent;
+        }
+    }
+    &__link:hover svg path {
+        stroke: $accent-hover;
+    }
+    &__item:nth-child(2) svg, &__item:nth-child(3) svg{
+        display: none;
     }
 }
 
@@ -39,6 +97,15 @@
     align-items: center;
     &__item + .social__item {
         margin-left: 10px;
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+    }
+    img {
+        width: 24px; 
+        height: 24px;
+        flex-shrink: 0; /* предотвращает сжатие во флекс-контейнерах */
     }
 }
 

@@ -84,6 +84,7 @@ body {
   font-weight: 400;
   line-height: 135%;
   color: #120d31;
+  background-color: #f4f1eb;
 }
 
 .rox-container {
@@ -94,8 +95,8 @@ body {
   max-width: 1296px;
   width: 100%;
   margin: 0 auto;
-  border: 1px dotted #ccc;
-  min-width: 320px;
+  border: 1px dotted #888;
+  min-width: 360px;
 }
 
 .accent-btn {
@@ -129,6 +130,51 @@ body {
 }
 
 /*---- header ----*/
+.header {
+  height: 860px;
+  padding: 32px 0;
+  border: 1px solid green;
+}
+
+.header {
+  position: relative;
+  /* Высота блока должна быть достаточной, чтобы градиенты не соприкасались */
+  min-height: 400px;
+  overflow: hidden; /* Обрезает градиенты по краям, если есть border-radius */
+}
+
+/* классы для контента, чтобы он был поверх фона */
+.header-top, .header-middle, .header-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+/* ВЕРХНИЙ ГРАДИЕНТ (прижат к верху) */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* Высота верхней зоны — например, 30% от высоты блока */
+  height: 30%;
+  background: linear-gradient(180deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
+  z-index: 0;
+}
+
+/* НИЖНИЙ ГРАДИЕНТ (прижат к низу) */
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* Высота нижней зоны — например, 30% от высоты блока */
+  height: 30%;
+  background: linear-gradient(0deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
+  z-index: 0;
+}
+
 /*---- header-top ----*/
 /*---- header-contacts ----*/
 .header-contacts .rox-container {
@@ -148,9 +194,26 @@ body {
 }
 .phones__link {
   color: #cc5803;
+  display: flex;
+  align-items: center;
 }
 .phones__link:hover {
   color: #fd7f23;
+}
+.phones svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0; /* предотвращает сжатие во флекс-контейнерах */
+  margin-right: 32px;
+}
+.phones svg path {
+  stroke: #cc5803;
+}
+.phones__link:hover svg path {
+  stroke: #fd7f23;
+}
+.phones__item:nth-child(2) svg, .phones__item:nth-child(3) svg {
+  display: none;
 }
 
 .social {
@@ -159,6 +222,15 @@ body {
 }
 .social__item + .social__item {
   margin-left: 10px;
+}
+.social__link {
+  display: flex;
+  align-items: center;
+}
+.social img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0; /* предотвращает сжатие во флекс-контейнерах */
 }
 
 h1 {
@@ -185,6 +257,9 @@ h1 {
     поэтому убираю 24px, т.е 960px-24px=936px
     чтоб получить фактич. ширину контента */
     max-width: 936px;
+  }
+  .phones__item:nth-child(1) svg {
+    display: none;
   }
 }
 @media (max-width: 991px) {
