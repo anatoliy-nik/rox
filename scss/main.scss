@@ -53,11 +53,15 @@
 
 /*---- header-contacts ----*/
 .header-contacts {
+    margin-bottom: 20px;
     .rox-container {
         display: flex;
         align-items: center;
         justify-content: end;
         column-gap: 40px;
+    }
+    .adress {
+        margin-right: auto;
     }
 }
 
@@ -109,6 +113,106 @@
     }
 }
 
+/*---- header-menu ----*/
+.header-menu {
+    margin-bottom: 30px;
+    .rox-container {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        column-gap: 40px;
+    }
+}
+
+.logo-wrap {
+    margin-right: auto;
+    .slogan {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1;
+    }
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 60px;
+    padding: 8px 16px;
+    width: 350px;
+    &__input {
+        border: none;
+        outline: none;
+        flex: 1;
+        font-size: 14px;
+        padding: 4px 8px
+    }
+    &__btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__btn svg {
+        width: 16px;
+        height: 16px;
+    }
+    &__btn:hover svg path {
+        fill: $accent;
+    }
+}
+
+.contacts-menu {
+    display: flex;
+    align-items: center;
+    &__item + .contacts-menu__item {
+        margin-left: 35px;
+    }
+    &__link {
+        color: $black-text;
+    }
+    &__link:hover {
+        color: $accent;
+    }
+}
+
+/*---- header-menu-product ----*/
+.header-menu-product {
+    margin-bottom: 100px;
+    .rox-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.menu-product {
+    display: flex;
+    align-items: center;
+    &__item + .menu-product__item {
+        margin-left: 35px;
+    }
+    &__link {
+        color: $black-text;
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        svg {
+            width: 16px;
+            height: 9px;
+        }
+    }
+    &__link:hover {
+        color: $accent;
+    }
+    &__link:hover svg path {
+        stroke: $accent;
+    }
+}
 
 
 
