@@ -1,17 +1,17 @@
 // липкий футер
 
-html, body {
-    height: 100%;
-}
+// html, body {
+//     height: 100%;
+// }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
+// body {
+//     display: flex;
+//     flex-direction: column;
+// }
 
-.main {
-    flex-grow: 1;
-}
+// .main {
+//     flex-grow: 1;
+// }
 
 // visually-hidden
 
@@ -46,7 +46,7 @@ body {
     max-width: 1296px;
     width: 100%;
     margin: 0 auto;
-    border: 1px dotted #888;
+    border: 1px dotted transparent;
     // min-width: 320px;
     min-width: 360px;
 }
@@ -70,13 +70,16 @@ body {
     background-color: $accent-hover;
 }
 
+.main-title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 135%;
+}
+
 .section-title {
-    font-family: 'Roboto-Bold', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 135%;
     text-transform: uppercase;
-    font-size: 48px;
-    line-height: 26px;
-    margin-bottom: 28px;
-    text-align: center;
-    color: black;
+    margin-bottom: 20px;
 }
