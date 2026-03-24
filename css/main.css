@@ -98,7 +98,7 @@ body {
   max-width: 1296px;
   width: 100%;
   margin: 0 auto;
-  border: 1px dotted transparent;
+  border: 1px dotted #ccc;
   min-width: 360px;
 }
 
@@ -106,8 +106,8 @@ body {
   border: none;
   border-radius: 60px;
   font-size: 16px;
-  line-height: 26px;
-  font-family: "Roboto-Regular", sans-serif;
+  line-height: 135%;
+  font-family: "Inter", sans-serif;
   font-weight: 400;
   background-color: #cc5803;
   padding: 10px 32px;
@@ -403,6 +403,75 @@ body {
 /*---- s-hits ----*/
 .s-hits {
   padding: 45px 0;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+}
+.card {
+  border-radius: 30px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+  background: #faf6ed;
+  padding: 16px;
+  height: 448px;
+  position: relative;
+}
+.card__img-link {
+  border-radius: 20px;
+  background-color: #e4ddcf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  height: 194px;
+}
+.card__title {
+  color: #000;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 135%;
+  margin-bottom: 16px;
+}
+.card__title:hover {
+  color: #cc5803;
+}
+.card__params {
+  margin-bottom: 32px;
+}
+.card__params-item {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #555;
+}
+.card__params-item--seazon .card__params-value {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-right: 25px;
+}
+.card__params-item--seazon .card__params-value::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  background-image: url(../img/icons/leto.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.card__params-item--seazon .card__params-value.card__params-value--zima::after {
+  background-image: url(../img/icons/zima.svg);
+}
+.card .button-wrap {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
 }
 
 @media (max-width: 1399px) {

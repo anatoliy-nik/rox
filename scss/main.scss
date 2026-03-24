@@ -292,5 +292,79 @@
     padding: 45px 0;
 }
 
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+    &__item {
+        
+    }
+}
+
+.card {
+    border-radius: 30px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+    background: #faf6ed;
+    padding: 16px;
+    height: 448px;
+    position: relative;
+    &__img-link {
+        border-radius: 20px;
+        background-color: #e4ddcf;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        height: 194px;
+    }
+    &__title {
+        color: #000;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 135%;
+        margin-bottom: 16px;
+    }
+    &__title:hover {
+        color: $accent;
+    }
+    &__params {
+        margin-bottom: 32px;
+    }
+    &__params-item {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #555;
+    }
+    &__params-item--seazon {
+        .card__params-value {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-right: 25px;
+        }
+        .card__params-value::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: 0;
+            background-image: url(../img/icons/leto.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            
+        }
+        .card__params-value.card__params-value--zima::after {
+            background-image: url(../img/icons/zima.svg);
+        }
+    }
+    .button-wrap {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+    }
+}
 
 @import '_media.scss'
