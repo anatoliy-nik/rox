@@ -135,6 +135,18 @@ body {
   margin-bottom: 20px;
 }
 
+.header-top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.toggle-menu,
+.burger-btn {
+  display: none;
+}
+
 /*---- header ----*/
 .header {
   padding: 32px 0;
@@ -185,7 +197,11 @@ body {
 }
 
 /* классы для контента, чтобы он был поверх фона */
-.header-contacts, .header-menu, .header-menu-product, .header-brands, .header-text {
+.header-contacts,
+.header-menu,
+.header-menu-product,
+.header-brands,
+.header-text {
   position: relative;
   z-index: 1;
 }
@@ -193,8 +209,6 @@ body {
 /*---- header-contacts ----*/
 .header-contacts {
   margin-bottom: 30px;
-}
-.header-contacts .rox-container {
   display: flex;
   align-items: center;
   justify-content: end;
@@ -256,8 +270,6 @@ body {
 /*---- header-menu ----*/
 .header-menu {
   margin-bottom: 30px;
-}
-.header-menu .rox-container {
   display: flex;
   align-items: center;
   justify-content: end;
@@ -267,6 +279,7 @@ body {
 
 .logo-wrap {
   margin-right: auto;
+  flex-shrink: 0;
 }
 .logo-wrap .slogan {
   font-family: "Montserrat", sans-serif;
@@ -297,6 +310,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 .search-form__btn svg {
   width: 16px;
@@ -323,11 +337,9 @@ body {
 /*---- header-menu-product ----*/
 .header-menu-product {
   margin-bottom: 120px;
-}
-.header-menu-product .rox-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  height: 56px;
 }
 .header-menu-product .sale {
   border: 1px solid #cc5803;
@@ -348,6 +360,7 @@ body {
 .menu-product {
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 .menu-product__item + .menu-product__item {
   margin-left: 35px;
@@ -482,6 +495,9 @@ body {
     чтоб получить фактич. ширину контента */
     max-width: 1116px;
   }
+  .header-contacts .adress {
+    display: none;
+  }
 }
 @media (max-width: 1199px) {
   .rox-container {
@@ -491,8 +507,20 @@ body {
     чтоб получить фактич. ширину контента */
     max-width: 936px;
   }
-  .phones__item:nth-child(1) svg {
+  .header-contacts .phones__item:nth-child(1) svg {
     display: none;
+  }
+  .search-form {
+    width: 292px;
+  }
+  .contacts-menu__item + .contacts-menu__item {
+    margin-left: 15px;
+  }
+  .header-menu-product .sale {
+    position: absolute;
+    top: 66px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 @media (max-width: 991px) {
@@ -502,6 +530,127 @@ body {
     поэтому убираю 24px, т.е 720px-24px=696px
     чтоб получить фактич. ширину контента */
     max-width: 696px;
+  }
+  .header-top {
+    flex-direction: column;
+    background-color: #f4f1eb;
+  }
+  .header-top::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    /* Высота верхней зоны — например, 30% от высоты блока */
+    height: 300px;
+    background: linear-gradient(180deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
+    z-index: 1;
+  }
+  .toggle-menu:checked ~ .burger-btn::before {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .toggle-menu:checked ~ .burger-btn span {
+    opacity: 0;
+  }
+  .toggle-menu:checked ~ .burger-btn::after {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+  /* 1) открытие/закрытие меню при клике на бургер кнопку */
+  .toggle-menu:checked ~ .header-contacts {
+    display: flex;
+  }
+  .toggle-menu:checked ~ .header-menu {
+    display: flex;
+  }
+  .toggle-menu:checked ~ .header-menu-product {
+    display: flex;
+  }
+  .burger-btn {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+    margin: 10px;
+    margin-left: auto;
+  }
+  .burger-btn::after, .burger-btn::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #ecf0f1;
+    left: 0;
+    transition: all 0.3s;
+  }
+  .burger-btn::after {
+    bottom: 0;
+  }
+  .burger-btn::before {
+    top: 0;
+  }
+  .burger-btn span {
+    display: block;
+    height: 2px;
+    background-color: #ecf0f1;
+    transition: all 0.3s;
+    width: 100%;
+  }
+  /* 2) скрыть меню на мобиле */
+  .header-contacts, .header-menu, .header-menu-product {
+    display: none;
+  }
+  .header-contacts {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 15px;
+    border: 1px solid green;
+  }
+  .header-contacts .adress {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .header-contacts .phones__item:nth-child(1) svg {
+    display: block;
+  }
+  .header-menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 15px;
+    border: 1px solid green;
+  }
+  .header-menu .logo-wrap {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .header-menu-product {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 15px;
+    border: 1px solid green;
+    height: auto;
+  }
+  .header-menu-product .sale {
+    position: static;
+    transform: none;
+  }
+  .menu-product {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    row-gap: 15px;
+  }
+  .menu-product__item + .menu-product__item {
+    margin-left: 0;
   }
 }
 @media (max-width: 767px) {

@@ -13,7 +13,7 @@
 //     flex-grow: 1;
 // }
 
-// visually-hidden
+// ---- visually-hidden ---- 
 
 .visually-hidden {
     position: absolute;
@@ -27,7 +27,7 @@
     border: 0;
 }
 
-// others
+// ---- others ---- 
 
 body {
     font-family: 'Inter', sans-serif;
@@ -35,7 +35,7 @@ body {
     font-weight: 400;
     line-height: 135%;
     color: #120d31;
-    background-color: #f4f1eb;
+    background-color: $background-color;
 }
 
 .rox-container {
@@ -82,4 +82,18 @@ body {
     line-height: 135%;
     text-transform: uppercase;
     margin-bottom: 20px;
+}
+
+// ---- mobile menu ----
+.header-top {
+//   background-color: #2c3e50;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.toggle-menu,
+.burger-btn {
+  display: none;
 }

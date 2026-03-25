@@ -55,7 +55,11 @@
 }
 
 /* классы для контента, чтобы он был поверх фона */
-.header-contacts, .header-menu, .header-menu-product, .header-brands, .header-text {
+.header-contacts, 
+.header-menu,
+.header-menu-product, 
+.header-brands, 
+.header-text {
     position: relative;
     z-index: 1;
 }
@@ -64,12 +68,10 @@
 /*---- header-contacts ----*/
 .header-contacts {
     margin-bottom: 30px;
-    .rox-container {
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        column-gap: 40px;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: 40px;
     .adress {
         margin-right: auto;
     }
@@ -126,16 +128,15 @@
 /*---- header-menu ----*/
 .header-menu {
     margin-bottom: 30px;
-    .rox-container {
-        display: flex;
-        align-items: center;
-        justify-content: end;
-        column-gap: 40px;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    column-gap: 40px;
 }
 
 .logo-wrap {
     margin-right: auto;
+    flex-shrink: 0;
     .slogan {
         font-family: 'Montserrat', sans-serif;
         font-size: 12px;
@@ -166,6 +167,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
     }
     &__btn svg {
         width: 16px;
@@ -193,11 +195,10 @@
 /*---- header-menu-product ----*/
 .header-menu-product {
     margin-bottom: 120px;
-    .rox-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    height: 56px;
     .sale {
         border: 1px solid $accent;
         border-radius: 60px;
@@ -218,6 +219,7 @@
 .menu-product {
     display: flex;
     align-items: center;
+    margin-left: auto;
     &__item + .menu-product__item {
         margin-left: 35px;
     }
