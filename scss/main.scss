@@ -6,23 +6,24 @@
 /*---- header ----*/
 .header {
     padding: 32px 0;
-    height: 800px;
+    // height: 800px;
+    height: 630px;
     /* Высота блока должна быть достаточной, чтобы градиенты не соприкасались */
     min-height: 400px;  
-    overflow: hidden; /* Обрезает градиенты по краям, если есть border-radius */
+    // overflow: hidden; /
     position: relative;
     z-index: 0;
 }
 
 .header-left-img {
     position: absolute;
-    top: 200px;
+    top: 120px;
     left: 0;
 }
 
 .header-right-img {
     position: absolute;
-    top: 155px;
+    top: 70px;
     right: 0;
 }
 
@@ -44,7 +45,7 @@
 .header::after {
     content: "";
     position: absolute;
-    bottom: -42px;
+    bottom: 0;
     left: 0;
     right: 0;
     /* Высота нижней зоны — например, 30% от высоты блока */
@@ -194,7 +195,7 @@
 
 /*---- header-menu-product ----*/
 .header-menu-product {
-    margin-bottom: 120px;
+    margin-bottom: 90px;
     display: flex;
     align-items: center;
     // justify-content: space-between;
@@ -214,12 +215,14 @@
         border: 1px solid $accent-hover;
         color: $accent-hover;
     }
+    nav {
+        margin-left: auto;
+    }
 }
 
 .menu-product {
     display: flex;
     align-items: center;
-    margin-left: auto;
     &__item + .menu-product__item {
         margin-left: 35px;
     }
@@ -243,7 +246,7 @@
 
 /*---- header-brands ----*/
 .header-brands {
-    margin-bottom: 120px;
+    margin-bottom: 86px;
     /*раскомментить, чтобы линия была на всю ширину экрана*/
     // border-bottom: 1px solid #837f8e;
     // border-top: 1px solid #837f8e;
@@ -254,9 +257,9 @@
     .rox-container {
         border-bottom: 1px solid #837f8e;
         border-top: 1px solid #837f8e;
-        height: 150px;
+        // height: 150px;
         background-color: #f4f1eb;
-        padding: 33px 0px;
+        padding: 22px 0px;
     }
     .splide {
         &__slide--haski img {
@@ -281,7 +284,7 @@
 .header-text {
     &__left {
         display: block;
-        width: 66%;
+        width: 58%;
         text-align: center;
         margin: 0 auto;
     }

@@ -9,7 +9,12 @@
     .header-contacts .adress {
         display: none;
     }
-
+     .search-form {
+        width: 292px;
+    }
+    .contacts-menu__item + .contacts-menu__item {
+        margin-left: 15px;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -25,17 +30,17 @@
         display: none;
         }
     }
-    .search-form {
-        width: 292px;
-    }
-    .contacts-menu__item + .contacts-menu__item {
-        margin-left: 15px;
-    }
     .header-menu-product .sale {
         position: absolute;
         top: 66px;
         left: 50%;
         transform: translateX(-50%);
+    }
+    .contacts-menu__link {
+        font-size: 12px;
+    }
+    .header-text__left {
+        width: 80%;
     }
 }
 
@@ -47,22 +52,27 @@
     чтоб получить фактич. ширину контента */
         max-width: 696px;
     }
-    .header-top {
-        flex-direction: column;
-        background-color: $background-color;
+    .header-top-wrap {
+        position: relative;
     }
-    .header-top::before {
-        content: "";
+    .header-top {
         position: absolute;
         top: 0;
-        left: 0;
         right: 0;
-        /* Высота верхней зоны — например, 30% от высоты блока */
-        // height: 30%; 
-        height: 300px;
-        background: linear-gradient(180deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
-        z-index: 1;
+        width: 100%;
+        z-index: 2;
+        background-color: $background-color;
     }
+    // .header-top::before {
+    //     content: "";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     height: 300px;
+    //     background: linear-gradient(180deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
+    //     z-index: 1;
+    // }
     .toggle-menu:checked ~ .burger-btn::before {
         top: 50%;
         transform: translateY(-50%) rotate(45deg);
@@ -92,7 +102,7 @@
         cursor: pointer;
         position: relative;
         z-index: 100;
-        margin: 10px;
+        margin: 12px;
         margin-left: auto;
     }
     .burger-btn::after, .burger-btn::before {
@@ -100,7 +110,7 @@
         position: absolute;
         height: 2px;
         width: 100%;
-        background-color: #ecf0f1;
+        background-color: $black-text;
         left: 0;
         transition: all 0.3s;
     }
@@ -113,7 +123,7 @@
     .burger-btn span {
         display: block;
         height: 2px;
-        background-color: #ecf0f1;
+        background-color: $black-text;
         transition: all 0.3s;
         width: 100%;
     }
@@ -126,7 +136,6 @@
         align-items: center;
         justify-content: center;
         row-gap: 15px;
-        border: 1px solid green;
     }
     .header-contacts .adress {
         display: block;
@@ -143,7 +152,6 @@
         align-items: center;
         justify-content: center;
         row-gap: 15px;
-        border: 1px solid green;
     }
     .header-menu .logo-wrap {
         margin: 0 auto;
@@ -154,7 +162,6 @@
         align-items: center;
         justify-content: center;
         row-gap: 15px;
-        border: 1px solid green;
         height: auto;
     }
     .header-menu-product .sale {
@@ -171,6 +178,18 @@
     .menu-product__item + .menu-product__item {
         margin-left: 0;
     }
+    .header-brands {
+        margin-top: 86px;
+    }
+    .contacts-menu__link {
+        font-size: 16px;
+    }
+    .header-menu-product {
+        margin-bottom: 30px;
+    }
+    .header-menu-product nav {
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 767px) {
@@ -181,6 +200,20 @@
     чтоб получить фактич. ширину контента */
         max-width: 516px;
     }
+    .header-contacts .phones {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .header-contacts .phones__item:nth-child(2) svg,
+    .header-contacts .phones__item:nth-child(3) svg{
+        display: block;
+    }
+    .header-contacts .phones__item + .phones__item {
+        margin-left: 0;
+    }
+    .header-contacts .phones svg {
+        margin-right: 16px;
+    }
 }
 
 @media (max-width: 539px) {
@@ -189,6 +222,16 @@
         а есть только width: 100%; */
         padding: 0 12px;
         max-width: 100%; 
+    }
+    .header-menu .contacts-menu {
+        flex-direction: column;
+        row-gap: 5px;
+    }
+    .header-menu .contacts-menu__item + .contacts-menu__item {
+        margin-left: 0;
+    }
+    .header-top {
+        top: -32px;
     }
 }
 
