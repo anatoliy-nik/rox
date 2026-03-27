@@ -56,23 +56,17 @@
         position: relative;
     }
     .header-top {
+        border: 1px solid red;
         position: absolute;
         top: 0;
         right: 0;
         width: 100%;
         z-index: 2;
-        background-color: $background-color;
+        background-color: transparent;
     }
-    // .header-top::before {
-    //     content: "";
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     height: 300px;
-    //     background: linear-gradient(180deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
-    //     z-index: 1;
-    // }
+    .header-top-mobile {
+        display: flex;
+    }
     .toggle-menu:checked ~ .burger-btn::before {
         top: 50%;
         transform: translateY(-50%) rotate(45deg);
@@ -85,15 +79,22 @@
         transform: translateY(50%) rotate(-45deg);
     }
     /* 1) открытие/закрытие меню при клике на бургер кнопку */
-        .toggle-menu:checked ~ .header-contacts {
+    .toggle-menu:checked ~ .header-contacts {
         display: flex;
+        background-color: $background-color;
     }
-        .toggle-menu:checked ~ .header-menu {
+    .toggle-menu:checked ~ .header-menu {
         display: flex;
+        background-color: $background-color;
     }
-        .toggle-menu:checked ~ .header-menu-product {
+    .toggle-menu:checked ~ .header-menu-product {
         display: flex;
+        background-color: $background-color;
     }
+    .toggle-menu:checked ~ .header-top-mobile {
+        display: none;
+    }
+    
     .burger-btn {
         display: flex;
         align-items: center;

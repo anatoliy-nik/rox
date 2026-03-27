@@ -135,8 +135,33 @@ body {
   margin-bottom: 20px;
 }
 
-.header-top {
-  border: 1px solid red;
+.header-top-mobile {
+  border: 1px solid green;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: end;
+  padding-left: 12px;
+  padding-right: 54px;
+  z-index: 10;
+}
+.header-top-mobile .logo-link img {
+  height: 36px;
+}
+.header-top-mobile .phones-link {
+  margin-left: 8px;
+}
+.header-top-mobile .phones-link svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+.header-top-mobile .logo-wrap {
+  margin-right: auto;
 }
 
 .toggle-menu,
@@ -538,12 +563,16 @@ body {
     position: relative;
   }
   .header-top {
+    border: 1px solid red;
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
     z-index: 2;
-    background-color: #f4f1eb;
+    background-color: transparent;
+  }
+  .header-top-mobile {
+    display: flex;
   }
   .toggle-menu:checked ~ .burger-btn::before {
     top: 50%;
@@ -559,12 +588,18 @@ body {
   /* 1) открытие/закрытие меню при клике на бургер кнопку */
   .toggle-menu:checked ~ .header-contacts {
     display: flex;
+    background-color: #f4f1eb;
   }
   .toggle-menu:checked ~ .header-menu {
     display: flex;
+    background-color: #f4f1eb;
   }
   .toggle-menu:checked ~ .header-menu-product {
     display: flex;
+    background-color: #f4f1eb;
+  }
+  .toggle-menu:checked ~ .header-top-mobile {
+    display: none;
   }
   .burger-btn {
     display: flex;
