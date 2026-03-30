@@ -37,7 +37,7 @@
         transform: translateX(-50%);
     }
     .contacts-menu__link {
-        font-size: 12px;
+        // font-size: 12px;
     }
     .header-text__left {
         width: 80%;
@@ -52,17 +52,21 @@
     чтоб получить фактич. ширину контента */
         max-width: 696px;
     }
-    .header-top-wrap {
-        position: relative;
-    }
+    // .header-top-wrap {
+    //     position: relative;
+    //     display: flex;
+    // }
     .header-top {
-        border: 1px solid red;
+        // border: 1px solid red;
         position: absolute;
         top: 0;
         right: 0;
         width: 100%;
         z-index: 2;
         background-color: transparent;
+    }
+    .header-top:has(.toggle-menu:checked) {
+        border: 1px solid #837f8e;
     }
     .header-top-mobile {
         display: flex;
@@ -137,6 +141,10 @@
         align-items: center;
         justify-content: center;
         row-gap: 15px;
+        margin-bottom: 0;
+        padding-bottom: 30px;
+        margin-top: -55px;
+        padding-top: 12px;
     }
     .header-contacts .adress {
         display: block;
@@ -153,6 +161,8 @@
         align-items: center;
         justify-content: center;
         row-gap: 15px;
+        margin-bottom: 0;
+        padding-bottom: 80px;
     }
     .header-menu .logo-wrap {
         margin: 0 auto;
@@ -164,6 +174,9 @@
         justify-content: center;
         row-gap: 15px;
         height: auto;
+        padding-bottom: 50px;
+        margin-bottom: 0;
+        margin-top: -54px;
     }
     .header-menu-product .sale {
         position: static;
@@ -183,13 +196,41 @@
         margin-top: 86px;
     }
     .contacts-menu__link {
-        font-size: 16px;
-    }
-    .header-menu-product {
-        margin-bottom: 30px;
+        // font-size: 16px;
     }
     .header-menu-product nav {
         margin-left: 0;
+    }
+    .header-brands {
+        margin-top: 160px;
+    }
+    .header {
+        height: 540px;
+    }
+    .header-right-img {
+        right: -465px;
+    }
+    .header-left-img {
+        left: -548px;
+    }
+    .header-top {
+        display: flex;
+        flex-direction: column;
+    }
+    .header-menu-product {
+        order: 3;
+        padding-top: 30px;
+    }
+    .header-menu {
+        order: 4;
+    }
+    .header-contacts {
+        order: 5;
+    }
+    .header-menu {
+        .logo-wrap {
+            display: none;
+        }
     }
 }
 
@@ -215,6 +256,12 @@
     .header-contacts .phones svg {
         margin-right: 16px;
     }
+    .header-left-img {
+        left: -480px;
+    }
+    .header-right-img {
+        right: -340px;
+    }
 }
 
 @media (max-width: 539px) {
@@ -233,7 +280,36 @@
     }
     .header-top {
         top: -32px;
+        // background-color: $background-color;
+        border-bottom: 1px solid #232532;
     }
+    .header-brands {
+        margin-top: 140px;
+        margin-bottom: 110px;
+        .splide {
+            &__slide--haski img {
+                height: 40px;
+            }
+            &__slide--sarma img {
+                height: 60px;
+            }
+            &__slide--bars img {
+                height: 60px;
+            }
+        }
+    }
+    .header-right-img {
+        display: none;
+    }
+    .header-left-img {
+        left: -133px;
+        min-width: 478px;
+        top: 36px;
+    }
+    .header-text__left {
+        width: 100%;
+    }
+
 }
 
 /* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 

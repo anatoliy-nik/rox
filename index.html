@@ -13,14 +13,12 @@
 <body>
     <header class="header">
 
-        <img class="header-left-img" src="/img/header-left-img.svg" alt="">
-        <img class="header-right-img" src="/img/header-right-img.svg" alt="">
-
         <div class="rox-container header-top-wrap">
 
-            <div class="header-top">
+            <img class="header-left-img" src="/img/header-left-img-full.svg" alt="">
+            <img class="header-right-img" src="/img/header-right-img-full.svg" alt="">
 
-                
+            <div class="header-top">
 
                 <input type="checkbox" id="toggle-menu" class="toggle-menu">
                 <label for="toggle-menu" class="burger-btn">
@@ -147,9 +145,9 @@
                     </form>
                     <nav aria-label="Основное меню">
                         <ul class="contacts-menu">
-                            <li class="contacts-menu__item">
+                            <!-- <li class="contacts-menu__item">
                                 <a class="contacts-menu__link" href="#">Главная</a>
-                            </li>
+                            </li> -->
                             <li class="contacts-menu__item">
                                 <a class="contacts-menu__link" href="#">О компании</a>
                             </li>
@@ -170,7 +168,7 @@
                     <a class="sale" href="#">Sale</a>
                     <nav aria-label="Каталог товаров">
                         <ul class="menu-product">
-                            <!-- <li class="menu-product__item">
+                            <li class="menu-product__item">
                                 <a class="menu-product__link" href="#">
                                     Главная
                                     <svg viewBox="0 0 16 9" fill="none"
@@ -179,7 +177,7 @@
                                             stroke-linejoin="round" />
                                     </svg>
                                 </a>
-                            </li> -->
+                            </li>
                             <li class="menu-product__item">
                                 <a class="menu-product__link" href="#">
                                     Бренды
@@ -239,29 +237,29 @@
         </div>
 
         <div class="header-brands">
-            <div class="rox-container">
-                <div class="splide" id="brands">
+            <!-- <div class="rox-container"> -->
+                <div class="splide" id="brands" aria-label="Слайдер брендов">
                     <div class="splide__track">
                         <ul class="splide__list">
-                            <li class="splide__slide">
+                            <li class="splide__slide splide__slide--sarma">
                                 <a href="#">
-                                    <img src="/img/sarma.png" alt="Сарма">
+                                    <img src="/img/sarma.svg" alt="Сарма">
                                 </a>
                             </li>
-                            <li class="splide__slide">
+                            <li class="splide__slide splide__slide--bars">
                                 <a href="#">
-                                    <img src="/img/bars.png" alt="Барс">
+                                    <img src="/img/bars.svg" alt="Барс">
                                 </a>
                             </li>
                             <li class="splide__slide splide__slide--haski">
                                 <a href="#">
-                                    <img src="/img/haski.png" alt="Хаски">
+                                    <img src="/img/haski.svg" alt="Хаски">
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
 
         <div class="header-text">

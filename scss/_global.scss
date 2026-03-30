@@ -36,6 +36,7 @@ body {
     line-height: 135%;
     color: #120d31;
     background-color: $background-color;
+    overflow: hidden;
 }
 
 .rox-container {
@@ -48,7 +49,7 @@ body {
     margin: 0 auto;
     border: 1px dotted #ccc;
     // min-width: 320px;
-    min-width: 360px;
+    min-width: 320px;
 }
 
 .accent-btn {
@@ -87,7 +88,7 @@ body {
 // ---- mobile menu ----
 
 .header-top-mobile {
-    border: 1px solid green;
+    // border: 1px solid green;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -118,4 +119,21 @@ body {
 .toggle-menu,
 .burger-btn {
   display: none;
+}
+
+// ----кастомные стили для инпутов----
+
+input {
+  appearance: none; /* Убираем стандартный стиль */
+}
+
+input:checked {
+  background-color: #4a90d9;
+  border-color: #4a90d9;
+}
+
+input:focus {
+  outline: none;  /* Можно убрать outline, если есть border */
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
 }

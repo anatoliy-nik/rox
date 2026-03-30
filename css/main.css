@@ -88,6 +88,7 @@ body {
   line-height: 135%;
   color: #120d31;
   background-color: #f4f1eb;
+  overflow: hidden;
 }
 
 .rox-container {
@@ -99,7 +100,7 @@ body {
   width: 100%;
   margin: 0 auto;
   border: 1px dotted #ccc;
-  min-width: 360px;
+  min-width: 320px;
 }
 
 .accent-btn {
@@ -136,7 +137,6 @@ body {
 }
 
 .header-top-mobile {
-  border: 1px solid green;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -169,26 +169,47 @@ body {
   display: none;
 }
 
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; /* Убираем стандартный стиль */
+}
+
+input:checked {
+  background-color: #4a90d9;
+  border-color: #4a90d9;
+}
+
+input:focus {
+  outline: none; /* Можно убрать outline, если есть border */
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
+}
+
 /*---- header ----*/
 .header {
   padding: 32px 0;
-  height: 630px;
+  height: 620px;
   /* Высота блока должна быть достаточной, чтобы градиенты не соприкасались */
   min-height: 400px;
   position: relative;
   z-index: 0;
 }
 
+.header-top-wrap {
+  position: relative;
+}
+
 .header-left-img {
   position: absolute;
-  top: 120px;
-  left: 0;
+  top: 78px;
+  left: -460px;
 }
 
 .header-right-img {
   position: absolute;
-  top: 70px;
-  right: 0;
+  top: 8px;
+  right: -712px;
 }
 
 /* ВЕРХНИЙ ГРАДИЕНТ (прижат к верху) */
@@ -350,6 +371,7 @@ body {
 }
 .contacts-menu__link {
   color: #120d31;
+  font-size: 14px;
 }
 .contacts-menu__link:hover {
   color: #cc5803;
@@ -408,17 +430,23 @@ body {
 
 /*---- header-brands ----*/
 .header-brands {
-  margin-bottom: 86px;
+  margin-bottom: 70px;
   /*раскомментить, чтобы линия была на всю ширину экрана*/
-}
-.header-brands .rox-container {
   border-bottom: 1px solid #837f8e;
   border-top: 1px solid #837f8e;
   background-color: #f4f1eb;
+  display: flex;
+  align-items: center;
   padding: 22px 0px;
 }
 .header-brands .splide__slide--haski img {
-  height: 60px;
+  height: 50px;
+}
+.header-brands .splide__slide--sarma img {
+  height: 80px;
+}
+.header-brands .splide__slide--bars img {
+  height: 80px;
 }
 .header-brands .splide__slide {
   display: flex;
@@ -544,9 +572,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
   }
-  .contacts-menu__link {
-    font-size: 12px;
-  }
   .header-text__left {
     width: 80%;
   }
@@ -559,17 +584,16 @@ body {
     чтоб получить фактич. ширину контента */
     max-width: 696px;
   }
-  .header-top-wrap {
-    position: relative;
-  }
   .header-top {
-    border: 1px solid red;
     position: absolute;
     top: 0;
     right: 0;
     width: 100%;
     z-index: 2;
     background-color: transparent;
+  }
+  .header-top:has(.toggle-menu:checked) {
+    border: 1px solid #837f8e;
   }
   .header-top-mobile {
     display: flex;
@@ -643,6 +667,10 @@ body {
     align-items: center;
     justify-content: center;
     row-gap: 15px;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    margin-top: -55px;
+    padding-top: 12px;
   }
   .header-contacts .adress {
     display: block;
@@ -657,6 +685,8 @@ body {
     align-items: center;
     justify-content: center;
     row-gap: 15px;
+    margin-bottom: 0;
+    padding-bottom: 80px;
   }
   .header-menu .logo-wrap {
     margin: 0 auto;
@@ -668,6 +698,9 @@ body {
     justify-content: center;
     row-gap: 15px;
     height: auto;
+    padding-bottom: 50px;
+    margin-bottom: 0;
+    margin-top: -54px;
   }
   .header-menu-product .sale {
     position: static;
@@ -686,14 +719,37 @@ body {
   .header-brands {
     margin-top: 86px;
   }
-  .contacts-menu__link {
-    font-size: 16px;
-  }
-  .header-menu-product {
-    margin-bottom: 30px;
-  }
   .header-menu-product nav {
     margin-left: 0;
+  }
+  .header-brands {
+    margin-top: 160px;
+  }
+  .header {
+    height: 540px;
+  }
+  .header-right-img {
+    right: -465px;
+  }
+  .header-left-img {
+    left: -548px;
+  }
+  .header-top {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-menu-product {
+    order: 3;
+    padding-top: 30px;
+  }
+  .header-menu {
+    order: 4;
+  }
+  .header-contacts {
+    order: 5;
+  }
+  .header-menu .logo-wrap {
+    display: none;
   }
 }
 @media (max-width: 767px) {
@@ -718,6 +774,12 @@ body {
   .header-contacts .phones svg {
     margin-right: 16px;
   }
+  .header-left-img {
+    left: -480px;
+  }
+  .header-right-img {
+    right: -340px;
+  }
 }
 @media (max-width: 539px) {
   .rox-container {
@@ -735,6 +797,31 @@ body {
   }
   .header-top {
     top: -32px;
+    border-bottom: 1px solid #232532;
+  }
+  .header-brands {
+    margin-top: 140px;
+    margin-bottom: 110px;
+  }
+  .header-brands .splide__slide--haski img {
+    height: 40px;
+  }
+  .header-brands .splide__slide--sarma img {
+    height: 60px;
+  }
+  .header-brands .splide__slide--bars img {
+    height: 60px;
+  }
+  .header-right-img {
+    display: none;
+  }
+  .header-left-img {
+    left: -133px;
+    min-width: 478px;
+    top: 36px;
+  }
+  .header-text__left {
+    width: 100%;
   }
 }
 /* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 

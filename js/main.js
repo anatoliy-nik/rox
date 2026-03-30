@@ -9,17 +9,35 @@ $(function(){
     /*---- слайдер брендов ----*/
     new Splide('#brands', {
         type : 'loop',
-        // perPage: 3, /* Будет сжимать слайды, если сколько надо не влезут/ Не работает, если указан fixedWidth */
+        // perPage: 3, /* Будет сжимать слайды, если сколько надо не влезут. Не работает, если указан fixedWidth */
+        perPage: 7,
         perMove: 1,
-        fixedWidth: 258, /* Фикс. ширина слайдов. Если слайдов мало, то продублирует их, до полного заполнения контейнера */
+        // fixedWidth: 258, /* Фикс. ширина слайдов. Если слайдов мало, то продублирует их, до полного заполнения контейнера */
         // gap: 24,
-        speed: 1500, /* по дефолту 400 */
         arrows: false,
         pagination: false,
         // autoplay: true,
-        interval: 3000,
+        speed: 300000, /* по дефолту 400 */
+        interval: 100, /* по дефолту 5000 */
         pauseOnHover: true,
-        pauseOnFocus: true
+        pauseOnFocus: true,
+        breakpoints: {
+                1399: {
+                    perPage: 6,
+                },
+                1199: {
+                    perPage: 5,
+                },
+                991: {
+                    perPage: 4,
+                },
+                767: {
+                    perPage: 3,
+                },
+                539: {
+                    perPage: 2,
+                }
+            }
     }).mount();
 
     /*---- 2-х уровневое меню (на мобиле) ----*/
