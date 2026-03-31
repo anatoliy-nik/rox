@@ -15,6 +15,7 @@
     .contacts-menu__item + .contacts-menu__item {
         margin-left: 15px;
     }
+
 }
 
 @media (max-width: 1199px) {
@@ -42,6 +43,16 @@
     .header-text__left {
         width: 80%;
     }
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 24px;
+    }
+    .products {
+        .card {
+        
+        }
+    }
+
 }
 
 @media (max-width: 991px) {
@@ -52,10 +63,6 @@
     чтоб получить фактич. ширину контента */
         max-width: 696px;
     }
-    // .header-top-wrap {
-    //     position: relative;
-    //     display: flex;
-    // }
     .header-top {
         // border: 1px solid red;
         position: absolute;
@@ -65,6 +72,16 @@
         z-index: 2;
         background-color: transparent;
     }
+    // .header-top::after {
+    //     content: "";
+    //     position: absolute;
+    //     bottom: 0;
+    //     left: 0;
+    //     right: 0;
+    //     height: 242px;
+    //     background: linear-gradient(0deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
+    //     z-index: 10;
+    // }
     .header-top:has(.toggle-menu:checked) {
         border: 1px solid #837f8e;
     }
@@ -232,6 +249,11 @@
             display: none;
         }
     }
+    .products {
+        .card {
+       
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -261,6 +283,11 @@
     }
     .header-right-img {
         right: -340px;
+    }
+    .card {
+        &__params {
+            font-size: 14px;
+        }
     }
 }
 
@@ -308,6 +335,12 @@
     }
     .header-text__left {
         width: 100%;
+    }
+    .products {
+        grid-template-columns: repeat(1, 1fr);
+        .card {
+            
+        }
     }
 
 }

@@ -88,7 +88,7 @@ body {
   line-height: 135%;
   color: #120d31;
   background-color: #f4f1eb;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .rox-container {
@@ -99,7 +99,6 @@ body {
   max-width: 1296px;
   width: 100%;
   margin: 0 auto;
-  border: 1px dotted #ccc;
   min-width: 320px;
 }
 
@@ -465,7 +464,7 @@ input:focus {
 /*---- main ----*/
 /*---- s-hits ----*/
 .s-hits {
-  padding: 45px 0;
+  padding: 35px 0;
 }
 
 .products {
@@ -475,12 +474,15 @@ input:focus {
        column-gap: 24px;
 }
 .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   border-radius: 30px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
   background: #faf6ed;
   padding: 16px;
-  height: 448px;
   position: relative;
+  z-index: -1;
 }
 .card__img-link {
   border-radius: 20px;
@@ -494,15 +496,18 @@ input:focus {
 .card__title {
   color: #000;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 135%;
-  margin-bottom: 16px;
+  margin-bottom: 113px;
 }
 .card__title:hover {
   color: #cc5803;
 }
 .card__params {
-  margin-bottom: 32px;
+  position: absolute;
+  bottom: 60px;
+  left: 16px;
+  right: 16px;
 }
 .card__params-item {
   margin-bottom: 8px;
@@ -574,6 +579,10 @@ input:focus {
   }
   .header-text__left {
     width: 80%;
+  }
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
   }
 }
 @media (max-width: 991px) {
@@ -780,6 +789,9 @@ input:focus {
   .header-right-img {
     right: -340px;
   }
+  .card__params {
+    font-size: 14px;
+  }
 }
 @media (max-width: 539px) {
   .rox-container {
@@ -822,6 +834,9 @@ input:focus {
   }
   .header-text__left {
     width: 100%;
+  }
+  .products {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 /* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 

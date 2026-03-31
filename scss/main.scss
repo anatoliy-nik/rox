@@ -306,7 +306,7 @@
 
 /*---- s-hits ----*/
 .s-hits {
-    padding: 45px 0;
+    padding: 35px 0;
 }
 
 .products {
@@ -314,17 +314,21 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 24px;
     &__item {
-        
+        // display: flex; //!Важно
     }
 }
 
 .card {
+    height: 100%; // !Важно
+    display: flex;
+    flex-direction: column;
     border-radius: 30px;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
     background: #faf6ed;
     padding: 16px;
-    height: 448px;
+    // height: 428px;
     position: relative;
+    z-index: -1;
     &__img-link {
         border-radius: 20px;
         background-color: #e4ddcf;
@@ -337,15 +341,19 @@
     &__title {
         color: #000;
         font-weight: 500;
-        font-size: 24px;
+        font-size: 22px;
         line-height: 135%;
-        margin-bottom: 16px;
+        margin-bottom: 113px;
     }
     &__title:hover {
         color: $accent;
     }
     &__params {
-        margin-bottom: 32px;
+        // margin-bottom: 42px;
+        position: absolute;
+        bottom: 60px;
+        left: 16px;
+        right: 16px;
     }
     &__params-item {
         margin-bottom: 8px;
