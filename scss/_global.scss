@@ -47,9 +47,13 @@ body {
     max-width: 1296px;
     width: 100%;
     margin: 0 auto;
-    // border: 1px dotted #ccc;
+    border: 1px dotted #ccc;
     // min-width: 320px;
     min-width: 320px;
+}
+
+section {
+    padding: 35px 0;
 }
 
 .accent-btn {
@@ -78,7 +82,7 @@ body {
 }
 
 .section-title {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 32px;
     line-height: 135%;
     text-transform: uppercase;

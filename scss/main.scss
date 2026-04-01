@@ -12,7 +12,7 @@
     min-height: 400px;  
     // overflow: hidden; /
     position: relative;
-    z-index: 0;
+    // z-index: 1;
 }
 
 .header-top-wrap {
@@ -306,7 +306,7 @@
 
 /*---- s-hits ----*/
 .s-hits {
-    padding: 35px 0;
+    // padding: 35px 0;
 }
 
 .products {
@@ -314,7 +314,7 @@
     grid-template-columns: repeat(4, 1fr);
     column-gap: 24px;
     &__item {
-        // display: flex; //!Важно
+        // display: flex; 
     }
 }
 
@@ -328,7 +328,7 @@
     padding: 16px;
     // height: 428px;
     position: relative;
-    z-index: -1;
+    z-index: 0;
     &__img-link {
         border-radius: 20px;
         background-color: #e4ddcf;
@@ -391,5 +391,99 @@
         right: 16px;
     }
 }
+
+/*---- s-ohota-rybalka ----*/
+
+.s-ohota-rybalka {
+    position: relative;
+    // height: 630px;
+    overflow: hidden;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, #217d72 0%, #bee9e8 65.38%, #f1faff 82.21%, #f4f1eb 99.99%);
+        z-index: -1;
+    }
+    .rox-container {
+        position: relative;
+    }
+    &__left-img {
+        position: absolute;
+        top: 0;
+        left: -130px;
+        z-index: 0;
+    }
+    &__right-img {
+        position: absolute;
+        top: 30px;
+        right: -130px;
+        z-index: 0;
+    }
+    &__text {
+        position: absolute;
+        width: 57%;
+        top: 0;
+        right: 0;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 135%;
+    }
+    .section-title {
+        margin-bottom: 230px;
+    }
+}
+
+.ohota-rybalka {
+    display: flex;
+    // display: grid;
+    // grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+    position: relative;
+    z-index: 1;
+    &__item {
+        width: 25%;
+        // border: 1px solid red;
+    }
+    &__link {
+        display: flex;
+        flex-direction: column;
+    }
+    &__img-wrap {
+        border-radius: 30px;
+        background-color: #faf6ed;
+        margin-bottom: 16px;
+        height: 210px;
+        position: relative;
+        transition: all .3s ease;
+        border: 1px solid transparent;
+    }
+    &__img {
+        position: absolute;
+        top: -33%;
+        left: 50%;
+        transform: translateX(-50%);
+        // border: 1px solid green;
+        height: 280px;
+        width: 280px;
+        object-fit: contain;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 135%;
+        text-transform: uppercase;
+        color: $black-text;
+        text-align: center;
+        transition: all .3s ease;
+    }
+    &__link:hover .ohota-rybalka__img-wrap {
+        border: 1px solid $accent;
+    }
+}
+
 
 @import '_media.scss'

@@ -254,6 +254,24 @@
        
         }
     }
+    .s-ohota-rybalka__text {
+        position: static;
+        width: 72%;
+        margin-bottom: 80px;
+        margin-left: auto;
+    }
+    .s-ohota-rybalka {
+        .section-title {
+            margin-bottom: 20px;
+        }
+    }
+    .ohota-rybalka {
+        flex-wrap: wrap;
+        row-gap: 48px;
+        &__item {
+            width: 48%;
+        }
+    }
 }
 
 @media (max-width: 767px) {
@@ -287,6 +305,23 @@
     .card {
         &__params {
             font-size: 14px;
+        }
+    }
+    .s-ohota-rybalka {
+        &__text {
+            width: 100%;
+            font-size: 16px;
+        }
+        &__left-img {
+            top: 205px;
+        }
+        &__right-img {
+            top: -84px;
+         }
+    }
+    .ohota-rybalka {
+        &__item {
+            width: 47.5%;
         }
     }
 }
@@ -342,7 +377,15 @@
             
         }
     }
-
+    .ohota-rybalka {
+        row-gap: 55px;
+        &__item {
+            width: 100%;
+        }
+    }
+    .s-ohota-rybalka__left-img {
+        top: 215px;
+    }
 }
 
 /* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 

@@ -99,7 +99,12 @@ body {
   max-width: 1296px;
   width: 100%;
   margin: 0 auto;
+  border: 1px dotted #ccc;
   min-width: 320px;
+}
+
+section {
+  padding: 35px 0;
 }
 
 .accent-btn {
@@ -128,7 +133,7 @@ body {
 }
 
 .section-title {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 32px;
   line-height: 135%;
   text-transform: uppercase;
@@ -192,7 +197,6 @@ input:focus {
   /* Высота блока должна быть достаточной, чтобы градиенты не соприкасались */
   min-height: 400px;
   position: relative;
-  z-index: 0;
 }
 
 .header-top-wrap {
@@ -463,10 +467,6 @@ input:focus {
 
 /*---- main ----*/
 /*---- s-hits ----*/
-.s-hits {
-  padding: 35px 0;
-}
-
 .products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -482,7 +482,7 @@ input:focus {
   background: #faf6ed;
   padding: 16px;
   position: relative;
-  z-index: -1;
+  z-index: 0;
 }
 .card__img-link {
   border-radius: 20px;
@@ -540,6 +540,95 @@ input:focus {
   position: absolute;
   bottom: 16px;
   right: 16px;
+}
+
+/*---- s-ohota-rybalka ----*/
+.s-ohota-rybalka {
+  position: relative;
+  overflow: hidden;
+}
+.s-ohota-rybalka::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #217d72 0%, #bee9e8 65.38%, #f1faff 82.21%, #f4f1eb 99.99%);
+  z-index: -1;
+}
+.s-ohota-rybalka .rox-container {
+  position: relative;
+}
+.s-ohota-rybalka__left-img {
+  position: absolute;
+  top: 0;
+  left: -130px;
+  z-index: 0;
+}
+.s-ohota-rybalka__right-img {
+  position: absolute;
+  top: 30px;
+  right: -130px;
+  z-index: 0;
+}
+.s-ohota-rybalka__text {
+  position: absolute;
+  width: 57%;
+  top: 0;
+  right: 0;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 135%;
+}
+.s-ohota-rybalka .section-title {
+  margin-bottom: 230px;
+}
+
+.ohota-rybalka {
+  display: flex;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+.ohota-rybalka__item {
+  width: 25%;
+}
+.ohota-rybalka__link {
+  display: flex;
+  flex-direction: column;
+}
+.ohota-rybalka__img-wrap {
+  border-radius: 30px;
+  background-color: #faf6ed;
+  margin-bottom: 16px;
+  height: 210px;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+.ohota-rybalka__img {
+  position: absolute;
+  top: -33%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 280px;
+  width: 280px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.ohota-rybalka__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 135%;
+  text-transform: uppercase;
+  color: #120d31;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.ohota-rybalka__link:hover .ohota-rybalka__img-wrap {
+  border: 1px solid #cc5803;
 }
 
 @media (max-width: 1399px) {
@@ -760,6 +849,22 @@ input:focus {
   .header-menu .logo-wrap {
     display: none;
   }
+  .s-ohota-rybalka__text {
+    position: static;
+    width: 72%;
+    margin-bottom: 80px;
+    margin-left: auto;
+  }
+  .s-ohota-rybalka .section-title {
+    margin-bottom: 20px;
+  }
+  .ohota-rybalka {
+    flex-wrap: wrap;
+    row-gap: 48px;
+  }
+  .ohota-rybalka__item {
+    width: 48%;
+  }
 }
 @media (max-width: 767px) {
   .rox-container {
@@ -791,6 +896,19 @@ input:focus {
   }
   .card__params {
     font-size: 14px;
+  }
+  .s-ohota-rybalka__text {
+    width: 100%;
+    font-size: 16px;
+  }
+  .s-ohota-rybalka__left-img {
+    top: 205px;
+  }
+  .s-ohota-rybalka__right-img {
+    top: -84px;
+  }
+  .ohota-rybalka__item {
+    width: 47.5%;
   }
 }
 @media (max-width: 539px) {
@@ -837,6 +955,15 @@ input:focus {
   }
   .products {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .ohota-rybalka {
+    row-gap: 55px;
+  }
+  .ohota-rybalka__item {
+    width: 100%;
+  }
+  .s-ohota-rybalka__left-img {
+    top: 215px;
   }
 }
 /* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 
