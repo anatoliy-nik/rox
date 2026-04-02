@@ -47,7 +47,7 @@ body {
     max-width: 1296px;
     width: 100%;
     margin: 0 auto;
-    border: 1px dotted #ccc;
+    // border: 1px dotted #ccc;
     // min-width: 320px;
     min-width: 320px;
 }
@@ -87,42 +87,6 @@ section {
     line-height: 135%;
     text-transform: uppercase;
     margin-bottom: 20px;
-}
-
-// ---- mobile menu ----
-
-.header-top-mobile {
-    // border: 1px solid green;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    width: 100%;
-    display: none;
-    align-items: center;
-    justify-content: end;
-    padding-left: 12px;
-    padding-right: 54px;
-    z-index: 10;
-    .logo-link img {
-        height: 36px;
-    }
-    .phones-link {
-        margin-left: 8px;
-        svg {
-            width: 22px;
-            height: 22px;
-            flex-shrink: 0;
-        }
-    }
-    .logo-wrap {
-        margin-right: auto;
-    }
-}
-
-.toggle-menu,
-.burger-btn {
-  display: none;
 }
 
 // ----кастомные стили для инпутов----
