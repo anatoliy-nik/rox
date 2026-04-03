@@ -282,6 +282,12 @@
             }
         }
     }
+    .s-text__img {
+        left: -300px;
+    }
+    .s-text {
+        min-height: 250px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -323,10 +329,10 @@
             font-size: 16px;
         }
         &__left-img {
-            top: 205px;
+            top: 455px;
         }
         &__right-img {
-            top: -84px;
+            top: 204px;
          }
     }
     .categories-box {
@@ -340,6 +346,9 @@
                 width: 47.5%;
             }
         }
+    }
+    .s-text__text {
+        font-size: 16px;
     }
 }
 
@@ -408,6 +417,20 @@
             &__item {
                 width: 100%;
             }
+        }
+    }
+    .s-text {
+        margin: 0px 0;
+        min-height: 360px;
+        overflow: hidden;
+        &__text {
+            width: 100%;
+            padding-top: 15px;
+        }
+        .s-text__img {
+        top: 175px;
+        left: -158px;
+        z-index: -1;
         }
     }
 }

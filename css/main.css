@@ -47,7 +47,7 @@
 
 body,
 h1, h2, h3, h4, h5, h6,
-p, ol, ul, figure, blockquote, dl, dd {
+ol, ul, figure, blockquote, dl, dd {
   margin: 0;
   padding: 0;
 }
@@ -300,7 +300,7 @@ input:focus {
   .menu-list__item--submenu:hover .submenu-list {
     display: none;
   }
-  .menu-list__item--submenu > div > a::after {
+  .menu-list__item--submenu > div > .menu-list__link::after {
     display: none;
   }
   .menu-list__item--submenu:hover .menu-list__link {
@@ -883,6 +883,42 @@ input:focus {
   margin-bottom: 90px;
 }
 
+/*---- .s-text ----*/
+.s-text {
+  position: relative;
+  padding: 0 0;
+  margin: 35px 0;
+  min-height: 380px;
+}
+.s-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 20px;
+  background-color: #8CA6D9;
+  z-index: -1;
+}
+.s-text .rox-container {
+  position: relative;
+}
+.s-text__img {
+  position: absolute;
+  top: -32px;
+  left: -180px;
+  z-index: 1;
+}
+.s-text__text {
+  width: 50%;
+  margin-left: auto;
+  padding-left: 24px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 135%;
+}
+
+/*---- s-proizvodstvo ----*/
 @media (max-width: 1399px) {
   .rox-container {
     /* max-width: 1140px; 
@@ -1130,6 +1166,12 @@ input:focus {
   .s-others-categories .categories-box__item {
     width: 48%;
   }
+  .s-text__img {
+    left: -300px;
+  }
+  .s-text {
+    min-height: 250px;
+  }
 }
 @media (max-width: 767px) {
   .rox-container {
@@ -1167,16 +1209,19 @@ input:focus {
     font-size: 16px;
   }
   .s-ohota-rybalka__left-img {
-    top: 205px;
+    top: 455px;
   }
   .s-ohota-rybalka__right-img {
-    top: -84px;
+    top: 204px;
   }
   .categories-box__item {
     width: 47.5%;
   }
   .s-others-categories .categories-box__item {
     width: 47.5%;
+  }
+  .s-text__text {
+    font-size: 16px;
   }
 }
 @media (max-width: 539px) {
@@ -1235,6 +1280,20 @@ input:focus {
   }
   .s-others-categories .categories-box__item {
     width: 100%;
+  }
+  .s-text {
+    margin: 0px 0;
+    min-height: 360px;
+    overflow: hidden;
+  }
+  .s-text__text {
+    width: 100%;
+    padding-top: 15px;
+  }
+  .s-text .s-text__img {
+    top: 175px;
+    left: -158px;
+    z-index: -1;
   }
 }
 /* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 

@@ -183,7 +183,7 @@
   .menu-list__item--submenu:hover .submenu-list {
     display: none;
   }
-  .menu-list__item--submenu > div > a::after {
+  .menu-list__item--submenu > div > .menu-list__link::after {
     display: none;
   }
   .menu-list__item--submenu:hover .menu-list__link {
@@ -821,6 +821,45 @@
         margin-bottom: 90px;
     }
 }
+
+/*---- .s-text ----*/
+
+.s-text {
+    position:relative;
+    padding: 0 0;
+    margin: 35px 0;
+    min-height: 380px;
+    &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 20px;
+            background-color: #8CA6D9;
+            z-index: -1;
+        }
+    .rox-container {
+        position:relative;
+        
+    }
+    &__img {
+        position: absolute;
+        top: -32px;
+        left: -180px;
+        z-index: 1;
+    }
+    &__text {
+        width: 50%;
+        margin-left: auto;
+        padding-left: 24px;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 135%;
+    }
+}
+
+/*---- s-proizvodstvo ----*/
 
 
 @import '_media.scss'
