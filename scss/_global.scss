@@ -89,19 +89,151 @@ section {
     margin-bottom: 20px;
 }
 
-// ----кастомные стили для инпутов----
+// ----forms----
 
-input {
-  appearance: none; /* Убираем стандартный стиль */
+.search-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 350px;
+    &__input {
+        width: 100%;
+        padding: 12px 40px 12px 16px; /* справа место под иконку */
+        border: none;
+        border-radius: 60px;
+        background: #fff;
+        font-size: 14px;
+        line-height: 113%;
+        font-weight: 400;
+        font-family: 'Montserrat', sans-serif;
+        &::placeholder {
+            color: #9795b5;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
+        }
+    }
+    &__btn {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        svg {
+            width: 16px;
+            height: 16px;
+            display: block;
+            path {
+                fill: #999;
+                transition: fill 0.3s ease;
+            }
+        }
+        &:hover svg path {
+            fill: $accent;
+        }
+    }
 }
 
-input:checked {
-  background-color: #4a90d9;
-  border-color: #4a90d9;
-}
-
-input:focus {
-  outline: none;  /* Можно убрать outline, если есть border */
-  border-color: #4a90d9;
-  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
+.main-form {
+    background-color: #e4ddcf; 
+    border-radius: 30px;
+    padding: 32px;
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 135%;
+        margin-bottom: 15px;
+    }
+    &__text {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 135%;
+        margin-bottom: 15px;
+    }
+    &__input {
+        padding: 12px 24px;
+        background-color: #f9f9ff;
+        margin-bottom: 12px;
+        width: 100%;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 113%;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 60px;
+        border: none;
+        &::placeholder {
+            color: #9795b5;
+        }
+        &:focus {
+            outline: none;
+            border-color: #4a90d9;
+            box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
+        }
+    }
+    &__agreement {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        align-items: center;
+    }
+    &__checkbox {
+        appearance: none;
+        -webkit-appearance: none;
+        min-width: 18px;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #9795b5;
+        border-radius: 4px;
+        cursor: pointer;
+        position: relative;
+        flex-shrink: 0;
+        margin-top: 2px;
+        transition: all 0.3s ease;
+        &:checked {
+            background-color: #4a90d9;
+            border-color: #4a90d9;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 5px;
+                top: 1px;
+                width: 4px;
+                height: 8px;
+                border: solid white;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+        }
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
+        }
+    }
+    &__agreement label {
+        cursor: pointer;
+        line-height: 1;
+        font-weight: 400;
+        font-size: 12px;
+    }
+    &__agreement a {
+        color: $accent;
+        text-decoration: underline;
+    }
+    &__agreement a:hover {
+        text-decoration: none;
+    }
+    .accent-btn {
+        margin-left: auto;
+        display: block;
+    }
 }
