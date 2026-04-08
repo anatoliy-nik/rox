@@ -67,12 +67,30 @@
             }
         }
     }
+    .proizvodstvo {
+        flex-direction: column;
+        row-gap: 12px;
+    }
     .proizvodstvo__item {
-        height: 248px;
+        height: auto;
+        width: 100%;
+        flex-direction: row;
+        padding: 0 12px;
+        align-items: center;
+        text-align: left;
+        img {
+            margin: 12px;
+        }
     }
     .s-proizvodstvo__right {
-        position: relative;
-        top: -116px;
+        // position: relative;
+        top: -72px;
+    }
+    .s-proizvodstvo__left {
+        width: 54%;
+    }
+    .s-text__img {
+        left: -224px;
     }
 }
 
@@ -314,7 +332,7 @@
         width: 100%;
     }
     .proizvodstvo__item {
-        height: 232px;
+        // height: 232px;
         padding-left: 12px;
         padding-right: 12px;
     }
@@ -323,6 +341,12 @@
     }
     .s-proizvodstvo__text {
         font-size: 16px;
+    }
+       .s-text__text .main-form {
+        position: absolute;
+        max-width: 100%;
+        left: 0;
+        z-index: 1;
     }
 }
 
@@ -390,11 +414,13 @@
         margin-top: 0;
     }
     .proizvodstvo__item {
-        height: 248px;
+        // height: 248px;
     }
     .s-proizvodstvo__text {
         width: 100%;
     }
+ 
+
 }
 
 @media (max-width: 539px) {
@@ -466,16 +492,26 @@
     }
     .s-text {
         margin: 0px 0;
-        min-height: 360px;
+        min-height: auto;
         overflow: hidden;
         &__text {
-            width: 100%;
+            width: 75%;
             padding-top: 15px;
+            padding-left: 0;
+            margin-left: 0;
         }
         .s-text__img {
-        top: 175px;
-        left: -158px;
-        z-index: -1;
+            top: 115px;
+            left: auto;
+            z-index: -1;
+            right: -220px;
+        }
+        &--velome {
+            overflow: visible;
+        }
+        .main-form {
+            margin: 0 12px;
+            max-width: 100%;
         }
     }
     .proizvodstvo {
@@ -485,11 +521,18 @@
             width: 100%;
             height: auto;
             padding-bottom: 20px;
-        }
+            padding-top: 8px;
+            flex-direction: column;
+            text-align: center;
+            }
         &__item img {
             margin-bottom: 20px;
         }
     }
+    .main-form .accent-btn {
+        margin-left: 0;
+    }
+    
 }
 
 /* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 
