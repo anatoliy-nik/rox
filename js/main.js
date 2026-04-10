@@ -16,7 +16,7 @@ $(function(){
         // gap: 24,
         arrows: false,
         pagination: false,
-        // autoplay: true,
+        autoplay: true,
         speed: 300000, /* по дефолту 400 */
         interval: 100, /* по дефолту 5000 */
         pauseOnHover: true,

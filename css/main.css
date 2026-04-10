@@ -1634,7 +1634,7 @@ section {
     right: -220px;
   }
   .s-text--velome {
-    overflow: visible;
+    overflow-y: visible;
   }
   .s-text .form-wrap {
     margin: 0 0px;
