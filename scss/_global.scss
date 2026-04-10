@@ -143,10 +143,29 @@ section {
     }
 }
 
-.main-form {
+.form-wrap {
     background-color: #e4ddcf; 
     border-radius: 30px;
     padding: 32px;
+    max-width: 702px;
+    margin-left: auto;
+    &__box {
+        margin-top: 20px;
+        text-align: center;
+        &-text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 135%;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .social {
+            justify-content: center;
+        }
+    }
+}
+.main-form {
+    
     &__title {
         font-weight: 700;
         font-size: 20px;
@@ -234,7 +253,7 @@ section {
         text-decoration: none;
     }
     .accent-btn {
-        margin-left: auto;
+        margin: 0 auto;
         display: block;
     }
 }

@@ -21,6 +21,9 @@
     .s-proizvodstvo__right {
         top: -198px;
     }
+    .s-text .form-wrap {
+        max-width: 558px;
+    }
 
 }
 
@@ -91,6 +94,9 @@
     }
     .s-text__img {
         left: -224px;
+    }
+    .s-text .form-wrap {
+        max-width: 468px;
     }
 }
 
@@ -342,11 +348,17 @@
     .s-proizvodstvo__text {
         font-size: 16px;
     }
-       .s-text__text .main-form {
-        position: absolute;
+    .s-text .form-wrap {
         max-width: 100%;
-        left: 0;
+        position: relative;
         z-index: 1;
+    }
+    .footer-inner {
+        flex-wrap: wrap;
+        row-gap: 24px;
+        &__item {
+            width: 48%;
+        }
     }
 }
 
@@ -419,8 +431,11 @@
     .s-proizvodstvo__text {
         width: 100%;
     }
- 
-
+    .footer-inner {
+        &__item {
+            width: 47%;
+        }
+    }
 }
 
 @media (max-width: 539px) {
@@ -509,9 +524,11 @@
         &--velome {
             overflow: visible;
         }
-        .main-form {
-            margin: 0 12px;
+        .form-wrap {
+            margin: 0 0px;
             max-width: 100%;
+            padding: 24px;
+            margin-bottom: 24px;
         }
     }
     .proizvodstvo {
@@ -529,8 +546,18 @@
             margin-bottom: 20px;
         }
     }
-    .main-form .accent-btn {
-        margin-left: 0;
+    .footer-inner {
+        text-align: center;
+        &__item {
+            width:  100%;
+            text-align: center;
+        }
+        &__item ul {
+            align-items: center;
+        }
+        .logo-wrap img {
+            margin: 0 auto;
+        }
     }
     
 }

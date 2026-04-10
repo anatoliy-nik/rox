@@ -194,11 +194,28 @@ section {
   fill: #cc5803;
 }
 
-.main-form {
+.form-wrap {
   background-color: #e4ddcf;
   border-radius: 30px;
   padding: 32px;
+  max-width: 702px;
+  margin-left: auto;
 }
+.form-wrap__box {
+  margin-top: 20px;
+  text-align: center;
+}
+.form-wrap__box-text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 135%;
+  margin-bottom: 10px;
+  display: block;
+}
+.form-wrap__box .social {
+  justify-content: center;
+}
+
 .main-form__title {
   font-weight: 700;
   font-size: 20px;
@@ -290,7 +307,7 @@ section {
   text-decoration: none;
 }
 .main-form .accent-btn {
-  margin-left: auto;
+  margin: 0 auto;
   display: block;
 }
 
@@ -1097,7 +1114,67 @@ section {
   border-radius: 30px;
 }
 
-/*---- s-text--velome ----*/
+/*---- footer ----*/
+.footer {
+  padding: 35px 0 15px 0;
+  background-color: #55a19a;
+}
+.footer .logo-wrap {
+  margin-bottom: 10px;
+}
+.footer .saitguru {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(72, 98, 132, 0.16);
+  margin-top: 35px;
+}
+.footer .saitguru a {
+  color: #120d31;
+  text-decoration: none;
+  font-size: 12px;
+}
+.footer .saitguru span {
+  color: #A7192E;
+}
+
+.footer-inner {
+  display: flex;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+}
+.footer-inner__item {
+  width: 25%;
+}
+.footer-inner__item ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.footer-inner__item li a {
+  display: flex;
+  align-items: center;
+}
+.footer-inner__item svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+.footer-inner__item svg path {
+  stroke: #120d31;
+}
+.footer-inner__item a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 135%;
+  color: #120d31;
+}
+.footer-inner__item a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 1399px) {
   .rox-container {
     /* max-width: 1140px; 
@@ -1120,6 +1197,9 @@ section {
   }
   .s-proizvodstvo__right {
     top: -198px;
+  }
+  .s-text .form-wrap {
+    max-width: 558px;
   }
 }
 @media (max-width: 1199px) {
@@ -1179,6 +1259,9 @@ section {
   }
   .s-text__img {
     left: -224px;
+  }
+  .s-text .form-wrap {
+    max-width: 468px;
   }
 }
 @media (max-width: 991px) {
@@ -1403,11 +1486,17 @@ section {
   .s-proizvodstvo__text {
     font-size: 16px;
   }
-  .s-text__text .main-form {
-    position: absolute;
+  .s-text .form-wrap {
     max-width: 100%;
-    left: 0;
+    position: relative;
     z-index: 1;
+  }
+  .footer-inner {
+    flex-wrap: wrap;
+    row-gap: 24px;
+  }
+  .footer-inner__item {
+    width: 48%;
   }
 }
 @media (max-width: 767px) {
@@ -1465,6 +1554,9 @@ section {
   }
   .s-proizvodstvo__text {
     width: 100%;
+  }
+  .footer-inner__item {
+    width: 47%;
   }
 }
 @media (max-width: 539px) {
@@ -1544,9 +1636,11 @@ section {
   .s-text--velome {
     overflow: visible;
   }
-  .s-text .main-form {
-    margin: 0 12px;
+  .s-text .form-wrap {
+    margin: 0 0px;
     max-width: 100%;
+    padding: 24px;
+    margin-bottom: 24px;
   }
   .proizvodstvo {
     flex-direction: column;
@@ -1563,8 +1657,18 @@ section {
   .proizvodstvo__item img {
     margin-bottom: 20px;
   }
-  .main-form .accent-btn {
-    margin-left: 0;
+  .footer-inner {
+    text-align: center;
+  }
+  .footer-inner__item {
+    width: 100%;
+    text-align: center;
+  }
+  .footer-inner__item ul {
+    align-items: center;
+  }
+  .footer-inner .logo-wrap img {
+    margin: 0 auto;
   }
 }
 /* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 
