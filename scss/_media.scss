@@ -24,6 +24,9 @@
     .s-text .form-wrap {
         max-width: 558px;
     }
+    .card__title {
+        font-size: 21px;
+    }
 
 }
 
@@ -98,6 +101,24 @@
     .s-text .form-wrap {
         max-width: 468px;
     }
+    .catalog-products {
+        width: 70%;
+        .products {
+        grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .catalog-sidebar {
+        width: 30%;
+    }
+    .page-title {
+        max-width: 500px;
+    }
+    .main {
+        padding-top: 60px;
+    }
+    .breadcrumbs ol {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 991px) {
@@ -128,7 +149,8 @@
     //     z-index: 10;
     // }
     .header-top:has(.toggle-menu:checked) {
-        border: 1px solid #837f8e;
+        // border: 1px solid #837f8e;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
     }
     .header-top-mobile {
         display: flex;
@@ -360,6 +382,31 @@
             width: 48%;
         }
     }
+    .catalog-products {
+        width: 100%;
+        .products {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    .catalog-sidebar {
+        width: 50%;
+        display: none;
+    }
+    .page-title {
+        max-width: 100%;
+    }
+    .main {
+        padding-top: 0;
+    }
+    .breadcrumbs ol {
+        justify-content: start;
+    }
+    .header.header-page {
+        height: 110px;
+    }
+    .breadcrumbs {
+        // padding: 0 12px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -436,6 +483,12 @@
             width: 47%;
         }
     }
+    .card__title {
+        font-size: 20px;
+    }
+    .page-title {
+        max-width: 450px;
+    }
 }
 
 @media (max-width: 539px) {
@@ -456,6 +509,9 @@
         top: -32px;
         // background-color: $background-color;
         border-bottom: 1px solid #232532;
+    }
+    .header-top:has(.toggle-menu:checked) {
+        border-bottom: none;
     }
     .header-brands {
         margin-top: 140px;
@@ -559,7 +615,32 @@
             margin: 0 auto;
         }
     }
-    
+    .catalog-products {
+        .products {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .header.header-page .header-right-img {
+        display: block;
+        right: -200px;
+        top: 100px;
+    }
+    .header.header-page .header-left-img {
+        display: none;
+    }
+    .header.header-page {
+        height: 80px;
+    }
+    .breadcrumbs ol {
+        flex-wrap: wrap;
+    }
+    .breadcrumbs a, .breadcrumbs span {
+        font-size: 13px;
+    }
+    .page-title {
+        max-width: 100%;
+        line-height: 1.1;
+    }
 }
 
 /* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 

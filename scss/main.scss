@@ -279,13 +279,16 @@
 /*---- header ----*/
 .header {
     padding: 32px 0;
-    // height: 800px;
     height: 620px;
-    /* Высота блока должна быть достаточной, чтобы градиенты не соприкасались */
     min-height: 400px;  
     // overflow: hidden; /
     position: relative;
     // z-index: 1;
+    &.header-page {
+        // height: 300px;
+        height: 268px;
+        min-height: auto;
+    } 
 }
 
 .header-top-wrap {
@@ -340,8 +343,6 @@
     top: 0;
     left: 0;
     right: 0;
-    /* Высота верхней зоны — например, 30% от высоты блока */
-    // height: 30%; 
     height: 300px;
     background: linear-gradient(180deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
     z-index: -1;
@@ -354,8 +355,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    /* Высота нижней зоны — например, 30% от высоты блока */
-    // height: 30%; 
     height: 242px;
     background: linear-gradient(0deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
     z-index: -1;
@@ -371,6 +370,14 @@
     // z-index: 1;
 }
 
+
+/*---- header-page----*/
+
+.header.header-page {
+    &::after {
+        content: none;
+    }
+}
 
 /*---- header-contacts ----*/
 .header-contacts {
@@ -484,6 +491,7 @@
         font-size: 32px;
         font-family: 'Montserrat', sans-serif;
         color: $accent;
+        transition: all .3s ease;
     }
     .sale:hover {
         border: 1px solid $accent-hover;
@@ -595,7 +603,9 @@
     display: flex;
     flex-direction: column;
     border-radius: 30px;
-    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+    // box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+    // box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    border: 1px solid #e4ddcf;
     background: #faf6ed;
     padding: 16px;
     // height: 428px;
@@ -966,5 +976,141 @@
         }
     }
 }
+
+/*---- main--catalog-page ----*/
+
+.breadcrumbs {
+    margin-bottom: 15px;
+    ol {
+        display: flex;
+        column-gap: 12px;
+    }
+    li {
+        position: relative;
+        &::after {
+            content: '/';
+            position: absolute;
+            top: 0;
+            right: -9px;
+        }
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+    a {
+        font-size: 14px;
+        line-height: 135%;
+        font-weight: 400;
+        color: $accent;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    span {
+        font-size: 14px;
+    }
+}
+
+.catalog-page {
+    display: flex;
+    column-gap: 24px;
+}
+
+.catalog-sidebar {
+    width: 25%;
+    border: 1px solid #e4ddcf;
+    padding: 18px 24px;
+    background-color: #faf6ed;
+    position: relative;
+    z-index: 1;
+    border-radius: 30px;
+    margin-bottom: 24px;
+}
+
+.catalog-products {
+    width: 75%;
+    padding: 0;
+    // border: 1px solid green;
+    margin-bottom: 24px;
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 24px;
+    }
+}
+
+/*---- catalog-menu ----*/
+
+.catalog-menu {
+    &__item {
+        // border: 1px solid gray;
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__link {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 135%;
+        color: $black-text;
+        margin-bottom: 10px;
+        display: block;
+        transition: all .3s ease;
+    }
+    a:hover {
+        color: $accent;
+    }
+    .active {
+        color: $accent;
+    }
+    .catalog-submenu {
+        margin-left: 25px;
+        li {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        a {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 135%;
+            color: $black-text;
+            transition: all .3s ease;
+        }
+        a:hover {
+            color: $accent;
+        }
+        .active {
+            color: $accent;
+        }
+    }
+    .catalog-sub2menu {
+        margin-left: 25px;
+        margin-top: 10px;
+        li {
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        a {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 135%;
+            color: $black-text;
+            transition: all .3s ease;
+        }
+        a:hover {
+            color: $accent;
+        }
+        .active {
+            color: $accent;
+        }
+    }
+}
+
 
 @import '_media.scss'

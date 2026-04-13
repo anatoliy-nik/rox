@@ -120,6 +120,7 @@ section {
   cursor: pointer;
   display: inline-block;
   box-shadow: none;
+  transition: all 0.3s ease;
 }
 
 .accent-btn:hover {
@@ -137,6 +138,13 @@ section {
   font-size: 32px;
   line-height: 135%;
   text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 135%;
   margin-bottom: 20px;
 }
 
@@ -544,9 +552,12 @@ section {
 .header {
   padding: 32px 0;
   height: 620px;
-  /* Высота блока должна быть достаточной, чтобы градиенты не соприкасались */
   min-height: 400px;
   position: relative;
+}
+.header.header-page {
+  height: 268px;
+  min-height: auto;
 }
 
 .header-top-wrap {
@@ -600,7 +611,6 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  /* Высота верхней зоны — например, 30% от высоты блока */
   height: 300px;
   background: linear-gradient(180deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
   z-index: -1;
@@ -613,7 +623,6 @@ section {
   bottom: 0;
   left: 0;
   right: 0;
-  /* Высота нижней зоны — например, 30% от высоты блока */
   height: 242px;
   background: linear-gradient(0deg, #859cd4 0%, #a3c9e9 24.25%, #edede8 87.96%, #f4f1eb 99.99%);
   z-index: -1;
@@ -626,6 +635,11 @@ section {
 .header-brands,
 .header-text {
   position: relative;
+}
+
+/*---- header-page----*/
+.header.header-page::after {
+  content: none;
 }
 
 /*---- header-contacts ----*/
@@ -742,6 +756,7 @@ section {
   font-size: 32px;
   font-family: "Montserrat", sans-serif;
   color: #cc5803;
+  transition: all 0.3s ease;
 }
 .header-menu-product .sale:hover {
   border: 1px solid #fd7f23;
@@ -827,7 +842,7 @@ section {
   display: flex;
   flex-direction: column;
   border-radius: 30px;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
+  border: 1px solid #e4ddcf;
   background: #faf6ed;
   padding: 16px;
   position: relative;
@@ -1175,6 +1190,135 @@ section {
   text-decoration: underline;
 }
 
+/*---- main--catalog-page ----*/
+.breadcrumbs {
+  margin-bottom: 15px;
+}
+.breadcrumbs ol {
+  display: flex;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+.breadcrumbs li {
+  position: relative;
+}
+.breadcrumbs li::after {
+  content: "/";
+  position: absolute;
+  top: 0;
+  right: -9px;
+}
+.breadcrumbs li:last-child::after {
+  display: none;
+}
+.breadcrumbs a {
+  font-size: 14px;
+  line-height: 135%;
+  font-weight: 400;
+  color: #cc5803;
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+.breadcrumbs span {
+  font-size: 14px;
+}
+
+.catalog-page {
+  display: flex;
+  -moz-column-gap: 24px;
+       column-gap: 24px;
+}
+
+.catalog-sidebar {
+  width: 25%;
+  border: 1px solid #e4ddcf;
+  padding: 18px 24px;
+  background-color: #faf6ed;
+  position: relative;
+  z-index: 1;
+  border-radius: 30px;
+  margin-bottom: 24px;
+}
+
+.catalog-products {
+  width: 75%;
+  padding: 0;
+  margin-bottom: 24px;
+}
+.catalog-products .products {
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 24px;
+}
+
+/*---- catalog-menu ----*/
+.catalog-menu__item {
+  margin-bottom: 20px;
+}
+.catalog-menu__item:last-child {
+  margin-bottom: 0;
+}
+.catalog-menu__link {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 135%;
+  color: #120d31;
+  margin-bottom: 10px;
+  display: block;
+  transition: all 0.3s ease;
+}
+.catalog-menu a:hover {
+  color: #cc5803;
+}
+.catalog-menu .active {
+  color: #cc5803;
+}
+.catalog-menu .catalog-submenu {
+  margin-left: 25px;
+}
+.catalog-menu .catalog-submenu li {
+  margin-bottom: 10px;
+}
+.catalog-menu .catalog-submenu li:last-child {
+  margin-bottom: 0;
+}
+.catalog-menu .catalog-submenu a {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 135%;
+  color: #120d31;
+  transition: all 0.3s ease;
+}
+.catalog-menu .catalog-submenu a:hover {
+  color: #cc5803;
+}
+.catalog-menu .catalog-submenu .active {
+  color: #cc5803;
+}
+.catalog-menu .catalog-sub2menu {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+.catalog-menu .catalog-sub2menu li {
+  margin-bottom: 10px;
+}
+.catalog-menu .catalog-sub2menu li:last-child {
+  margin-bottom: 0;
+}
+.catalog-menu .catalog-sub2menu a {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 135%;
+  color: #120d31;
+  transition: all 0.3s ease;
+}
+.catalog-menu .catalog-sub2menu a:hover {
+  color: #cc5803;
+}
+.catalog-menu .catalog-sub2menu .active {
+  color: #cc5803;
+}
+
 @media (max-width: 1399px) {
   .rox-container {
     /* max-width: 1140px; 
@@ -1200,6 +1344,9 @@ section {
   }
   .s-text .form-wrap {
     max-width: 558px;
+  }
+  .card__title {
+    font-size: 21px;
   }
 }
 @media (max-width: 1199px) {
@@ -1263,6 +1410,24 @@ section {
   .s-text .form-wrap {
     max-width: 468px;
   }
+  .catalog-products {
+    width: 70%;
+  }
+  .catalog-products .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .catalog-sidebar {
+    width: 30%;
+  }
+  .page-title {
+    max-width: 500px;
+  }
+  .main {
+    padding-top: 60px;
+  }
+  .breadcrumbs ol {
+    justify-content: center;
+  }
 }
 @media (max-width: 991px) {
   .rox-container {
@@ -1281,7 +1446,7 @@ section {
     background-color: transparent;
   }
   .header-top:has(.toggle-menu:checked) {
-    border: 1px solid #837f8e;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
   }
   .header-top-mobile {
     display: flex;
@@ -1498,6 +1663,28 @@ section {
   .footer-inner__item {
     width: 48%;
   }
+  .catalog-products {
+    width: 100%;
+  }
+  .catalog-products .products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .catalog-sidebar {
+    width: 50%;
+    display: none;
+  }
+  .page-title {
+    max-width: 100%;
+  }
+  .main {
+    padding-top: 0;
+  }
+  .breadcrumbs ol {
+    justify-content: start;
+  }
+  .header.header-page {
+    height: 110px;
+  }
 }
 @media (max-width: 767px) {
   .rox-container {
@@ -1558,6 +1745,12 @@ section {
   .footer-inner__item {
     width: 47%;
   }
+  .card__title {
+    font-size: 20px;
+  }
+  .page-title {
+    max-width: 450px;
+  }
 }
 @media (max-width: 539px) {
   .rox-container {
@@ -1576,6 +1769,9 @@ section {
   .header-top {
     top: -32px;
     border-bottom: 1px solid #232532;
+  }
+  .header-top:has(.toggle-menu:checked) {
+    border-bottom: none;
   }
   .header-brands {
     margin-top: 140px;
@@ -1669,6 +1865,30 @@ section {
   }
   .footer-inner .logo-wrap img {
     margin: 0 auto;
+  }
+  .catalog-products .products {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .header.header-page .header-right-img {
+    display: block;
+    right: -200px;
+    top: 100px;
+  }
+  .header.header-page .header-left-img {
+    display: none;
+  }
+  .header.header-page {
+    height: 80px;
+  }
+  .breadcrumbs ol {
+    flex-wrap: wrap;
+  }
+  .breadcrumbs a, .breadcrumbs span {
+    font-size: 13px;
+  }
+  .page-title {
+    max-width: 100%;
+    line-height: 1.1;
   }
 }
 /* Брейкпоинты и max-width у .container (как в ориг. Bootstrap 5) 

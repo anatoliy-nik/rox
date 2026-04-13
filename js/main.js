@@ -6,7 +6,10 @@ $(function(){
         $('.burger-btn').toggleClass('burger-btn--active');
     });
 
-    /*---- слайдер брендов ----*/
+/*---- слайдер брендов ----*/
+const brandsSlider = document.querySelector('#brands');
+
+if (brandsSlider) {
     new Splide('#brands', {
         type : 'loop',
         // perPage: 3, /* Будет сжимать слайды, если сколько надо не влезут. Не работает, если указан fixedWidth */
@@ -39,6 +42,7 @@ $(function(){
                 }
             }
     }).mount();
+}
 
     /*---- 2-х уровневое меню (на мобиле) ----*/
     $(document).on('click keydown', '.toggle-submenu', function(e) {

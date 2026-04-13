@@ -70,6 +70,7 @@ section {
     cursor: pointer;
     display: inline-block;
     box-shadow: none;
+    transition: all .3s ease;
 }
 
 .accent-btn:hover {
@@ -87,6 +88,13 @@ section {
     font-size: 32px;
     line-height: 135%;
     text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 135%;
     margin-bottom: 20px;
 }
 
