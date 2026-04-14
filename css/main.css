@@ -548,6 +548,71 @@ section {
     border-top: 1px solid #e4ddcf;
   }
 }
+/*---- toggle-catalog btn ----*/
+.toggle-catalog,
+.catalog-btn {
+  display: none;
+}
+
+/* === Mobile === */
+@media (max-width: 991px) {
+  .catalog-sidebar {
+    display: none;
+  }
+  .catalog-btn {
+    display: flex;
+    align-items: center;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    width: -moz-max-content;
+    width: max-content;
+    cursor: pointer;
+    position: relative;
+    font-weight: 600;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+  }
+  .catalog-btn svg {
+    width: 20px;
+  }
+  .catalog-btn svg path {
+    transition: all 0.3s ease;
+  }
+  .catalog-btn:hover {
+    color: #cc5803;
+  }
+  .catalog-btn:hover svg path {
+    fill: #cc5803;
+  }
+  .main .rox-container {
+    position: relative;
+  }
+  .toggle-catalog:checked ~ .catalog-page .catalog-sidebar {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    width: auto;
+    border-radius: 20px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    border: none;
+    padding-top: 50px;
+  }
+  .toggle-catalog:checked ~ .catalog-btn {
+    position: relative;
+    z-index: 2;
+    left: 24px;
+    top: 18px;
+  }
+}
+@media (max-width: 539px) {
+  .toggle-catalog:checked ~ .catalog-page .catalog-sidebar {
+    left: 12px;
+    right: 12px;
+  }
+}
 /*---- header ----*/
 .header {
   padding: 32px 0;
@@ -1237,7 +1302,7 @@ section {
   background-color: #faf6ed;
   position: relative;
   z-index: 1;
-  border-radius: 30px;
+  border-radius: 20px;
   margin-bottom: 24px;
 }
 
@@ -1442,7 +1507,7 @@ section {
     top: 0;
     right: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     background-color: transparent;
   }
   .header-top:has(.toggle-menu:checked) {
@@ -1669,10 +1734,6 @@ section {
   .catalog-products .products {
     grid-template-columns: repeat(2, 1fr);
   }
-  .catalog-sidebar {
-    width: 50%;
-    display: none;
-  }
   .page-title {
     max-width: 100%;
   }
@@ -1878,7 +1939,7 @@ section {
     display: none;
   }
   .header.header-page {
-    height: 80px;
+    height: 68px;
   }
   .breadcrumbs ol {
     flex-wrap: wrap;

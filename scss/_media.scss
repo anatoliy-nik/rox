@@ -135,7 +135,7 @@
         top: 0;
         right: 0;
         width: 100%;
-        z-index: 2;
+        z-index: 3;
         background-color: transparent;
     }
     // .header-top::after {
@@ -388,10 +388,6 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
-    .catalog-sidebar {
-        width: 50%;
-        display: none;
-    }
     .page-title {
         max-width: 100%;
     }
@@ -629,7 +625,8 @@
         display: none;
     }
     .header.header-page {
-        height: 80px;
+        // height: 80px;
+        height: 68px;
     }
     .breadcrumbs ol {
         flex-wrap: wrap;
