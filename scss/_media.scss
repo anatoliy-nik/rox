@@ -291,12 +291,22 @@
     .header {
         height: 540px;
     }
-    .header-right-img {
-        right: -465px;
+    .header-top-wrap {
+        &::before {
+            left: -552px;
+            top: 32px;
+        }
+        &::after {
+           right: -662px;
+            top: -54px;
+        }
     }
-    .header-left-img {
-        left: -548px;
-    }
+    // .header-right-img {
+    //     right: -465px;
+    // }
+    // .header-left-img {
+    //     left: -548px;
+    // }
     .header-top {
         display: flex;
         flex-direction: column;
@@ -403,6 +413,9 @@
     .breadcrumbs {
         // padding: 0 12px;
     }
+    .breadcrumbs ol {
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width: 767px) {
@@ -427,12 +440,21 @@
     .header-contacts .phones svg {
         margin-right: 16px;
     }
-    .header-left-img {
-        left: -480px;
+    .header-top-wrap {
+        &::before {
+            left: -570px;
+            top: 56px;
+        }
+        &::after {
+        //    right: -340px; 
+        }
     }
-    .header-right-img {
-        right: -340px;
-    }
+    // .header-left-img {
+    //     left: -480px;
+    // }
+    // .header-right-img {
+    //     right: -340px;
+    // }
     .card {
         &__params {
             font-size: 14px;
@@ -485,6 +507,7 @@
     .page-title {
         max-width: 450px;
     }
+
 }
 
 @media (max-width: 539px) {
@@ -524,14 +547,26 @@
             }
         }
     }
-    .header-right-img {
-        display: none;
+    .header-top-wrap {
+        &::before {
+            // left: 220px;
+            // top: 40px;
+            content: none;
+        }
+        &::after {
+            right: -500px;
+            top: 25px;
+            height: 250px;
+        }
     }
-    .header-left-img {
-        left: -133px;
-        min-width: 478px;
-        top: 36px;
-    }
+    // .header-right-img {
+    //     display: none;
+    // }
+    // .header-left-img {
+    //     left: -133px;
+    //     min-width: 478px;
+    //     top: 36px;
+    // }
     .header-text__left {
         width: 100%;
     }
@@ -628,9 +663,7 @@
         // height: 80px;
         height: 68px;
     }
-    .breadcrumbs ol {
-        flex-wrap: wrap;
-    }
+
     .breadcrumbs a, .breadcrumbs span {
         font-size: 13px;
     }

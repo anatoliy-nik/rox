@@ -82,6 +82,11 @@ a {
   overflow: hidden;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
@@ -100,6 +105,7 @@ body {
   max-width: 1296px;
   width: 100%;
   margin: 0 auto;
+  border: 1px dotted transparent;
   min-width: 320px;
 }
 
@@ -628,17 +634,29 @@ section {
 .header-top-wrap {
   position: relative;
 }
-
-.header-left-img {
+.header-top-wrap::before {
+  content: "";
   position: absolute;
   top: 78px;
   left: -460px;
+  width: 610px; /* Реальная ширина картинки */
+  height: 386px; /* Реальная высота картинки */
+  background-image: url(../img/header-left-img-full.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 }
-
-.header-right-img {
+.header-top-wrap::after {
+  content: "";
   position: absolute;
   top: 8px;
   right: -712px;
+  width: 872px; /* Реальная ширина картинки */
+  height: 552px; /* Реальная высота картинки */
+  background-image: url(../img/header-right-img-full.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
 }
 
 .header-top-mobile {
@@ -1942,11 +1960,13 @@ section {
   .header {
     height: 540px;
   }
-  .header-right-img {
-    right: -465px;
+  .header-top-wrap::before {
+    left: -552px;
+    top: 32px;
   }
-  .header-left-img {
-    left: -548px;
+  .header-top-wrap::after {
+    right: -662px;
+    top: -54px;
   }
   .header-top {
     display: flex;
@@ -2042,6 +2062,9 @@ section {
   .header.header-page {
     height: 110px;
   }
+  .breadcrumbs ol {
+    flex-wrap: wrap;
+  }
 }
 @media (max-width: 767px) {
   .rox-container {
@@ -2065,11 +2088,9 @@ section {
   .header-contacts .phones svg {
     margin-right: 16px;
   }
-  .header-left-img {
-    left: -480px;
-  }
-  .header-right-img {
-    right: -340px;
+  .header-top-wrap::before {
+    left: -570px;
+    top: 56px;
   }
   .card__params {
     font-size: 14px;
@@ -2143,13 +2164,13 @@ section {
   .header-brands .splide__slide--bars img {
     height: 60px;
   }
-  .header-right-img {
-    display: none;
+  .header-top-wrap::before {
+    content: none;
   }
-  .header-left-img {
-    left: -133px;
-    min-width: 478px;
-    top: 36px;
+  .header-top-wrap::after {
+    right: -500px;
+    top: 25px;
+    height: 250px;
   }
   .header-text__left {
     width: 100%;
@@ -2236,9 +2257,6 @@ section {
   }
   .header.header-page {
     height: 68px;
-  }
-  .breadcrumbs ol {
-    flex-wrap: wrap;
   }
   .breadcrumbs a, .breadcrumbs span {
     font-size: 13px;

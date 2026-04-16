@@ -367,19 +367,34 @@
 
 .header-top-wrap {
     position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 78px;
+        left: -460px;
+        width: 610px;  /* Реальная ширина картинки */
+        height: 386px; /* Реальная высота картинки */
+        background-image: url(../img/header-left-img-full.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        // border: 1px dotted red;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 8px;
+        right: -712px;
+        width: 872px;  /* Реальная ширина картинки */
+        height: 552px; /* Реальная высота картинки */
+        background-image: url(../img/header-right-img-full.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        // border: 1px dotted red;
+    }
 }
 
-.header-left-img {
-    position: absolute;
-    top: 78px;
-    left: -460px;
-}
-
-.header-right-img {
-    position: absolute;
-    top: 8px;
-    right: -712px;
-}
 
 .header-top-mobile {
     // border: 1px solid green;

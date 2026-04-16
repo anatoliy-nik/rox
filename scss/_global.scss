@@ -29,6 +29,10 @@
 }
 
 // ---- others ---- 
+html {
+    overflow-x: hidden;
+    width: 100%;
+}
 
 body {
     font-family: 'Inter', sans-serif;
@@ -48,7 +52,7 @@ body {
     max-width: 1296px;
     width: 100%;
     margin: 0 auto;
-    // border: 1px dotted #ccc;
+    border: 1px dotted transparent;
     // min-width: 320px;
     min-width: 320px;
 }
