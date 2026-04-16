@@ -2165,12 +2165,21 @@ section {
     height: 60px;
   }
   .header-top-wrap::before {
-    content: none;
+    left: -80px;
+    top: 33px;
+    height: 320px;
   }
   .header-top-wrap::after {
+    display: none;
+  }
+  .header-page .header-top-wrap::before {
+    content: none;
+  }
+  .header-page .header-top-wrap::after {
     right: -500px;
     top: 25px;
     height: 250px;
+    display: block;
   }
   .header-text__left {
     width: 100%;
