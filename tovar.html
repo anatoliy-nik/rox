@@ -436,41 +436,41 @@
                     <div class="about-product">
                         <div class="about-product__img">
 
-<div class="gallery" id="gallery">
-  <!-- Миниатюры (выводятся из CMS) -->
-  <div class="gallery__thumbs" id="thumbs">
-    <img src="img/tovar/tovar-1.jpg" alt="Фото 1">
-    <img src="img/tovar/tovar-2.jpg" alt="Фото 2">
-    <img src="img/tovar/tovar-3.jpg" alt="Фото 3">
-    <img src="img/tovar/tovar-4.jpg" alt="Фото 4">
-    <img src="img/tovar/tovar-5.jpg" alt="Фото 5">
-    <img src="img/tovar/tovar-6.jpg" alt="Фото 6">
-  </div>
-  
-  <!-- Главное фото на странице -->
-  <div class="gallery__main">
-    <img id="mainImg" src="img/tovar/tovar-1.jpg" alt="Фото товара">
-  </div>
-</div>
+                            <div class="gallery" id="gallery">
+                            <!-- Миниатюры (выводятся из CMS) -->
+                            <div class="gallery__thumbs" id="thumbs">
+                                <img src="img/tovar/vedro-1.png" alt="Фото 1">
+                                <img src="img/tovar/vedro-2.png" alt="Фото 2">
+                                <img src="img/tovar/vedro-3.png" alt="Фото 3">
+                                <img src="img/tovar/vedro-1.png" alt="Фото 1">
+                                <img src="img/tovar/vedro-2.png" alt="Фото 2">
+                                <img src="img/tovar/vedro-3.png" alt="Фото 3">
+                            </div>
+                            
+                            <!-- Главное фото на странице -->
+                            <div class="gallery__main">
+                                <img id="mainImg" src="img/tovar/vedro-1.png" alt="Фото товара">
+                            </div>
+                            </div>
 
-<!-- Лайтбокс -->
-<div class="lightbox" id="lightbox">
-  <span class="lightbox__close" id="lbClose">
-    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-  </span>
-  
-  <div class="lightbox__viewer">
-    <img id="lbImg" src="" alt="">
-    <button class="lb-btn lb-prev" id="lbPrev">
-      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
-    </button>
-    <button class="lb-btn lb-next" id="lbNext">
-      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
-    </button>
-  </div>
-  
-  <div class="lightbox__thumbs" id="lbThumbs"></div>
-</div>
+                            <!-- Лайтбокс -->
+                            <div class="lightbox" id="lightbox">
+                            <span class="lightbox__close" id="lbClose">
+                                <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </span>
+                            
+                            <div class="lightbox__viewer">
+                                <img id="lbImg" src="" alt="">
+                                <button class="lb-btn lb-prev" id="lbPrev">
+                                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                </button>
+                                <button class="lb-btn lb-next" id="lbNext">
+                                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                </button>
+                            </div>
+                            
+                            <div class="lightbox__thumbs" id="lbThumbs"></div>
+                            </div>
 
                         </div>
                         <div class="about-product__params">
@@ -581,175 +581,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- здесь js всех плагинов -->
     <script src="js/splide.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/umd/photoswipe.umd.min.js"></script>
+    <script src="js/gallerycustom.js"></script>
     <script src="js/main.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-  // ==========================================
-  // 1. СБОР ЭЛЕМЕНТОВ
-  // ==========================================
-  const thumbsWrap = document.getElementById('thumbs');      // Контейнер миниатюр в галерее
-  const mainImg = document.getElementById('mainImg');        // Главное изображение
-  const lightbox = document.getElementById('lightbox');      // Модальное окно (лайтбокс)
-  const lbImg = document.getElementById('lbImg');            // Изображение внутри лайтбокса
-  const lbThumbs = document.getElementById('lbThumbs');      // Контейнер миниатюр в лайтбоксе
-  
-  const lbPrev = document.getElementById('lbPrev');          // Кнопка "Назад"
-  const lbNext = document.getElementById('lbNext');          // Кнопка "Вперед"
-  const lbClose = document.getElementById('lbClose');        // Кнопка "Закрыть"
-
-  // Получаем список всех изображений (превращаем NodeList в обычный массив)
-  const rawImgs = Array.from(thumbsWrap.querySelectorAll('img'));
-  // Извлекаем только пути (src) для удобного переключения
-  const images = rawImgs.map(img => img.src);
-  
-  let current = 0;          // Индекс текущего слайда
-  const maxVisible = 4;     // Сколько миниатюр показывать в основной галерее
-
-  // ==========================================
-  // 2. ОБРАБОТКА МИНИАТЮР В ГАЛЕРЕЕ
-  // ==========================================
-  
-  // Оборачиваем каждое <img> в <div class="gallery__thumb"> для стилизации и кликов
-  rawImgs.forEach((img, i) => {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'gallery__thumb';
-    wrapper.dataset.index = i;
-    
-    // Вставляем обертку перед картинкой
-    img.parentNode.insertBefore(wrapper, img);
-    wrapper.appendChild(img);
-
-    // Логика скрытия лишних миниатюр и кнопки "+3"
-    if (i >= maxVisible) {
-      wrapper.classList.add('hidden');
-    } else {
-      // Активный класс для первой картинки
-      if (i === 0) wrapper.classList.add('active');
-      
-      // Если картинок больше лимита, на последней показываем "+N"
-      if (i === maxVisible - 1 && images.length > maxVisible) {
-        wrapper.classList.add('more');
-        wrapper.dataset.count = `+${images.length - maxVisible}`;
-      }
-      
-      // Клик по миниатюре переключает главное фото
-      wrapper.addEventListener('click', () => setActive(i));
-    }
-  });
-
-  // Функция установки активного слайда в галерее
-  function setActive(index) {
-    current = index;
-    mainImg.src = images[index];
-    // Обновляем классы active у миниатюр
-    thumbsWrap.querySelectorAll('.gallery__thumb').forEach((t, i) => {
-      t.classList.toggle('active', i === index);
-    });
-  }
-
-  // Клик по главному фото открывает лайтбокс
-  mainImg.addEventListener('click', () => {
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
-    lbImg.src = images[current];
-    renderLbThumbs(); // Генерируем миниатюры внутри попапа
-  });
-
-  // ==========================================
-  // 3. ЛОГИКА ЛАЙТБОКСА
-  // ==========================================
-
-  // Генерация миниатюр внутри лайтбокса
-  function renderLbThumbs() {
-    lbThumbs.innerHTML = '';
-    images.forEach((src, i) => {
-      const t = document.createElement('img');
-      t.src = src;
-      // Добавляем класс active текущему слайду
-      t.className = 'lb-thumb' + (i === current ? ' active' : '');
-      
-      // Клик по миниатюре переключает слайд
-      t.addEventListener('click', (e) => {
-        e.stopPropagation(); // Останавливаем всплытие, чтобы не закрыть попап
-        goToSlide(i);
-      });
-      lbThumbs.appendChild(t);
-    });
-  }
-
-  // Переход к конкретному слайду
-  function goToSlide(index) {
-    current = index;
-    lbImg.src = images[current];
-    renderLbThumbs(); // Обновляем подсветку миниатюр
-  }
-
-  // Навигация (вперед/назад) с зацикливанием
-  function navigate(dir) {
-    let next = current + dir;
-    if (next >= images.length) next = 0;       // Если вышли за конец -> идем в начало
-    if (next < 0) next = images.length - 1;    // Если вышли за начало -> идем в конец
-    goToSlide(next);
-  }
-
-  // Кнопки "Вперед" и "Назад"
-  if (lbPrev) lbPrev.addEventListener('click', (e) => { e.stopPropagation(); navigate(-1); });
-  if (lbNext) lbNext.addEventListener('click', (e) => { e.stopPropagation(); navigate(1); });
-
-  // ==========================================
-  // 4. ЗАКРЫТИЕ ПОПАПА (ИСПРАВЛЕНО)
-  // ==========================================
-
-  const closeLightbox = () => {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = ''; // Возвращаем скролл
-  };
-
-  // Кнопка крестика
-  if (lbClose) lbClose.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
-
-  // !!! ГЛАВНОЕ ИСПРАВЛЕНИЕ: Закрытие по клику на пустое пространство !!!
-  lightbox.addEventListener('click', (e) => {
-    // Проверяем, куда именно кликнули:
-    // 1. e.target === lightbox — клик по самому черному фону (самый внешний контейнер)
-    // 2. e.target === lbImg.parentNode — клик по прозрачному блоку .lightbox__viewer
-    //    (он занимает всю высоту, поэтому клик "рядом" с картинкой попадает в него).
-    //
-    // Если клик был по картинке, кнопкам или миниатюрам — e.target будет равен ИМ,
-    // а не родителю или контейнеру, поэтому условие сработает как false и попап НЕ закроется.
-    
-    if (e.target === lightbox || e.target === lbImg.parentNode) {
-      closeLightbox();
-    }
-  });
-
-  // ==========================================
-  // 5. УПРАВЛЕНИЕ КЛАВИАТУРОЙ
-  // ==========================================
-  
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('open')) return; // Работаем только если попап открыт
-    
-    if (e.key === 'Escape') { 
-      closeLightbox(); 
-      return; 
-    }
-    if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      navigate(-1);
-    }
-    if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      navigate(1);
-    }
-  });
-
-  // Инициализация первого слайда при загрузке
-  setActive(0);
-});
-    </script>
 
 </body>
 

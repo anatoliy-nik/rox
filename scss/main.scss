@@ -693,16 +693,18 @@
     flex-direction: column;
     border-radius: 30px;
     // box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.25);
-    // box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-    border: 1px solid #e4ddcf;
-    background: #faf6ed;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+    // border: 1px solid #e4ddcf;
+    background-color: #faf6ed;
     padding: 16px;
     // height: 428px;
     position: relative;
     z-index: 0;
     &__img-link {
         border-radius: 20px;
-        background-color: #e4ddcf;
+        // background-color: #e4ddcf;
+        /* добавил для красоты, для .png можно убрать */
+        background-color: #fff;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -710,6 +712,7 @@
         height: 194px;
         transition: all .3s ease;
         border: 2px solid transparent;
+        // border: 1px solid #e4ddcf;
     }
     &__img-link:hover {
         border: 2px solid $accent;
@@ -1253,7 +1256,7 @@
 
 .gallery {
   display: grid;
-  grid-template-columns: 86px 1fr;
+  grid-template-columns: 83px 1fr;
   gap: 12px;
   max-width: 800px;
   margin: 0 auto;
@@ -1269,13 +1272,14 @@
 .gallery__thumb {
   position: relative;
   width: 100%;
-  
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
   border: 1px solid transparent;
   transition: all 0.3s ease;
-  background-color: #e4ddcf;
+//   background-color: #e4ddcf;
+/* добавил для красоты, для .png можно убрать */
+background-color: #fff;
 }
 
 .gallery__thumb img {
@@ -1283,11 +1287,13 @@
   height: 100%;
   object-fit: cover; 
   display: block;
-  aspect-ratio: 3 / 4;
+//   aspect-ratio: 3 / 4;
+  aspect-ratio: 1;
 }
 
 .gallery__thumb:hover, .gallery__thumb.active {
-  border-color: $accent; 
+// box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  border-color: $accent;
 //   transform: scale(1.03);
 }
 
@@ -1304,10 +1310,12 @@
 }
 
 .gallery__main {
-  height: 100%; 
+//   height: 100%; 
   overflow: hidden;
   border-radius: 20px; 
-  background-color: #e4ddcf;
+//   background-color: #e4ddcf;
+/* добавил для красоты, для .png можно убрать */
+background-color: #fff;
   cursor: zoom-in; 
 }
 
@@ -1315,12 +1323,13 @@
   width: 100%; 
   height: 100%;
   object-fit: cover;
-  aspect-ratio: 3 / 4;
+//   aspect-ratio: 3 / 4;
+  aspect-ratio: 1;
   display: block;
 }
 
 /* =========================================
-   ЛАЙТБОКС (ИСПРАВЛЕНО)
+   ЛАЙТБОКС для галереи
    ========================================= */
 .lightbox {
   position: fixed; inset: 0;
@@ -1330,7 +1339,9 @@
   flex-direction: column; /* Вертикальная структура */
   align-items: center;
   justify-content: center;
-  padding: 40px 20px; /* Отступы от краёв экрана */
+  /* Отступы от краёв экрана */
+//   padding: 40px 20px; 
+  padding: 70px 12px; 
   box-sizing: border-box;
 }
 
@@ -1353,7 +1364,10 @@
   max-height: 100%;
   object-fit: contain;
   display: block;
-  /* Убран opacity transition для полного отсутствия дёргания */
+  /* добавил для красоты, для .png можно убрать */
+  background-color: #fff;
+  //   aspect-ratio: 3 / 4;
+  aspect-ratio: 1;
 }
 
 /* Кнопки навигации (позиционируются относительно всего экрана) */
@@ -1415,7 +1429,8 @@
 
 .lb-thumb {
   width: 70px;
-  aspect-ratio: 3 / 4;
+//   aspect-ratio: 3 / 4;
+  aspect-ratio: 1;
   object-fit: cover;
   border-radius: 4px;
   cursor: pointer;
@@ -1423,12 +1438,19 @@
   border: 2px solid transparent;
   transition: all 0.2s;
   flex-shrink: 0;
+  /* добавил для красоты, для .png можно убрать */
+  background-color: #fff;
 }
 .lb-thumb:hover, .lb-thumb.active {
-  opacity: 1; border-color: #fff; transform: scale(1.05);
+  opacity: 1; border-color: #cc5803; transform: scale(1.05);
 }
 
 /* Адаптив */
+@media (max-width: 1399px) {
+    .gallery {
+        grid-template-columns: 69px 1fr;
+    }
+}
 @media (max-width: 1199px) {
   .gallery { 
     grid-template-columns: 1fr; 
