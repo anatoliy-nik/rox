@@ -969,13 +969,13 @@ section {
   justify-content: space-between;
   color: #555;
 }
-.card__params-item--seazon .card__params-value {
+.card__params-item--season .card__params-value {
   position: relative;
   display: flex;
   align-items: center;
   padding-right: 25px;
 }
-.card__params-item--seazon .card__params-value::after {
+.card__params-item--season .card__params-value::after {
   content: "";
   position: absolute;
   width: 20px;
@@ -986,7 +986,7 @@ section {
   background-position: center center;
   background-size: contain;
 }
-.card__params-item--seazon .card__params-value.card__params-value--zima::after {
+.card__params-item--season .card__params-value.card__params-value--winter::after {
   background-image: url(../img/icons/zima.svg);
 }
 .card .button-wrap {
@@ -1710,6 +1710,38 @@ section {
     height: 18px;
   }
 }
+/*---- about-product__params ----*/
+.params-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  -moz-column-gap: 38px;
+       column-gap: 38px;
+  row-gap: 10px;
+  align-items: baseline;
+  font-size: 20px;
+  line-height: 135%;
+}
+.params-list .season {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-right: 25px;
+}
+.params-list .season::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 0;
+  background-image: url(../img/icons/leto.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.params-list .season.season--winter::after {
+  background-image: url(../img/icons/zima.svg);
+}
+
 @media (max-width: 1399px) {
   .rox-container {
     /* max-width: 1140px; 

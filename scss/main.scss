@@ -741,7 +741,7 @@
         justify-content: space-between;
         color: #555;
     }
-    &__params-item--seazon {
+    &__params-item--season {
         .card__params-value {
             position: relative;
             display: flex;
@@ -760,7 +760,7 @@
             background-size: contain;
             
         }
-        .card__params-value.card__params-value--zima::after {
+        .card__params-value.card__params-value--winter::after {
             background-image: url(../img/icons/zima.svg);
         }
     }
@@ -1487,6 +1487,38 @@ background-color: #fff;
      width: 18px; 
      height: 18px;
      }
+}
+
+/*---- about-product__params ----*/
+
+.params-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 38px;
+    row-gap: 10px;
+    align-items: baseline;
+    font-size: 20px;
+    line-height: 135%;
+    .season {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-right: 25px;
+    }
+    .season::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        right: 0;
+        background-image: url(../img/icons/leto.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    }
+    .season.season--winter::after {
+        background-image: url(../img/icons/zima.svg);
+    }
 }
 
 
