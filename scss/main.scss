@@ -739,7 +739,18 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+    &__params-property {
         color: #555;
+    }
+    &__params-value {
+        color: #555;
+    }
+    a.card__params-value {
+        color: $accent;
+        &:hover {
+            text-decoration: underline;
+        }
     }
     &__params-item--season {
         .card__params-value {
@@ -1211,25 +1222,47 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
-    gap: 24px;
+    // gap: 24px;
+    column-gap: 24px;
+    row-gap: 24px;
     &__img {
         grid-column: 1 / 2;
         grid-row: 1;
-        border: 1px dotted red;
+        // border: 1px dotted red;
     }
     &__params {
         grid-column: 2 / 3;
         grid-row: 1;
-        border: 1px dotted green;
+        // border: 1px dotted green;
+        position: relative;
     }
     &__info {
         grid-column: 1 / 3; /* Растягиваем блок на обе колонки */
         grid-row: 2;
-        border: 1px dotted blue;
+        // border: 1px dotted blue;
+        font-size: 18px;
+        ol, ul {
+            list-style-type: revert;
+            padding-left: 1.5em;
+        }
+        
+    }
+    &__buttons-wrap {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        // border: 1px solid pink;
+        width: 100%;
+        // justify-content: space-between;
+        .accent-btn {
+            margin-right: 60px;
+        }
     }
 }
 
-@media (max-width: 539px) {
+@media (max-width: 767px) {
     .about-product {
         grid-template-columns: 1fr;
         &__img {
@@ -1493,17 +1526,19 @@ background-color: #fff;
 
 .params-list {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 155px 1fr;
     column-gap: 38px;
     row-gap: 10px;
     align-items: baseline;
-    font-size: 20px;
+    // font-size: 20px;
+    font-size: 18px;
     line-height: 135%;
     .season {
         position: relative;
         display: flex;
         align-items: center;
         padding-right: 25px;
+        width: max-content;
     }
     .season::after {
         content: "";
@@ -1518,6 +1553,71 @@ background-color: #fff;
     }
     .season.season--winter::after {
         background-image: url(../img/icons/zima.svg);
+    }
+    a {
+        // color: #120d31;
+        color: $accent;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.get-price {
+    border: none;
+    // border-radius: 60px;
+    // font-size: 20px;
+    line-height: 135%;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    background-color: transparent;
+    padding: 0;
+    color: $accent;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: none;
+    transition: all .3s ease;
+    text-decoration: underline;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/* Адаптив */
+@media (max-width: 1399px) {
+    .about-product__buttons-wrap {
+        position: static;
+        margin-top: 20px;
+        .accent-btn {
+            // margin-right: 58px;
+        }
+    }
+}
+@media (max-width: 1199px) {
+    .params-list {
+        column-gap: 0px;
+    }
+    .about-product__buttons-wrap {
+        flex-direction: column;
+        align-items: start;
+        row-gap: 15px;
+        .accent-btn {
+            margin-right: 0px;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .params-list {
+        font-size: 16px;
+    }
+    .about-product__info {
+        font-size: 16px;
+    }
+}
+@media (max-width: 767px) {
+    .about-product__buttons-wrap {
+        align-items: center;
     }
 }
 
