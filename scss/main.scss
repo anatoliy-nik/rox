@@ -33,6 +33,7 @@
   color: $black-text;
   text-decoration: none;
   white-space: nowrap;
+  transition: all .3s ease;
 }
 .menu-list__link:hover {
 //   background-color: #34495e;
@@ -50,7 +51,10 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23cc5803' d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
 }
 .menu-list__item--submenu:hover .submenu-list {
-  display: flex;
+//   display: flex;
+    opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 .menu-list__item--submenu:hover .menu-list__link {
 //   background-color: #34495e;
@@ -76,10 +80,15 @@
   position: absolute;
   top: 100%;
   left: 0;
-  display: none;
   background-color: #e4ddcf;
   z-index: 10;
   overflow: hidden;
+//   display: none;
+   /* Скрытое состояние */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all .3s ease;
 }
 .submenu-list__item {
   border-bottom: 1px solid #f4f1eb;
@@ -96,6 +105,7 @@
   text-decoration: none;
   white-space: nowrap;
   min-width: 150px;
+  transition: all .3s ease;
 }
 .submenu-list__link:hover {
 //   background-color: #34495e;
@@ -248,6 +258,10 @@
     width: 100%;
     left: 0;
     top: 0;
+       /* отменить Скрытое состояние, которое прописано в десктопе*/
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
   }
   .submenu-list.open {
     display: flex !important;
@@ -378,6 +392,7 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
+        z-index: -1;
         // border: 1px dotted red;
     }
     &::after {
@@ -391,6 +406,7 @@
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain;
+        z-index: -1;
         // border: 1px dotted red;
     }
 }
@@ -490,6 +506,7 @@
         color: $accent;
         display: flex;
         align-items: center;
+        transition: all .3s ease;
     }
     &__link:hover {
         color: $accent-hover;
@@ -501,6 +518,7 @@
         margin-right: 32px;
         path {
             stroke: $accent;
+            transition: all .3s ease;
         }
     }
     &__link:hover svg path {
@@ -557,6 +575,7 @@
     &__link {
         color: $black-text;
         font-size: 14px;
+        transition: all .3s ease;
     }
     &__link:hover {
         color: $accent;
@@ -602,9 +621,11 @@
         display: flex;
         align-items: center;
         column-gap: 8px;
+        transition: all .3s ease;
         svg {
             width: 16px;
             height: 9px;
+            transition: all .3s ease;
         }
     }
     &__link:hover {
@@ -723,6 +744,7 @@
         font-size: 22px;
         line-height: 135%;
         margin-bottom: 113px;
+        transition: all .3s ease;
     }
     &__title:hover {
         color: $accent;
@@ -1281,9 +1303,8 @@
 
 }
 
-
 /* =========================================
-   ГАЛЕРЕЯ НА СТРАНИЦЕ
+   ГАЛЕРЕЯ НА СТРАНИЦЕ ТОВАРА
    ========================================= */
 .gallery__thumbs > img { display: none; }
 
@@ -1310,9 +1331,7 @@
   cursor: pointer;
   border: 1px solid transparent;
   transition: all 0.3s ease;
-//   background-color: #e4ddcf;
-/* добавил для красоты, для .png можно убрать */
-background-color: #fff;
+  background-color: #fff;
 }
 
 .gallery__thumb img {
@@ -1320,14 +1339,12 @@ background-color: #fff;
   height: 100%;
   object-fit: cover; 
   display: block;
-//   aspect-ratio: 3 / 4;
   aspect-ratio: 1;
 }
 
-.gallery__thumb:hover, .gallery__thumb.active {
-// box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-  border-color: $accent;
-//   transform: scale(1.03);
+.gallery__thumb:hover, 
+.gallery__thumb.active {
+  border-color: #cc5803;
 }
 
 .gallery__thumb.hidden { display: none; }
@@ -1343,12 +1360,9 @@ background-color: #fff;
 }
 
 .gallery__main {
-//   height: 100%; 
   overflow: hidden;
   border-radius: 20px; 
-//   background-color: #e4ddcf;
-/* добавил для красоты, для .png можно убрать */
-background-color: #fff;
+  background-color: #fff;
   cursor: zoom-in; 
 }
 
@@ -1356,35 +1370,43 @@ background-color: #fff;
   width: 100%; 
   height: 100%;
   object-fit: cover;
-//   aspect-ratio: 3 / 4;
   aspect-ratio: 1;
   display: block;
 }
 
 /* =========================================
-   ЛАЙТБОКС для галереи
+   ЛАЙТБОКС (ПОПАП ГАЛЕРЕИ)
    ========================================= */
 .lightbox {
   position: fixed; inset: 0;
   background: rgba(0, 0, 0, 0.94);
-  z-index: 9999;
-  display: none;
-  flex-direction: column; /* Вертикальная структура */
+  z-index: 10001; /* Выше форм! */
+  
+  /* Скрытое состояние */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Отступы от краёв экрана */
-//   padding: 40px 20px; 
-  padding: 70px 12px; 
+  padding: 70px 5px;
   box-sizing: border-box;
 }
 
-.lightbox.open { display: flex; }
+/* Активное состояние */
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
 
-/* Область просмотра */
 .lightbox__viewer {
   position: relative;
   width: 100%;
-  max-height: calc(85vh - 100px); /* Резервируем место под миниатюры */
+  max-height: calc(85vh - 100px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1397,13 +1419,11 @@ background-color: #fff;
   max-height: 100%;
   object-fit: contain;
   display: block;
-  /* добавил для красоты, для .png можно убрать */
   background-color: #fff;
-  //   aspect-ratio: 3 / 4;
   aspect-ratio: 1;
 }
 
-/* Кнопки навигации (позиционируются относительно всего экрана) */
+/* Кнопки навигации */
 .lb-btn, .lightbox__close {
   position: absolute;
   z-index: 100;
@@ -1423,7 +1443,7 @@ background-color: #fff;
   width: 20px; height: 20px;
   fill: none; stroke: currentColor;
   stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
-  pointer-events: none; /* Клик проходит на кнопку */
+  pointer-events: none;
 }
 
 .lb-btn {
@@ -1443,16 +1463,16 @@ background-color: #fff;
 .lightbox__close svg { width: 22px; height: 22px; }
 .lightbox__close:hover { background: rgba(255, 255, 255, 0.2); transform: rotate(90deg); }
 
-/* Миниатюры в лайтбоксе (теперь в потоке, не наезжают) */
+/* Миниатюры в лайтбоксе */
 .lightbox__thumbs {
   width: 100%;
   max-width: 800px;
   display: flex;
   gap: 8px;
   justify-content: center;
-  flex-wrap: wrap; /* Перенос на узких экранах */
+  flex-wrap: wrap;
   margin-top: 20px;
-  flex-shrink: 0; /* Не сжимается */
+  flex-shrink: 0;
   overflow-x: auto;
   padding: 4px;
   scrollbar-width: none;
@@ -1462,7 +1482,6 @@ background-color: #fff;
 
 .lb-thumb {
   width: 70px;
-//   aspect-ratio: 3 / 4;
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 4px;
@@ -1471,7 +1490,6 @@ background-color: #fff;
   border: 2px solid transparent;
   transition: all 0.2s;
   flex-shrink: 0;
-  /* добавил для красоты, для .png можно убрать */
   background-color: #fff;
 }
 .lb-thumb:hover, .lb-thumb.active {
@@ -1480,49 +1498,21 @@ background-color: #fff;
 
 /* Адаптив */
 @media (max-width: 1399px) {
-    .gallery {
-        grid-template-columns: 69px 1fr;
-    }
+    .gallery { grid-template-columns: 69px 1fr; }
 }
 @media (max-width: 1199px) {
-  .gallery { 
-    grid-template-columns: 1fr; 
-    gap: 12px; 
-    }
-  .gallery__thumbs { 
-    flex-direction: row; 
-    // flex-wrap: wrap; 
-    // justify-content: center; 
-    order: 2; 
-    }
-  .gallery__main { 
-    order: 1; 
-    }
-  .gallery__thumb {
-    //  width: 70px; 
-    //  height: 70px; 
-    }
-  .gallery__main img { 
-    // aspect-ratio: 16 / 9; 
-    // max-height: 60vh; 
-    }
-  .lb-prev { 
-    left: 10px; 
-    } 
-    .lb-next {
-     right: 10px; 
-    }
-  .lb-btn {
-     width: 40px; 
-     height: 40px; 
-    }
-  .lb-btn svg, .lightbox__close svg {
-     width: 18px; 
-     height: 18px;
-     }
+  .gallery { grid-template-columns: 1fr; gap: 12px; }
+  .gallery__thumbs { flex-direction: row; order: 2; }
+  .gallery__main { order: 1; }
+  .lb-prev { left: 10px; } 
+  .lb-next { right: 10px; }
+  .lb-btn { width: 40px; height: 40px; }
+  .lb-btn svg, .lightbox__close svg { width: 18px; height: 18px; }
 }
 
-/*---- about-product__params ----*/
+/* =========================================
+   about-product__params
+   ========================================= */
 
 .params-list {
     display: grid;

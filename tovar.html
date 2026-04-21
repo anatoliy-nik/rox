@@ -435,47 +435,22 @@
                     <div class="about-product">
                         <div class="about-product__img">
 
-                            <div class="gallery" id="gallery">
-                                <!-- Миниатюры (выводятся из CMS) -->
-                                <div class="gallery__thumbs" id="thumbs">
-                                    <img src="img/tovar/vedro-1.png" alt="Фото 1">
-                                    <img src="img/tovar/vedro-2.png" alt="Фото 2">
-                                    <img src="img/tovar/vedro-3.png" alt="Фото 3">
-                                    <img src="img/tovar/vedro-1.png" alt="Фото 1">
-                                    <img src="img/tovar/vedro-2.png" alt="Фото 2">
-                                    <img src="img/tovar/vedro-3.png" alt="Фото 3">
-                                </div>
-
-                                <!-- Главное фото на странице -->
-                                <div class="gallery__main">
-                                    <img id="mainImg" src="img/tovar/vedro-1.png" alt="Фото товара">
-                                </div>
+                            <!-- Основная галерея -->
+                            <div class="gallery">
+                            <!-- Миниатюры -->
+                            <div class="gallery__thumbs" id="thumbs">
+                                <img src="img/tovar/vedro-1.png" alt="Фото 1">
+                                <img src="img/tovar/vedro-2.png" alt="Фото 2">
+                                <img src="img/tovar/vedro-3.png" alt="Фото 3">
+                                <img src="img/tovar/vedro-1.png" alt="Фото 4">
+                                <img src="img/tovar/vedro-2.png" alt="Фото 5">
+                                <img src="img/tovar/vedro-3.png" alt="Фото 6">
                             </div>
-
-                            <!-- Лайтбокс -->
-                            <div class="lightbox" id="lightbox">
-                                <span class="lightbox__close" id="lbClose">
-                                    <svg viewBox="0 0 24 24">
-                                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                                    </svg>
-                                </span>
-
-                                <div class="lightbox__viewer">
-                                    <img id="lbImg" src="" alt="">
-                                    <button class="lb-btn lb-prev" id="lbPrev">
-                                        <svg viewBox="0 0 24 24">
-                                            <polyline points="15 18 9 12 15 6"></polyline>
-                                        </svg>
-                                    </button>
-                                    <button class="lb-btn lb-next" id="lbNext">
-                                        <svg viewBox="0 0 24 24">
-                                            <polyline points="9 18 15 12 9 6"></polyline>
-                                        </svg>
-                                    </button>
-                                </div>
-
-                                <div class="lightbox__thumbs" id="lbThumbs"></div>
+                            
+                            <!-- Большое изображение -->
+                            <div class="gallery__main">
+                                <img id="mainImg" src="img/tovar/vedro-1.png" alt="Основное фото">
+                            </div>
                             </div>
 
                         </div>
@@ -711,10 +686,74 @@
         </div>
     </footer>
 
+    <!-- Лайтбокс (попап галереи) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+    
+    <!-- Кнопка закрытия -->
+    <button class="lightbox__close" id="lbClose" aria-label="Закрыть">
+        <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    
+    <!-- Область просмотра -->
+    <div class="lightbox__viewer">
+        <img id="lbImg" src="" alt="Просмотр">
+    </div>
+    
+    <!-- Навигация -->
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Назад">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Вперёд">
+        <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    
+    <!-- Миниатюры в лайтбоксе -->
+    <div class="lightbox__thumbs" id="lbThumbs"></div>
+    </div>
+
+    <button class="js-open-modal" data-modal-target="modal-order">Заказать</button>
+    <button class="js-open-modal" data-modal-target="modal-question">Задать вопрос</button>
+
+    <!-- ПОПАП: ЗАКАЗ -->
+<div id="modal-order" class="modal-overlay form-modal" aria-hidden="true" role="dialog">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Закрыть">&times;</button>
+    <h2 class="modal-title">Оформить заказ</h2>
+    <div class="bitrix-form-wrapper">
+      <!-- Сюда при интеграции вставится компонент Bitrix -->
+      <!-- Пока можно оставить мокап для вёрстки: -->
+      <form class="feedback-form">
+        <input class="input" type="text" name="NAME" placeholder="Ваше имя" required>
+        <input class="input" type="tel" name="PHONE" placeholder="Телефон" required>
+        <textarea class="input" name="MESSAGE" placeholder="Сообщение" rows="4"></textarea>
+        <button class="submit" type="submit">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ПОПАП: ВОПРОС (аналогично) -->
+<div id="modal-question" class="modal-overlay form-modal" aria-hidden="true" role="dialog">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Закрыть">&times;</button>
+    <h2 class="modal-title">Задать вопрос</h2>
+    <div class="bitrix-form-wrapper">
+      <form class="feedback-form">
+        <input class="input" type="email" name="EMAIL" placeholder="Email" required>
+        <textarea class="input" name="MESSAGE" placeholder="Ваш вопрос" rows="4"></textarea>
+        <button class="submit" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+</div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- здесь js всех плагинов -->
     <script src="js/splide.min.js"></script>
-    <script src="js/gallerycustom.js"></script>
+    
+    <script src="js/gallery.js"></script>
+    <script src="js/forms.js"></script> 
+
     <script src="js/main.js"></script>
 
 </body>

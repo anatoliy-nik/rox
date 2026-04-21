@@ -159,6 +159,9 @@ h2.page-title {
   margin-bottom: 15px;
 }
 
+/* =========================================
+   search-form
+   ========================================= */
 .search-form {
   display: flex;
   align-items: center;
@@ -213,12 +216,18 @@ h2.page-title {
   fill: #cc5803;
 }
 
+/* =========================================
+   main form
+   ========================================= */
+.s-text .form-wrap {
+  margin-left: auto;
+  max-width: 702px;
+}
+
 .form-wrap {
   background-color: #e4ddcf;
   border-radius: 30px;
   padding: 32px;
-  max-width: 702px;
-  margin-left: auto;
 }
 .form-wrap__box {
   margin-top: 20px;
@@ -269,6 +278,36 @@ h2.page-title {
   outline: none;
   border-color: #4a90d9;
   box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.2);
+}
+.main-form textarea {
+  resize: none;
+  border-radius: 10px;
+}
+.main-form .radio-group {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.main-form .radio-group__item {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  cursor: pointer;
+}
+.main-form .radio-group__item input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: #006ffd;
+  margin: 0;
+}
+.main-form .radio-group__item label {
+  cursor: pointer;
+  color: #9795b5;
 }
 .main-form__agreement {
   display: flex;
@@ -330,6 +369,74 @@ h2.page-title {
   display: block;
 }
 
+@media (max-width: 539px) {
+  .form-wrap {
+    padding: 20px;
+  }
+}
+/* =========================================
+   ОБЩИЕ СТИЛИ ДЛЯ МОДАЛОК ФОРМ
+   ========================================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 30px;
+  width: 95%;
+  max-width: 480px;
+  position: relative;
+  transform: translateY(-15px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
 /*---- mobile menu ----*/
 /* === Desktop (Default) === */
 .toggle-menu,
@@ -354,6 +461,7 @@ h2.page-title {
   color: #120d31;
   text-decoration: none;
   white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
 .menu-list__link:hover {
@@ -374,7 +482,9 @@ h2.page-title {
 }
 
 .menu-list__item--submenu:hover .submenu-list {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .menu-list__item--submenu:hover .menu-list__link {
@@ -403,10 +513,14 @@ h2.page-title {
   position: absolute;
   top: 100%;
   left: 0;
-  display: none;
   background-color: #e4ddcf;
   z-index: 10;
   overflow: hidden;
+  /* Скрытое состояние */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
 }
 
 .submenu-list__item {
@@ -427,6 +541,7 @@ h2.page-title {
   text-decoration: none;
   white-space: nowrap;
   min-width: 150px;
+  transition: all 0.3s ease;
 }
 
 .submenu-list__link:hover {
@@ -533,6 +648,10 @@ h2.page-title {
     width: 100%;
     left: 0;
     top: 0;
+    /* отменить Скрытое состояние, которое прописано в десктопе*/
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
   .submenu-list.open {
     display: flex !important;
@@ -650,6 +769,7 @@ h2.page-title {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+  z-index: -1;
 }
 .header-top-wrap::after {
   content: "";
@@ -662,6 +782,7 @@ h2.page-title {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
+  z-index: -1;
 }
 
 .header-top-mobile {
@@ -754,6 +875,7 @@ h2.page-title {
   color: #cc5803;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
 }
 .phones__link:hover {
   color: #fd7f23;
@@ -766,6 +888,7 @@ h2.page-title {
 }
 .phones svg path {
   stroke: #cc5803;
+  transition: all 0.3s ease;
 }
 .phones__link:hover svg path {
   stroke: #fd7f23;
@@ -822,6 +945,7 @@ h2.page-title {
 .contacts-menu__link {
   color: #120d31;
   font-size: 14px;
+  transition: all 0.3s ease;
 }
 .contacts-menu__link:hover {
   color: #cc5803;
@@ -867,10 +991,12 @@ h2.page-title {
   align-items: center;
   -moz-column-gap: 8px;
        column-gap: 8px;
+  transition: all 0.3s ease;
 }
 .menu-product__link svg {
   width: 16px;
   height: 9px;
+  transition: all 0.3s ease;
 }
 .menu-product__link:hover {
   color: #cc5803;
@@ -957,6 +1083,7 @@ h2.page-title {
   font-size: 22px;
   line-height: 135%;
   margin-bottom: 113px;
+  transition: all 0.3s ease;
 }
 .card__title:hover {
   color: #cc5803;
@@ -1476,7 +1603,7 @@ h2.page-title {
   }
 }
 /* =========================================
-   ГАЛЕРЕЯ НА СТРАНИЦЕ
+   ГАЛЕРЕЯ НА СТРАНИЦЕ ТОВАРА
    ========================================= */
 .gallery__thumbs > img {
   display: none;
@@ -1505,7 +1632,6 @@ h2.page-title {
   cursor: pointer;
   border: 1px solid transparent;
   transition: all 0.3s ease;
-  /* добавил для красоты, для .png можно убрать */
   background-color: #fff;
 }
 
@@ -1518,7 +1644,8 @@ h2.page-title {
   aspect-ratio: 1;
 }
 
-.gallery__thumb:hover, .gallery__thumb.active {
+.gallery__thumb:hover,
+.gallery__thumb.active {
   border-color: #cc5803;
 }
 
@@ -1544,7 +1671,6 @@ h2.page-title {
 .gallery__main {
   overflow: hidden;
   border-radius: 20px;
-  /* добавил для красоты, для .png можно убрать */
   background-color: #fff;
   cursor: zoom-in;
 }
@@ -1559,31 +1685,37 @@ h2.page-title {
 }
 
 /* =========================================
-   ЛАЙТБОКС для галереи
+   ЛАЙТБОКС (ПОПАП ГАЛЕРЕИ)
    ========================================= */
 .lightbox {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.94);
-  z-index: 9999;
-  display: none;
-  flex-direction: column; /* Вертикальная структура */
+  z-index: 10001; /* Выше форм! */
+  /* Скрытое состояние */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Отступы от краёв экрана */
-  padding: 70px 12px;
+  padding: 70px 5px;
   box-sizing: border-box;
 }
 
-.lightbox.open {
-  display: flex;
+/* Активное состояние */
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-/* Область просмотра */
 .lightbox__viewer {
   position: relative;
   width: 100%;
-  max-height: calc(85vh - 100px); /* Резервируем место под миниатюры */
+  max-height: calc(85vh - 100px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1597,12 +1729,11 @@ h2.page-title {
   -o-object-fit: contain;
      object-fit: contain;
   display: block;
-  /* добавил для красоты, для .png можно убрать */
   background-color: #fff;
   aspect-ratio: 1;
 }
 
-/* Кнопки навигации (позиционируются относительно всего экрана) */
+/* Кнопки навигации */
 .lb-btn, .lightbox__close {
   position: absolute;
   z-index: 100;
@@ -1626,7 +1757,7 @@ h2.page-title {
   stroke-width: 2.5;
   stroke-linecap: round;
   stroke-linejoin: round;
-  pointer-events: none; /* Клик проходит на кнопку */
+  pointer-events: none;
 }
 
 .lb-btn {
@@ -1668,16 +1799,16 @@ h2.page-title {
   transform: rotate(90deg);
 }
 
-/* Миниатюры в лайтбоксе (теперь в потоке, не наезжают) */
+/* Миниатюры в лайтбоксе */
 .lightbox__thumbs {
   width: 100%;
   max-width: 800px;
   display: flex;
   gap: 8px;
   justify-content: center;
-  flex-wrap: wrap; /* Перенос на узких экранах */
+  flex-wrap: wrap;
   margin-top: 20px;
-  flex-shrink: 0; /* Не сжимается */
+  flex-shrink: 0;
   overflow-x: auto;
   padding: 4px;
   scrollbar-width: none;
@@ -1699,7 +1830,6 @@ h2.page-title {
   border: 2px solid transparent;
   transition: all 0.2s;
   flex-shrink: 0;
-  /* добавил для красоты, для .png можно убрать */
   background-color: #fff;
 }
 
@@ -1742,7 +1872,9 @@ h2.page-title {
     height: 18px;
   }
 }
-/*---- about-product__params ----*/
+/* =========================================
+   about-product__params
+   ========================================= */
 .params-list {
   display: grid;
   grid-template-columns: 155px 1fr;

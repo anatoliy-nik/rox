@@ -712,10 +712,49 @@
         </div>
     </footer>
 
+    <button class="js-open-modal" data-modal-target="modal-order">Заказать</button>
+    <button class="js-open-modal" data-modal-target="modal-question">Задать вопрос</button>
+    
+        <!-- ПОПАП: ЗАКАЗ -->
+<div id="modal-order" class="modal-overlay form-modal" aria-hidden="true" role="dialog">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Закрыть">&times;</button>
+    <h2 class="modal-title">Оформить заказ</h2>
+    <div class="bitrix-form-wrapper">
+      <!-- Сюда при интеграции вставится компонент Bitrix -->
+      <!-- Пока можно оставить мокап для вёрстки: -->
+      <form class="feedback-form">
+        <input class="input" type="text" name="NAME" placeholder="Ваше имя" required>
+        <input class="input" type="tel" name="PHONE" placeholder="Телефон" required>
+        <textarea class="input" name="MESSAGE" placeholder="Сообщение" rows="4"></textarea>
+        <button class="submit" type="submit">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ПОПАП: ВОПРОС (аналогично) -->
+<div id="modal-question" class="modal-overlay form-modal" aria-hidden="true" role="dialog">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Закрыть">&times;</button>
+    <h2 class="modal-title">Задать вопрос</h2>
+    <div class="bitrix-form-wrapper">
+      <form class="feedback-form">
+        <input class="input" type="email" name="EMAIL" placeholder="Email" required>
+        <textarea class="input" name="MESSAGE" placeholder="Ваш вопрос" rows="4"></textarea>
+        <button class="submit" type="submit">Отправить</button>
+      </form>
+    </div>
+  </div>
+</div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- здесь js всех плагинов -->
     <script src="js/splide.min.js"></script>
-    <script src="js/gallerycustom.js"></script>
+
+    <script src="js/gallery.js"></script>
+    <script src="js/forms.js"></script>
+    
     <script src="js/main.js"></script>
 </body>
 
