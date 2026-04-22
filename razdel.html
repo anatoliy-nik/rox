@@ -117,7 +117,7 @@
                         </li>
                     </ul>
                     <div class="button-wrap">
-                        <button class="accent-btn">Заказать звонок</button>
+                        <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-callback">Обратный звонок</button>
                     </div>
                 </div>
 
@@ -449,7 +449,7 @@
                                     </li>
                                 </ul>
                                 <div class="button-wrap">
-                                    <button class="accent-btn" type="button">Заказать</button>
+                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
                                 </div>
                             </div>
                         </li>
@@ -472,7 +472,7 @@
                                     </li>
                                 </ul>
                                 <div class="button-wrap">
-                                    <button class="accent-btn" type="button">Заказать</button>
+                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
                                 </div>
                             </div>
                         </li>
@@ -495,7 +495,7 @@
                                     </li>
                                 </ul>
                                 <div class="button-wrap">
-                                    <button class="accent-btn" type="button">Заказать</button>
+                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
                                 </div>
                             </div>
                         </li>
@@ -518,7 +518,7 @@
                                     </li>
                                 </ul>
                                 <div class="button-wrap">
-                                    <button class="accent-btn" type="button">Заказать</button>
+                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
                                 </div>
                             </div>
                         </li>
@@ -541,7 +541,7 @@
                                     </li>
                                 </ul>
                                 <div class="button-wrap">
-                                    <button class="accent-btn" type="button">Заказать</button>
+                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
                                 </div>
                             </div>
                         </li>
@@ -564,7 +564,7 @@
                                     </li>
                                 </ul>
                                 <div class="button-wrap">
-                                    <button class="accent-btn" type="button">Заказать</button>
+                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
                                 </div>
                             </div>
                         </li>
@@ -587,7 +587,7 @@
                                     </li>
                                 </ul>
                                 <div class="button-wrap">
-                                    <button class="accent-btn" type="button">Заказать</button>
+                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
                                 </div>
                             </div>
                         </li>
@@ -610,7 +610,7 @@
                                     </li>
                                 </ul>
                                 <div class="button-wrap">
-                                    <button class="accent-btn" type="button">Заказать</button>
+                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
                                 </div>
                             </div>
                         </li>
@@ -712,49 +712,152 @@
         </div>
     </footer>
 
-    <button class="js-open-modal" data-modal-target="modal-order">Заказать</button>
-    <button class="js-open-modal" data-modal-target="modal-question">Задать вопрос</button>
-    
-        <!-- ПОПАП: ЗАКАЗ -->
-<div id="modal-order" class="modal-overlay form-modal" aria-hidden="true" role="dialog">
-  <div class="modal-content">
-    <button class="modal-close" aria-label="Закрыть">&times;</button>
-    <h2 class="modal-title">Оформить заказ</h2>
-    <div class="bitrix-form-wrapper">
-      <!-- Сюда при интеграции вставится компонент Bitrix -->
-      <!-- Пока можно оставить мокап для вёрстки: -->
-      <form class="feedback-form">
-        <input class="input" type="text" name="NAME" placeholder="Ваше имя" required>
-        <input class="input" type="tel" name="PHONE" placeholder="Телефон" required>
-        <textarea class="input" name="MESSAGE" placeholder="Сообщение" rows="4"></textarea>
-        <button class="submit" type="submit">Отправить заявку</button>
-      </form>
-    </div>
-  </div>
-</div>
+    <!-- ПОПАП: заказ -->
+    <div id="modal-order" class="modal-overlay" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрыть">&times;</button>
+            <div class="bitrix-form-wrapper">
+                <!-- Сюда при интеграции вставится компонент Bitrix -->
+                
+                <div class="form-wrap">
+                    <form class="main-form main-form--order">
+                        <h3 class="main-form__title">Оформить заказ</h3>
 
-<!-- ПОПАП: ВОПРОС (аналогично) -->
-<div id="modal-question" class="modal-overlay form-modal" aria-hidden="true" role="dialog">
-  <div class="modal-content">
-    <button class="modal-close" aria-label="Закрыть">&times;</button>
-    <h2 class="modal-title">Задать вопрос</h2>
-    <div class="bitrix-form-wrapper">
-      <form class="feedback-form">
-        <input class="input" type="email" name="EMAIL" placeholder="Email" required>
-        <textarea class="input" name="MESSAGE" placeholder="Ваш вопрос" rows="4"></textarea>
-        <button class="submit" type="submit">Отправить</button>
-      </form>
+                        <label class="visually-hidden" for="name-order">Имя</label>
+                        <input class="main-form__input" id="name-order" type="text" name="name-order" placeholder="Имя*" required>
+
+                        <label class="visually-hidden" for="email-order">E-mail</label>
+                        <input class="main-form__input" id="email-order" type="email" name="email-order" placeholder="E-mail">
+
+                        <label class="visually-hidden" for="phone-order">Телефон</label>
+                        <input class="main-form__input" id="phone-order" type="tel" name="phone-order" placeholder="Телефон*" required>
+
+                        <p class="main-form__text">
+                            Как с вами связаться по уточнению деталей?
+                        </p>
+                        <div class="radio-group">
+                            <div class="radio-group__item">
+                                <input type="radio" id="radio-phone-order" name="contact-order" value="phone" checked>
+                                <label for="radio-phone-order">Телефон</label>
+                            </div>
+                            <div class="radio-group__item">
+                                <input type="radio" id="radio-telegram-order" name="contact-order" value="telegram">
+                                <label for="radio-telegram-order">Telegram</label>
+                            </div>
+                            <div class="radio-group__item">
+                                <input type="radio" id="radio-max-order" name="contact-order" value="max">
+                                <label for="radio-max-order">MAX</label>
+                            </div>
+                            <div class="radio-group__item">
+                                <input type="radio" id="radio-wa-order" name="contact-order" value="wa">
+                                <label for="radio-wa-order">WhatsApp</label>
+                            </div>
+                            <div class="radio-group__item">
+                                <input type="radio" id="radio-email-order" name="contact-order" value="email">
+                                <label for="radio-email-order">E-mail</label>
+                            </div>
+                        </div>
+
+                        <label class="visually-hidden" for="comment-order">Комментарий к заказу</label>
+                        <textarea class="main-form__input" id="comment-order" rows="4" name="comment-order" placeholder="Комментарий к заказу"></textarea>
+
+                        <div class="main-form__agreement">
+                            <input class="main-form__checkbox" type="checkbox" id="check-order" name="consent-order" required checked>
+                            <label for="check-order">
+                                Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных
+                                данных и принимаю <a href="#">условия соглашения</a>
+                            </label>
+                        </div>
+
+                        <button class="accent-btn" type="submit">Отправить</button>
+                    </form>
+                    <div class="form-wrap__box">
+                        <span class="form-wrap__box-text">или напишите нам через мессенджер:</span>
+                        <ul class="social">
+                            <li class="social__item">
+                                <a class="social__link" href="whatsapp://+79112556464" target="_blank">
+                                    <img src="img/icons/wa.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="//max.ru/u/f9LHodD0cOIFUrugutiGpJuRJ8TARsbzSevhgqJAIDQ2o-sbtvv9sSAxkxc" target="_blank">
+                                    <img src="img/icons/max.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="//t.me/+79112556464" target="_blank">
+                                    <img src="img/icons/tg.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+
+    <!-- ПОПАП: Обратный звонок -->
+    <div id="modal-callback" class="modal-overlay" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрыть">&times;</button>
+            <div class="bitrix-form-wrapper">
+                <!-- Сюда при интеграции вставится компонент Bitrix -->
+
+                <div class="form-wrap">
+                    <form class="main-form main-form--callback">
+                        <h3 class="main-form__title">Заказать обратный звонок</h3>
+                        <p class="main-form__text">
+                            Есть вопросы? Оставьте телефон, и наш специалист перезвонит и проконсультирует вас
+                        </p>
+
+                        <label for="name-callback" class="visually-hidden">Имя</label>
+                        <input class="main-form__input" id="name-callback" type="text" name="name-callback" placeholder="Имя*" required>
+
+                        <label for="phone-callback" class="visually-hidden">Телефон</label>
+                        <input class="main-form__input" id="phone-callback" type="tel" name="phone-callback" placeholder="Телефон*" required>
+
+                        <div class="main-form__agreement">
+                            <input class="main-form__checkbox" type="checkbox" id="check-callback" name="consent-callback" required checked>
+                            <label for="check-callback">
+                                Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных
+                                данных и принимаю <a href="#">условия соглашения</a>
+                            </label>
+                        </div>
+
+                        <button class="accent-btn" type="submit">Отправить</button>
+                    </form>
+                    <!-- <div class="form-wrap__box">
+                        <span class="form-wrap__box-text">или напишите нам через мессенджер:</span>
+                        <ul class="social">
+                            <li class="social__item">
+                                <a class="social__link" href="whatsapp://+79112556464" target="_blank">
+                                    <img src="img/icons/wa.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="//max.ru/u/f9LHodD0cOIFUrugutiGpJuRJ8TARsbzSevhgqJAIDQ2o-sbtvv9sSAxkxc" target="_blank">
+                                    <img src="img/icons/max.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="//t.me/+79112556464" target="_blank">
+                                    <img src="img/icons/tg.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- здесь js всех плагинов -->
     <script src="js/splide.min.js"></script>
-
     <script src="js/gallery.js"></script>
     <script src="js/forms.js"></script>
-    
     <script src="js/main.js"></script>
 </body>
 
