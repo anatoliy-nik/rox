@@ -6,6 +6,44 @@ $(function(){
     //     $('.burger-btn').toggleClass('burger-btn--active');
     // });
 
+/*---- слайдер Наши партнеры ----*/
+const partnetsSlider = document.querySelector('#partners');
+
+if (partnetsSlider) {
+    new Splide('#partners', {
+        type : 'loop',
+        // perPage: 3, 
+        perPage: 3,
+        perMove: 1,
+        // fixedWidth: 258,
+        gap: 24,
+        arrows: true,
+        pagination: false,
+        // autoplay: true,
+        // speed: 300000, /* по дефолту 400 */
+        // interval: 100, /* по дефолту 5000 */
+        // pauseOnHover: true,
+        // pauseOnFocus: true,
+        breakpoints: {
+                1399: {
+                    perPage: 2,
+                },
+                1199: {
+                    perPage: 2,
+                },
+                991: {
+                    perPage: 2,
+                },
+                767: {
+                    perPage: 1,
+                },
+                539: {
+                    perPage: 1,
+                }
+            }
+    }).mount();
+}
+
 /*---- слайдер брендов ----*/
 const brandsSlider = document.querySelector('#brands');
 

@@ -105,7 +105,7 @@ body {
   max-width: 1296px;
   width: 100%;
   margin: 0 auto;
-  border: 1px dotted #444;
+  border: 1px dotted transparent;
   min-width: 320px;
 }
 
@@ -732,7 +732,7 @@ h2.page-title {
   }
   .toggle-catalog:checked ~ .catalog-btn {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     left: 24px;
     top: 18px;
   }
@@ -1463,7 +1463,7 @@ h2.page-title {
   padding: 18px 24px;
   background-color: #faf6ed;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   border-radius: 20px;
   margin-bottom: 24px;
 }
@@ -2017,6 +2017,51 @@ h2.page-title {
 .contacts-bottom-wrap .form-wrap {
   width: 50%;
 }
+.contacts-bottom-wrap iframe {
+  z-index: 1;
+}
+
+.main-page {
+  position: relative;
+}
+.main-page::after {
+  content: "";
+  position: absolute;
+  bottom: -77px;
+  left: 0;
+  width: 100%;
+  height: 350px;
+  background: linear-gradient(360deg, #217d72 0%, #bee9e8 65.38%, #f1faff 82.21%, #f4f1eb 99.99%);
+  z-index: -1;
+}
+.main-page .rox-container {
+  position: relative;
+}
+.main-page .rox-container::before {
+  content: "";
+  position: absolute;
+  left: -150px;
+  bottom: -100px;
+  width: 410px;
+  height: 353px;
+  background-image: url(../img/left-vetochka.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+.main-page .rox-container::after {
+  content: "";
+  position: absolute;
+  right: -150px;
+  bottom: -100px;
+  width: 410px;
+  height: 353px;
+  background-image: url(../img/right-vetochka.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  z-index: 0;
+}
 
 @media (max-width: 1199px) {
   .contacts-bottom-wrap {
@@ -2025,8 +2070,159 @@ h2.page-title {
   .contacts-bottom-wrap .form-wrap {
     width: 100%;
   }
-  iframe {
+  .contacts-bottom-wrap iframe {
     width: 100%;
+  }
+}
+/* =========================================
+   our-partners
+   ========================================= */
+.our-partners .splide {
+  margin-bottom: 35px;
+}
+.our-partners .splide__slide {
+  border-radius: 20px;
+  padding: 24px 16px;
+  background-color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.partner span {
+  display: block;
+}
+.partner__sity {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 135%;
+}
+.partner__name {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 135%;
+}
+
+/* =========================================
+   how-become-partner
+   ========================================= */
+.how-become-partner {
+  counter-reset: step-counter;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+  gap: 24px;
+  z-index: 1;
+  position: relative;
+  margin-bottom: 24px;
+}
+.how-become-partner__item {
+  counter-increment: step-counter; /* Увеличиваем счетчик */
+  position: relative;
+  background-color: #fff;
+  padding: 16px;
+  padding-top: 74px;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 600;
+  height: 200px;
+}
+.how-become-partner__item::before {
+  content: counter(step-counter); /* Вставляем номер */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 16px;
+  width: 50px;
+  height: 50px;
+  background-color: #E8E0D5; /* Бежевый цвет как на изображении */
+  border-radius: 50%; /* Делаем круг */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 135%;
+}
+.how-become-partner img {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.how-become-partner span {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.form-wrap--partners {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+.form-wrap--partners .main-form {
+  width: 40%;
+}
+.form-wrap--partners .map-geo {
+  width: 573px;
+  height: 292px;
+  max-width: 100%;
+  background-image: url(../img/partners/map-rus.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+@media (max-width: 1399px) {
+  .how-become-partner__item {
+    height: 220px;
+  }
+  .form-wrap--partners .main-form {
+    width: 50%;
+  }
+}
+@media (max-width: 1199px) {
+  .how-become-partner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .how-become-partner__item {
+    height: 200px;
+  }
+  .form-wrap--partners {
+    flex-direction: column;
+  }
+  .form-wrap--partners .main-form {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .how-become-partner__item {
+    height: 230px;
+  }
+}
+@media (max-width: 539px) {
+  .how-become-partner {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .how-become-partner__item {
+    height: auto;
+  }
+  .how-become-partner img {
+    position: static;
+    margin: 0 auto;
+    transform: none;
+    margin-top: 10px;
+  }
+  .form-wrap--partners .map-geo {
+    background-size: cover;
   }
 }
 @media (max-width: 1399px) {
