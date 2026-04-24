@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Раздел продукции</title>
+    <title>Контакты</title>
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
     <!-- здесь стили всех плагинов -->
     <link rel="stylesheet" href="css/splide.min.css">
@@ -101,7 +101,9 @@
                             </a>
                         </li>
                         <li class="social__item">
-                            <a class="social__link" href="//max.ru/u/f9LHodD0cOIFUrugutiGpJuRJ8TARsbzSevhgqJAIDQ2o-sbtvv9sSAxkxc" target="_blank">
+                            <a class="social__link"
+                                href="//max.ru/u/f9LHodD0cOIFUrugutiGpJuRJ8TARsbzSevhgqJAIDQ2o-sbtvv9sSAxkxc"
+                                target="_blank">
                                 <img src="img/icons/max.svg" alt="">
                             </a>
                         </li>
@@ -299,18 +301,15 @@
                         <a href="#">Главная</a>
                     </li>
                     <li>
-                        <a href="#">Сапоги для охоты и рыбалки</a>
-                    </li>
-                    <li>
-                        <span>Забродные</span>
+                        <span>Контакты</span>
                     </li>
                 </ol>
             </nav>
 
             <!-- на статичной странице здесь и у потомков будет еще default-page -->
-            <div class="catalog-page">
+            <div class="catalog-page default-page">
 
-                <aside class="catalog-sidebar">
+                <aside class="catalog-sidebar default-sidebar">
                     <nav aria-label="Категории товаров">
                         <ul class="catalog-menu">
                             <!-- Бренды -->
@@ -427,194 +426,180 @@
                     </nav>
                 </aside>
 
-                <section class="catalog-products">
-                    <h1 class="page-title">Сапоги забродные для охоты и рыбалки</h1>
-                    <ul class="products">
-                        <li class="products__item">
-                            <div class="card">
-                                <a class="card__img-link" href="#">
-                                    <img src="img/products/rukzak.png" alt="">
-                                </a>
-                                <a href="#">
-                                    <h3 class="card__title">Рюкзак водонепроницаемый</h3>
-                                </a>
-                                <ul class="card__params">
-                                    <li class="card__params-item">
-                                        <span class="card__params-property">Материал</span>
-                                        <a class="card__params-value" href="#">Полиуретан/ЭВА</a>
-                                    </li>
-                                    <li class="card__params-item card__params-item--season">
-                                        <span class="card__params-property">Сезон</span>
-                                        <a class="card__params-value" href="#">Лето</a>
-                                    </li>
-                                </ul>
-                                <div class="button-wrap">
-                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
+                <section class="catalog-products default-content">
+                    <h1 class="page-title">Контактная информация</h1>
+                    
+                    <div class="contacts-card" itemscope itemtype="https://schema.org/LocalBusiness">
+                        
+                        <!-- Основная организация -->
+                        <div class="contacts-card__section">
+                            <div class="contacts-card__title" itemprop="name">ООО «Рокс Н»</div>
+                            <div class="contacts-card__value" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                                <span itemprop="postalCode">198320</span>, 
+                                <span itemprop="addressCountry">Россия</span> 
+                                <span itemprop="addressLocality">г. Санкт-Петербург</span>, 
+                                <span itemprop="streetAddress">Кингисеппское шоссе, 53</span>
+                            </div>
+                        </div>
+
+                        <!-- Режим работы -->
+                        <div class="contacts-card__section" itemprop="openingHours" content="Mo-Fr 08:30-17:00">
+                            <div class="contacts-card__title">Режим работы:</div>
+                            <div class="contacts-card__value">Пн-Пт 08:30–17:00</div>
+                        </div>
+
+                        <!-- Розничная продажа -->
+                        <div class="contacts-card__section">
+                            <div class="contacts-card__title">Розничная продажа:</div>
+                            <div class="contacts-card__value">
+                                <a href="tel:+79875760018" itemprop="telephone">+7 (987) 576-00-18</a>
+                            </div>
+                        </div>
+
+                        <!-- Отдел сбыта -->
+                        <div class="contacts-card__section">
+                            <div class="contacts-card__title">Отдел сбыта:</div>
+                            
+                            <meta itemprop="department" content="Отдел сбыта">
+                            
+                            <div class="contacts-card__value">
+                                <!-- Контакт 1 -->
+                                <div class="contacts-card__item">
+                                    <div class="contacts-card__name">Менеджер</div>
+                                    <div class="contacts-card__detail">
+                                        <a href="mailto:salesmsk@rox.ru" itemprop="email">salesmsk@rox.ru</a>
+                                    </div>
+                                    <div class="contacts-card__detail">
+                                        <a href="tel:+79112556464" itemprop="telephone">+7 (911) 255-64-64</a>
+                                    </div>
+                                    <div class="contacts-card__detail">
+                                        <a href="tel:+78123857220" itemprop="telephone">+7 (812) 385-72-20</a> (доб 3) 
+                                        <span class="multi-channel">многоканальный</span>
+                                    </div>
+                                </div>
+
+                                <!-- Сотрудник: (с микроразметкой Person) -->
+                                <div class="contacts-card__item" itemprop="employee" itemscope itemtype="https://schema.org/Person">
+                                    <div class="contacts-card__name" itemprop="name">Менеджер Орешко Любовь</div>
+                                    <div class="contacts-card__detail">
+                                        <a href="mailto:sales@rox.ru" itemprop="email">sales@rox.ru</a>
+                                    </div>
+                                    <div class="contacts-card__detail">
+                                        <a href="tel:+78123857220" itemprop="telephone">+7 (812) 385-72-20</a> (доб 2) 
+                                        <span class="multi-channel">многоканальный</span>
+                                    </div>
+                                    <div class="contacts-card__detail">
+                                        <a href="tel:+79112556464" itemprop="telephone">+7 (911) 255-64-64</a>
+                                    </div>
+                                </div>
+
+                                <!-- Контакт 2 -->
+                                <div class="contacts-card__item">
+                                    <div class="contacts-card__name">Менеджер</div>
+                                    <div class="contacts-card__detail">
+                                        <a href="mailto:salespb@rox.ru" itemprop="email">salespb@rox.ru</a>
+                                    </div>
+                                    <div class="contacts-card__detail">
+                                        <a href="tel:+78123857220" itemprop="telephone">+7 (812) 385-72-20</a> (доб 3) 
+                                        <span class="multi-channel">многоканальный</span>
+                                    </div>
+                                    <div class="contacts-card__detail">
+                                        <a href="tel:+79112556464" itemprop="telephone">+7 (911) 255-64-64</a>
+                                    </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="products__item">
-                            <div class="card">
-                                <a class="card__img-link" href="#">
-                                    <img src="img/products/sapogi-eva.png" alt="">
-                                </a>
-                                <a href="#">
-                                    <h3 class="card__title">Сапоги мужские из ЭВА</h3>
-                                </a>
-                                <ul class="card__params">
-                                    <li class="card__params-item">
-                                        <span class="card__params-property">Материал</span>
-                                        <span class="card__params-value">Полиуретан/ЭВА</span>
-                                    </li>
-                                    <li class="card__params-item card__params-item--season">
-                                        <span class="card__params-property">Сезон</span>
-                                        <span class="card__params-value card__params-value--winter">Зима</span>
-                                    </li>
-                                </ul>
-                                <div class="button-wrap">
-                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
+                        </div>
+
+                        <!-- Отдел кадров -->
+                        <div class="contacts-card__section">
+                            <div class="contacts-card__title">Отдел кадров:</div>
+                            <div class="contacts-card__value">
+                                <div class="contacts-card__item" itemprop="employee" itemscope itemtype="https://schema.org/Person">
+                                    <div class="contacts-card__name" itemprop="name">Воробьева Александра Вячеславовна</div>
+                                    <div class="contacts-card__detail">
+                                        <a href="mailto:office@rox.ru" itemprop="email">office@rox.ru</a>
+                                    </div>
+                                    <div class="contacts-card__detail">
+                                        <a href="tel:+78123857220" itemprop="telephone">+7 (812) 385-72-20</a> (доб 5) 
+                                        <span class="multi-channel">многоканальный</span>
+                                    </div>
+                                    <div class="contacts-card__detail">
+                                        <a href="tel:+79112556464" itemprop="telephone">+7 (911) 255-64-64</a>
+                                    </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="products__item">
-                            <div class="card">
-                                <a class="card__img-link" href="#">
-                                    <img src="img/products/sapogi-pvh.png" alt="">
-                                </a>
-                                <a href="#">
-                                    <h3 class="card__title">Сапоги из ПВХ</h3>
-                                </a>
-                                <ul class="card__params">
-                                    <li class="card__params-item">
-                                        <span class="card__params-property">Материал</span>
-                                        <span class="card__params-value">Полиуретан/ЭВА</span>
-                                    </li>
-                                    <li class="card__params-item card__params-item--season">
-                                        <span class="card__params-property">Сезон</span>
-                                        <span class="card__params-value">Лето</span>
-                                    </li>
-                                </ul>
-                                <div class="button-wrap">
-                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
+                        </div>
+
+                        <!-- Директор -->
+                        <div class="contacts-card__section">
+                            <div class="contacts-card__title">Директор:</div>
+                            <div class="contacts-card__value" itemprop="employee" itemscope itemtype="https://schema.org/Person">
+                                <div class="contacts-card__name" itemprop="name">Хайруллина Галина Николаевна</div>
+                                <div class="contacts-card__detail">
+                                    <a href="mailto:director@rox.ru" itemprop="email">director@rox.ru</a>
                                 </div>
                             </div>
-                        </li>
-                        <li class="products__item">
-                            <div class="card">
-                                <a class="card__img-link" href="#">
-                                    <img src="img/products/polukombezy.png" alt="">
-                                </a>
-                                <a href="#">
-                                    <h3 class="card__title">Полукомбинезон</h3>
-                                </a>
-                                <ul class="card__params">
-                                    <li class="card__params-item">
-                                        <span class="card__params-property">Материал</span>
-                                        <span class="card__params-value">Полиуретан/ЭВА</span>
+                        </div>
+
+                        <!-- Интернет-магазин -->
+                        <div class="contacts-card__section">
+                            <div class="contacts-card__title">Интернет-магазин:</div>
+                            <div class="contacts-card__value">
+                                <a href="tel:+79875760018" itemprop="telephone">+7 (987) 576-00-18</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contacts-bottom-wrap">
+                        <div class="form-wrap">
+                            <form class="main-form">
+                                <h3 class="main-form__title">Заказать обратный звонок</h3>
+                                <p class="main-form__text">
+                                    Есть вопросы? Оставьте телефон, и наш специалист перезвонит и проконсультирует вас
+                                </p>
+
+                                <label for="name" class="visually-hidden">Имя</label>
+                                <input class="main-form__input" id="name" type="text" name="name" placeholder="Имя*" required>
+
+                                <label for="phone" class="visually-hidden">Телефон</label>
+                                <input class="main-form__input" id="phone" type="tel" name="phone" placeholder="Телефон*" required>
+
+                                <div class="main-form__agreement">
+                                    <input class="main-form__checkbox" type="checkbox" id="check" name="consent" required checked>
+                                    <label for="check">
+                                        Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных
+                                        данных и принимаю <a href="#">условия соглашения</a>
+                                    </label>
+                                </div>
+
+                                <button class="accent-btn" type="submit">Отправить</button>
+                            </form>
+                            <!-- <div class="form-wrap__box">
+                                <span class="form-wrap__box-text">или напишите нам через мессенджер:</span>
+                                <ul class="social">
+                                    <li class="social__item">
+                                        <a class="social__link" href="whatsapp://+79112556464" target="_blank">
+                                            <img src="img/icons/wa.svg" alt="">
+                                        </a>
                                     </li>
-                                    <li class="card__params-item card__params-item--season">
-                                        <span class="card__params-property">Сезон</span>
-                                        <span class="card__params-value card__params-value--winter">Зима</span>
+                                    <li class="social__item">
+                                        <a class="social__link" href="//max.ru/u/f9LHodD0cOIFUrugutiGpJuRJ8TARsbzSevhgqJAIDQ2o-sbtvv9sSAxkxc" target="_blank">
+                                            <img src="img/icons/max.svg" alt="">
+                                        </a>
+                                    </li>
+                                    <li class="social__item">
+                                        <a class="social__link" href="//t.me/+79112556464" target="_blank">
+                                            <img src="img/icons/tg.svg" alt="">
+                                        </a>
                                     </li>
                                 </ul>
-                                <div class="button-wrap">
-                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="products__item">
-                            <div class="card">
-                                <a class="card__img-link" href="#">
-                                    <img src="img/products/rukzak.png" alt="">
-                                </a>
-                                <a href="#">
-                                    <h3 class="card__title">Рюкзак водонепроницаемый</h3>
-                                </a>
-                                <ul class="card__params">
-                                    <li class="card__params-item">
-                                        <span class="card__params-property">Материал</span>
-                                        <span class="card__params-value">Полиуретан/ЭВА</span>
-                                    </li>
-                                    <li class="card__params-item card__params-item--season">
-                                        <span class="card__params-property">Сезон</span>
-                                        <span class="card__params-value">Лето</span>
-                                    </li>
-                                </ul>
-                                <div class="button-wrap">
-                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="products__item">
-                            <div class="card">
-                                <a class="card__img-link" href="#">
-                                    <img src="img/products/sapogi-eva.png" alt="">
-                                </a>
-                                <a href="#">
-                                    <h3 class="card__title">Сапоги мужские из ЭВА</h3>
-                                </a>
-                                <ul class="card__params">
-                                    <li class="card__params-item">
-                                        <span class="card__params-property">Материал</span>
-                                        <span class="card__params-value">Полиуретан/ЭВА</span>
-                                    </li>
-                                    <li class="card__params-item card__params-item--season">
-                                        <span class="card__params-property">Сезон</span>
-                                        <span class="card__params-value card__params-value--winter">Зима</span>
-                                    </li>
-                                </ul>
-                                <div class="button-wrap">
-                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="products__item">
-                            <div class="card">
-                                <a class="card__img-link" href="#">
-                                    <img src="img/products/sapogi-pvh.png" alt="">
-                                </a>
-                                <a href="#">
-                                    <h3 class="card__title">Сапоги из ПВХ</h3>
-                                </a>
-                                <ul class="card__params">
-                                    <li class="card__params-item">
-                                        <span class="card__params-property">Материал</span>
-                                        <span class="card__params-value">Полиуретан/ЭВА</span>
-                                    </li>
-                                    <li class="card__params-item card__params-item--season">
-                                        <span class="card__params-property">Сезон</span>
-                                        <span class="card__params-value">Лето</span>
-                                    </li>
-                                </ul>
-                                <div class="button-wrap">
-                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="products__item">
-                            <div class="card">
-                                <a class="card__img-link" href="#">
-                                    <img src="img/products/polukombezy.png" alt="">
-                                </a>
-                                <a href="#">
-                                    <h3 class="card__title">Полукомбинезон</h3>
-                                </a>
-                                <ul class="card__params">
-                                    <li class="card__params-item">
-                                        <span class="card__params-property">Материал</span>
-                                        <span class="card__params-value">Полиуретан/ЭВА</span>
-                                    </li>
-                                    <li class="card__params-item card__params-item--season">
-                                        <span class="card__params-property">Сезон</span>
-                                        <span class="card__params-value card__params-value--winter">Зима</span>
-                                    </li>
-                                </ul>
-                                <div class="button-wrap">
-                                    <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-order">Заказать</button>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </div> -->
+                        </div>
+                        <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=1505450414" width="560" height="400" frameborder="0"></iframe>
+                    </div>
+
+
                 </section>
 
             </div>
@@ -631,10 +616,24 @@
                             <img src="img/logo2.svg" alt="">
                         </a>
                     </div>
+                </div>
+                <div class="footer-inner__item">
                     <ul>
                         <li>
                             <a href="//yandex.ru/maps/-/CPrBqEn1" target="_blank">г. Санкт-Петербург, Кингисеппское
                                 шоссе, 53АБ</a>
+                        </li>
+                        <li>
+                            Пн-Пт 08.30-17.00
+                        </li>
+                        <li>
+                            <a href="mailto:office@rox.ru">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 7.13867V17.1387C22 17.8017 21.7366 18.4376 21.2678 18.9064C20.7989 19.3753 20.163 19.6387 19.5 19.6387H4.5C3.83696 19.6387 3.20107 19.3753 2.73223 18.9064C2.26339 18.4376 2 17.8017 2 17.1387V7.13867" stroke="#120D31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M22 7.13867C22 6.47563 21.7366 5.83975 21.2678 5.37091C20.7989 4.90206 20.163 4.63867 19.5 4.63867H4.5C3.83696 4.63867 3.20107 4.90206 2.73223 5.37091C2.26339 5.83975 2 6.47563 2 7.13867L10.675 12.5553C11.0723 12.8037 11.5314 12.9353 12 12.9353C12.4686 12.9353 12.9277 12.8037 13.325 12.5553L22 7.13867Z" stroke="#120D31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                office@rox.ru
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -654,7 +653,10 @@
                         <li>
                             <a href="tel:79112556464">
                                 <svg viewBox="0 0 22 22" fill="none" xmlns="//www.w3.org/2000/svg">
-                                    <path d="M13.7019 20.2227L13.7128 20.2303C14.6573 20.8317 15.7786 21.0928 16.8916 20.9706C18.0045 20.8484 19.0425 20.3501 19.8339 19.5581L20.5215 18.8706C20.6738 18.7183 20.7947 18.5375 20.8772 18.3385C20.9596 18.1395 21.0021 17.9262 21.0021 17.7108C21.0021 17.4954 20.9596 17.2821 20.8772 17.0832C20.7947 16.8842 20.6738 16.7034 20.5215 16.5511L17.6216 13.6534C17.4693 13.5011 17.2885 13.3802 17.0895 13.2977C16.8906 13.2153 16.6773 13.1728 16.4619 13.1728C16.2465 13.1728 16.0332 13.2153 15.8342 13.2977C15.6352 13.3802 15.4544 13.5011 15.3021 13.6534C14.9947 13.9608 14.5777 14.1335 14.1429 14.1335C13.7082 14.1335 13.2912 13.9608 12.9838 13.6534L8.34701 9.01558C8.03964 8.70811 7.86696 8.29115 7.86696 7.85639C7.86696 7.42163 8.03964 7.00467 8.34701 6.69721C8.49937 6.54494 8.62024 6.36415 8.7027 6.16516C8.78516 5.96616 8.82761 5.75287 8.82761 5.53747C8.82761 5.32207 8.78516 5.10878 8.7027 4.90979C8.62024 4.7108 8.49937 4.53 8.34701 4.37774L5.44823 1.48005C5.14076 1.17267 4.7238 1 4.28904 1C3.85428 1 3.43732 1.17267 3.12986 1.48005L2.44123 2.16758C1.64941 2.95915 1.15134 3.99717 1.02931 5.11012C0.907282 6.22308 1.1686 7.34436 1.77009 8.28869L1.77665 8.29962C4.95327 12.9995 9.0014 17.0469 13.7019 20.2227V20.2227Z" stroke="#CC5803" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path
+                                        d="M13.7019 20.2227L13.7128 20.2303C14.6573 20.8317 15.7786 21.0928 16.8916 20.9706C18.0045 20.8484 19.0425 20.3501 19.8339 19.5581L20.5215 18.8706C20.6738 18.7183 20.7947 18.5375 20.8772 18.3385C20.9596 18.1395 21.0021 17.9262 21.0021 17.7108C21.0021 17.4954 20.9596 17.2821 20.8772 17.0832C20.7947 16.8842 20.6738 16.7034 20.5215 16.5511L17.6216 13.6534C17.4693 13.5011 17.2885 13.3802 17.0895 13.2977C16.8906 13.2153 16.6773 13.1728 16.4619 13.1728C16.2465 13.1728 16.0332 13.2153 15.8342 13.2977C15.6352 13.3802 15.4544 13.5011 15.3021 13.6534C14.9947 13.9608 14.5777 14.1335 14.1429 14.1335C13.7082 14.1335 13.2912 13.9608 12.9838 13.6534L8.34701 9.01558C8.03964 8.70811 7.86696 8.29115 7.86696 7.85639C7.86696 7.42163 8.03964 7.00467 8.34701 6.69721C8.49937 6.54494 8.62024 6.36415 8.7027 6.16516C8.78516 5.96616 8.82761 5.75287 8.82761 5.53747C8.82761 5.32207 8.78516 5.10878 8.7027 4.90979C8.62024 4.7108 8.49937 4.53 8.34701 4.37774L5.44823 1.48005C5.14076 1.17267 4.7238 1 4.28904 1C3.85428 1 3.43732 1.17267 3.12986 1.48005L2.44123 2.16758C1.64941 2.95915 1.15134 3.99717 1.02931 5.11012C0.907282 6.22308 1.1686 7.34436 1.77009 8.28869L1.77665 8.29962C4.95327 12.9995 9.0014 17.0469 13.7019 20.2227V20.2227Z"
+                                        stroke="#CC5803" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
                                 </svg>
                                 +7 (911) 255-64-64
                             </a>
@@ -662,32 +664,13 @@
                         <li>
                             <a href="tel:79875760018">
                                 <svg viewBox="0 0 22 22" fill="none" xmlns="//www.w3.org/2000/svg">
-                                    <path d="M13.7019 20.2227L13.7128 20.2303C14.6573 20.8317 15.7786 21.0928 16.8916 20.9706C18.0045 20.8484 19.0425 20.3501 19.8339 19.5581L20.5215 18.8706C20.6738 18.7183 20.7947 18.5375 20.8772 18.3385C20.9596 18.1395 21.0021 17.9262 21.0021 17.7108C21.0021 17.4954 20.9596 17.2821 20.8772 17.0832C20.7947 16.8842 20.6738 16.7034 20.5215 16.5511L17.6216 13.6534C17.4693 13.5011 17.2885 13.3802 17.0895 13.2977C16.8906 13.2153 16.6773 13.1728 16.4619 13.1728C16.2465 13.1728 16.0332 13.2153 15.8342 13.2977C15.6352 13.3802 15.4544 13.5011 15.3021 13.6534C14.9947 13.9608 14.5777 14.1335 14.1429 14.1335C13.7082 14.1335 13.2912 13.9608 12.9838 13.6534L8.34701 9.01558C8.03964 8.70811 7.86696 8.29115 7.86696 7.85639C7.86696 7.42163 8.03964 7.00467 8.34701 6.69721C8.49937 6.54494 8.62024 6.36415 8.7027 6.16516C8.78516 5.96616 8.82761 5.75287 8.82761 5.53747C8.82761 5.32207 8.78516 5.10878 8.7027 4.90979C8.62024 4.7108 8.49937 4.53 8.34701 4.37774L5.44823 1.48005C5.14076 1.17267 4.7238 1 4.28904 1C3.85428 1 3.43732 1.17267 3.12986 1.48005L2.44123 2.16758C1.64941 2.95915 1.15134 3.99717 1.02931 5.11012C0.907282 6.22308 1.1686 7.34436 1.77009 8.28869L1.77665 8.29962C4.95327 12.9995 9.0014 17.0469 13.7019 20.2227V20.2227Z" stroke="#CC5803" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path
+                                        d="M13.7019 20.2227L13.7128 20.2303C14.6573 20.8317 15.7786 21.0928 16.8916 20.9706C18.0045 20.8484 19.0425 20.3501 19.8339 19.5581L20.5215 18.8706C20.6738 18.7183 20.7947 18.5375 20.8772 18.3385C20.9596 18.1395 21.0021 17.9262 21.0021 17.7108C21.0021 17.4954 20.9596 17.2821 20.8772 17.0832C20.7947 16.8842 20.6738 16.7034 20.5215 16.5511L17.6216 13.6534C17.4693 13.5011 17.2885 13.3802 17.0895 13.2977C16.8906 13.2153 16.6773 13.1728 16.4619 13.1728C16.2465 13.1728 16.0332 13.2153 15.8342 13.2977C15.6352 13.3802 15.4544 13.5011 15.3021 13.6534C14.9947 13.9608 14.5777 14.1335 14.1429 14.1335C13.7082 14.1335 13.2912 13.9608 12.9838 13.6534L8.34701 9.01558C8.03964 8.70811 7.86696 8.29115 7.86696 7.85639C7.86696 7.42163 8.03964 7.00467 8.34701 6.69721C8.49937 6.54494 8.62024 6.36415 8.7027 6.16516C8.78516 5.96616 8.82761 5.75287 8.82761 5.53747C8.82761 5.32207 8.78516 5.10878 8.7027 4.90979C8.62024 4.7108 8.49937 4.53 8.34701 4.37774L5.44823 1.48005C5.14076 1.17267 4.7238 1 4.28904 1C3.85428 1 3.43732 1.17267 3.12986 1.48005L2.44123 2.16758C1.64941 2.95915 1.15134 3.99717 1.02931 5.11012C0.907282 6.22308 1.1686 7.34436 1.77009 8.28869L1.77665 8.29962C4.95327 12.9995 9.0014 17.0469 13.7019 20.2227V20.2227Z"
+                                        stroke="#CC5803" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
                                 </svg>
                                 +7 (987) 576-00-18
                             </a>
-                        </li>
-                        <!-- <li>
-                            <a href="mailto:office@rox.ru">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M22 7.13867V17.1387C22 17.8017 21.7366 18.4376 21.2678 18.9064C20.7989 19.3753 20.163 19.6387 19.5 19.6387H4.5C3.83696 19.6387 3.20107 19.3753 2.73223 18.9064C2.26339 18.4376 2 17.8017 2 17.1387V7.13867" stroke="#120D31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M22 7.13867C22 6.47563 21.7366 5.83975 21.2678 5.37091C20.7989 4.90206 20.163 4.63867 19.5 4.63867H4.5C3.83696 4.63867 3.20107 4.90206 2.73223 5.37091C2.26339 5.83975 2 6.47563 2 7.13867L10.675 12.5553C11.0723 12.8037 11.5314 12.9353 12 12.9353C12.4686 12.9353 12.9277 12.8037 13.325 12.5553L22 7.13867Z" stroke="#120D31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                office@rox.ru
-                            </a>
-                        </li> -->
-                    </ul>
-                </div>
-                <div class="footer-inner__item">
-                    <ul>
-                        <li>
-                            <a href="#">О компаниии</a>
-                        </li>
-                        <li>
-                            <a href="#">Партнерам</a>
-                        </li>
-                        <li>
-                            <a href="#">Доставка</a>
                         </li>
                     </ul>
                 </div>
@@ -711,6 +694,84 @@
             </div>
         </div>
     </footer>
+
+    <!-- Лайтбокс (попап галереи) -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox__close" id="lbClose" aria-label="Закрыть">
+            <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        
+        <div class="lightbox__viewer">
+            <img id="lbImg" src="" alt="Просмотр">
+        </div>
+        
+        <button class="lb-btn lb-prev" id="lbPrev" aria-label="Назад">
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="lb-btn lb-next" id="lbNext" aria-label="Вперёд">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+        
+        <div class="lightbox__thumbs" id="lbThumbs"></div>
+    </div>
+
+
+
+    <!-- ПОПАП: Обратный звонок -->
+    <div id="modal-callback" class="modal-overlay" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрыть">&times;</button>
+            <div class="bitrix-form-wrapper">
+                <!-- Сюда при интеграции вставится компонент Bitrix -->
+
+                <div class="form-wrap">
+                    <form class="main-form main-form--callback">
+                        <h3 class="main-form__title">Заказать обратный звонок</h3>
+                        <p class="main-form__text">
+                            Есть вопросы? Оставьте телефон, и наш специалист перезвонит и проконсультирует вас
+                        </p>
+
+                        <label for="name-callback" class="visually-hidden">Имя</label>
+                        <input class="main-form__input" id="name-callback" type="text" name="name-callback" placeholder="Имя*" required>
+
+                        <label for="phone-callback" class="visually-hidden">Телефон</label>
+                        <input class="main-form__input" id="phone-callback" type="tel" name="phone-callback" placeholder="Телефон*" required>
+
+                        <div class="main-form__agreement">
+                            <input class="main-form__checkbox" type="checkbox" id="check-callback" name="consent-callback" required checked>
+                            <label for="check-callback">
+                                Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных
+                                данных и принимаю <a href="#">условия соглашения</a>
+                            </label>
+                        </div>
+
+                        <button class="accent-btn" type="submit">Отправить</button>
+                    </form>
+                    <!-- <div class="form-wrap__box">
+                        <span class="form-wrap__box-text">или напишите нам через мессенджер:</span>
+                        <ul class="social">
+                            <li class="social__item">
+                                <a class="social__link" href="whatsapp://+79112556464" target="_blank">
+                                    <img src="img/icons/wa.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="//max.ru/u/f9LHodD0cOIFUrugutiGpJuRJ8TARsbzSevhgqJAIDQ2o-sbtvv9sSAxkxc" target="_blank">
+                                    <img src="img/icons/max.svg" alt="">
+                                </a>
+                            </li>
+                            <li class="social__item">
+                                <a class="social__link" href="//t.me/+79112556464" target="_blank">
+                                    <img src="img/icons/tg.svg" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- ПОПАП: заказ -->
     <div id="modal-order" class="modal-overlay" aria-hidden="true" role="dialog">
@@ -797,29 +858,51 @@
         </div>
     </div>
 
-    <!-- ПОПАП: Обратный звонок -->
-    <div id="modal-callback" class="modal-overlay" aria-hidden="true" role="dialog">
+    <!-- ПОПАП: получить прайс -->
+    <div id="modal-getprice" class="modal-overlay" aria-hidden="true" role="dialog">
         <div class="modal-content">
             <button class="modal-close" aria-label="Закрыть">&times;</button>
             <div class="bitrix-form-wrapper">
                 <!-- Сюда при интеграции вставится компонент Bitrix -->
-
+                
                 <div class="form-wrap">
-                    <form class="main-form main-form--callback">
-                        <h3 class="main-form__title">Заказать обратный звонок</h3>
+                    <form class="main-form main-form--order">
+                        <h3 class="main-form__title">Получить прайс</h3>
+
+                        <label class="visually-hidden" for="name-getprice">Имя</label>
+                        <input class="main-form__input" id="name-getprice" type="text" name="name-getprice" placeholder="Имя*" required>
+
+                        <label class="visually-hidden" for="email-getprice">E-mail</label>
+                        <input class="main-form__input" id="email-getprice" type="email" name="email-getprice" placeholder="E-mail">
+
+                        <label class="visually-hidden" for="phone-getprice">Телефон</label>
+                        <input class="main-form__input" id="phone-getprice" type="tel" name="phone-getprice" placeholder="Телефон*" required>
+
                         <p class="main-form__text">
-                            Есть вопросы? Оставьте телефон, и наш специалист перезвонит и проконсультирует вас
+                            Куда вам выслать прайс?
                         </p>
-
-                        <label for="name-callback" class="visually-hidden">Имя</label>
-                        <input class="main-form__input" id="name-callback" type="text" name="name-callback" placeholder="Имя*" required>
-
-                        <label for="phone-callback" class="visually-hidden">Телефон</label>
-                        <input class="main-form__input" id="phone-callback" type="tel" name="phone-callback" placeholder="Телефон*" required>
+                        <div class="radio-group">
+                            <div class="radio-group__item">
+                                <input type="radio" id="radio-email-getprice" name="contact-getprice" value="email" checked>
+                                <label for="radio-email-getprice">E-mail</label>
+                            </div>
+                            <div class="radio-group__item">
+                                <input type="radio" id="radio-telegram-getprice" name="contact-getprice" value="telegram">
+                                <label for="radio-telegram-getprice">Telegram</label>
+                            </div>
+                            <div class="radio-group__item">
+                                <input type="radio" id="radio-max-getprice" name="contact-getprice" value="max">
+                                <label for="radio-max-getprice">MAX</label>
+                            </div>
+                            <div class="radio-group__item">
+                                <input type="radio" id="radio-wa-getprice" name="contact-getprice" value="wa">
+                                <label for="radio-wa-getprice">WhatsApp</label>
+                            </div>
+                        </div>
 
                         <div class="main-form__agreement">
-                            <input class="main-form__checkbox" type="checkbox" id="check-callback" name="consent-callback" required checked>
-                            <label for="check-callback">
+                            <input class="main-form__checkbox" type="checkbox" id="check-getprice" name="consent-getprice" required checked>
+                            <label for="check-getprice">
                                 Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных
                                 данных и принимаю <a href="#">условия соглашения</a>
                             </label>
@@ -857,8 +940,9 @@
     <!-- здесь js всех плагинов -->
     <script src="js/splide.min.js"></script>
     <script src="js/gallery.js"></script>
-    <script src="js/forms.js"></script>
+    <script src="js/forms.js"></script> 
     <script src="js/main.js"></script>
+
 </body>
 
 </html>

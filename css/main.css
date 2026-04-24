@@ -105,7 +105,7 @@ body {
   max-width: 1296px;
   width: 100%;
   margin: 0 auto;
-  border: 1px dotted transparent;
+  border: 1px dotted #444;
   min-width: 320px;
 }
 
@@ -1965,6 +1965,68 @@ h2.page-title {
 @media (max-width: 767px) {
   .about-product__buttons-wrap {
     align-items: center;
+  }
+}
+/* =========================================
+   contacts-card
+   ========================================= */
+.contacts-card {
+  margin-bottom: 35px;
+}
+.contacts-card__section {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+.contacts-card__section:last-child {
+  margin-bottom: 0;
+}
+.contacts-card__section a {
+  color: #cc5803;
+}
+.contacts-card__section a:hover {
+  text-decoration: underline;
+}
+.contacts-card__title {
+  font-weight: 600;
+  font-size: 20px;
+  width: 250px;
+}
+.contacts-card__item {
+  margin-bottom: 20px;
+}
+.contacts-card__item:last-child {
+  margin-bottom: 0;
+}
+.contacts-card__name {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.contacts-card__detail {
+  margin-bottom: 10px;
+}
+.contacts-card__detail:last-child {
+  margin-bottom: 0;
+}
+
+.contacts-bottom-wrap {
+  display: flex;
+  gap: 24px;
+}
+.contacts-bottom-wrap .form-wrap {
+  width: 50%;
+}
+
+@media (max-width: 1199px) {
+  .contacts-bottom-wrap {
+    flex-direction: column;
+  }
+  .contacts-bottom-wrap .form-wrap {
+    width: 100%;
+  }
+  iframe {
+    width: 100%;
   }
 }
 @media (max-width: 1399px) {
