@@ -6,6 +6,12 @@ $(function(){
     //     $('.burger-btn').toggleClass('burger-btn--active');
     // });
 
+if (typeof Fancybox !== 'undefined') {
+    Fancybox.bind("[data-fancybox]", { 
+        // Your custom options 
+    });
+}
+
 /*---- слайдер Наши партнеры ----*/
 const partnetsSlider = document.querySelector('#partners');
 

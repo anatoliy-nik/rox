@@ -376,6 +376,12 @@
         // height: 300px;
         height: 268px;
         min-height: auto;
+        &::after {
+            content: none;
+        }
+        .header-top-wrap::after {
+            right: -818px;
+        }
     } 
 }
 
@@ -475,14 +481,6 @@
     // z-index: 1;
 }
 
-
-/*---- header-page----*/
-
-.header.header-page {
-    &::after {
-        content: none;
-    }
-}
 
 /*---- header-contacts ----*/
 .header-contacts {
@@ -1670,51 +1668,6 @@
     }
 }
 
-.main-page {
-    position: relative;
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: -77px;
-        left: 0;
-        width: 100%;
-        height: 350px;
-        background: linear-gradient(360deg, #217d72 0%, #bee9e8 65.38%, #f1faff 82.21%, #f4f1eb 99.99%);
-        z-index: -1;
-    }
-    .rox-container {
-        position: relative;
-        &::before {
-            content: "";
-            position: absolute;
-            left: -150px;
-            bottom: -100px;
-            width: 410px;
-            height: 353px;
-            background-image: url(../img/left-vetochka.svg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
-            // z-index: -1; 
-            // border: 1px solid red;
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            right: -150px;
-            bottom: -100px;
-            width: 410px;
-            height: 353px;
-            background-image: url(../img/right-vetochka.svg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: contain;
-            z-index: 0; 
-            // border: 1px solid red;
-        }
-    }
-}
-
 @media (max-width: 1199px) {
     .contacts-bottom-wrap {
         flex-direction: column;
@@ -1770,9 +1723,9 @@
 }
 
 /* =========================================
-   how-become-partner
+   numbered-main
    ========================================= */
-.how-become-partner {
+.numbered-main {
     // list-style-type: decimal;
     counter-reset: step-counter;
     display: grid;
@@ -1848,7 +1801,7 @@
 }
 
 @media (max-width: 1399px) {
-   .how-become-partner {
+   .numbered-main {
     &__item {
         height: 220px;
         }
@@ -1860,7 +1813,7 @@
    }
 }
 @media (max-width: 1199px) {
-    .how-become-partner {
+    .numbered-main {
         grid-template-columns: repeat(2, 1fr);
         &__item {
             height: 200px;
@@ -1875,7 +1828,7 @@
 }
 
 @media (max-width: 767px) {
-        .how-become-partner {
+        .numbered-main {
         &__item {
             height: 230px;
         }
@@ -1883,7 +1836,7 @@
 }
 
 @media (max-width: 539px) {
-        .how-become-partner {
+        .numbered-main {
         grid-template-columns: repeat(1, 1fr);
         &__item {
             height: auto;
@@ -1897,6 +1850,157 @@
     }
     .form-wrap--partners .map-geo {
         background-size: cover;
+    }
+}
+
+/* =========================================
+   delivery-list
+   ========================================= */
+.delivery-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    img {
+        margin-bottom: 16px;
+        background-color: #fff;
+        height: 90px;
+        background-size: contain;
+    }
+    span {
+        margin-bottom: 16px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 135%;
+    }
+}
+
+@media (max-width: 539px) {
+    .delivery-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* =========================================
+   .sprig-pine
+   ========================================= */
+
+.sprig-pine {
+    position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            left: -150px;
+            // bottom: -100px;
+            top: -60px;
+            width: 410px;
+            height: 353px;
+            background-image: url(../img/left-vetochka.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            // z-index: -1; 
+            // border: 1px solid red;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            right: -150px;
+            top: -60px;
+            // bottom: -100px;
+            width: 410px;
+            height: 353px;
+            background-image: url(../img/right-vetochka.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            z-index: 0; 
+            // border: 1px solid red;
+        }
+        span {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 25px;
+        }
+    }
+
+
+.marketplaces {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 35px;
+    img {
+        height: 96px;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 539px) {
+    .marketplaces {
+        flex-direction: column;
+    }
+    .sprig-pine {
+        &::before {
+            left: -250px;
+        }
+        &::after {
+            right: -250px;
+        }
+    }
+
+}
+
+/* =========================================
+   .sertifikaty
+   ========================================= */
+
+.sertifikaty-list {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    li {
+        width: 23%;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 1399px) {
+    .sertifikaty-list {
+        li {
+            width: 22%;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .sertifikaty-list {
+        li {
+            width: 30%;
+        }
+    }
+}
+
+@media (max-width: 539px) {
+    .sertifikaty-list {
+        li {
+            width: 45%;
+        }
     }
 }
 

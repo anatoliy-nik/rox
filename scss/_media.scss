@@ -547,14 +547,14 @@
         }
     }
 
-    .header-page {
+    .header.header-page {
         .header-top-wrap {
             &::before {
                 content: none;
             }
             &::after {
                 right: -500px;
-                top: 25px;
+                top: 0px;
                 height: 250px;
                 display: block;
             }

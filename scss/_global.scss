@@ -105,6 +105,27 @@ h2.page-title {
     font-size: 26px;
     margin-bottom: 15px;
 }
+.title-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    .page-title {
+        margin-bottom: 0;
+        margin-right: 60px;
+        display: block;
+    }
+    &::after {
+        content: '';
+        // border-bottom: 10px solid #8ca6d9;
+        flex-grow: 1;
+        display: block;
+        height: 20px;
+        background-color: #8ca6d9;
+        line-height: 1.35;
+        margin-top: 5px;
+    }
+}
 
 /* =========================================
    search-form

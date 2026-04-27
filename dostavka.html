@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты</title>
+    <title>Доставка</title>
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
     <!-- здесь стили всех плагинов -->
     <link rel="stylesheet" href="css/splide.min.css">
@@ -119,7 +119,8 @@
                         </li>
                     </ul>
                     <div class="button-wrap">
-                        <button class="accent-btn js-open-modal" type="button" data-modal-target="modal-callback">Обратный звонок</button>
+                        <button class="accent-btn js-open-modal" type="button"
+                            data-modal-target="modal-callback">Обратный звонок</button>
                     </div>
                 </div>
 
@@ -301,7 +302,7 @@
                         <a href="#">Главная</a>
                     </li>
                     <li>
-                        <span>Контакты</span>
+                        <span>Доставка</span>
                     </li>
                 </ol>
             </nav>
@@ -427,176 +428,36 @@
                 </aside>
 
                 <section class="catalog-products">
-                    <h1 class="page-title">Контактная информация</h1>
-                    
-                    <div class="contacts-card" itemscope itemtype="https://schema.org/LocalBusiness">
+                    <h1 class="page-title">Информация о доставке</h1>
+                    <div class="page-content">
+                        <p>В регионы СНГ и по России доставка осуществляется любыми транспортными компаниями на ваш
+                            выбор (“Деловые линии”; ПЭК; “Байкал-Сервис” и т.д.)
+                        </p>
+                        <p>Стоимость доставки вы оплачиваете самостоятельно, по факту прибытия продукции в конечный
+                            пункт назначения. 
+                        </p>
+                        <p>Стоимость доставки рассчитывается в зависимости от выбора транспортной компании, от объема и
+                            веса заказа и от пункта назначения.
+                        </p>
+
+                        <ul class="delivery-list">
+                            <li class="delivery-list__item">
+                                <img src="img/dostavka/dl.png" alt="Деловые линии">
+                                <span>Деловые Линии</span>
+                                <a href="https://www.dellin.ru/products/ltl/" class="accent-btn" target="_blank">Рассчитать</a>
+                            </li>
+                            <li class="delivery-list__item">
+                                <img src="img/dostavka/pekk.png" alt="ПЭК">
+                                <span>ПЭК</span>
+                                <a href="https://pecom.ru/services-are/shipping-request/" class="accent-btn" target="_blank">Рассчитать</a>
+                            </li>
+                            <li class="delivery-list__item">
+                                <img src="img/dostavka/bs.png" alt="Байкал-Сервис">
+                                <span>Байкал-Сервис</span>
+                                <a href="https://www.baikalsr.ru/business/prices/" class="accent-btn" target="_blank">Рассчитать</a>
+                            </li>
+                        </ul>
                         
-                        <!-- Основная организация -->
-                        <div class="contacts-card__section">
-                            <div class="contacts-card__title" itemprop="name">ООО «Рокс Н»</div>
-                            <div class="contacts-card__value" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                                <span itemprop="postalCode">198320</span>, 
-                                <span itemprop="addressCountry">Россия</span> 
-                                <span itemprop="addressLocality">г. Санкт-Петербург</span>, 
-                                <span itemprop="streetAddress">Кингисеппское шоссе, 53</span>
-                            </div>
-                        </div>
-
-                        <!-- Режим работы -->
-                        <div class="contacts-card__section" itemprop="openingHours" content="Mo-Fr 08:30-17:00">
-                            <div class="contacts-card__title">Режим работы:</div>
-                            <div class="contacts-card__value">Пн-Пт 08:30–17:00</div>
-                        </div>
-
-                        <!-- Розничная продажа -->
-                        <div class="contacts-card__section">
-                            <div class="contacts-card__title">Розничная продажа:</div>
-                            <div class="contacts-card__value">
-                                <a href="tel:+79875760018" itemprop="telephone">+7 (987) 576-00-18</a>
-                            </div>
-                        </div>
-
-                        <!-- Отдел сбыта -->
-                        <div class="contacts-card__section">
-                            <div class="contacts-card__title">Отдел сбыта:</div>
-                            
-                            <meta itemprop="department" content="Отдел сбыта">
-                            
-                            <div class="contacts-card__value">
-                                <!-- Контакт 1 -->
-                                <div class="contacts-card__item">
-                                    <div class="contacts-card__name">Менеджер</div>
-                                    <div class="contacts-card__detail">
-                                        <a href="mailto:salesmsk@rox.ru" itemprop="email">salesmsk@rox.ru</a>
-                                    </div>
-                                    <div class="contacts-card__detail">
-                                        <a href="tel:+79112556464" itemprop="telephone">+7 (911) 255-64-64</a>
-                                    </div>
-                                    <div class="contacts-card__detail">
-                                        <a href="tel:+78123857220" itemprop="telephone">+7 (812) 385-72-20</a> (доб 3) 
-                                        <span class="multi-channel">многоканальный</span>
-                                    </div>
-                                </div>
-
-                                <!-- Сотрудник: (с микроразметкой Person) -->
-                                <div class="contacts-card__item" itemprop="employee" itemscope itemtype="https://schema.org/Person">
-                                    <div class="contacts-card__name" itemprop="name">Менеджер Орешко Любовь</div>
-                                    <div class="contacts-card__detail">
-                                        <a href="mailto:sales@rox.ru" itemprop="email">sales@rox.ru</a>
-                                    </div>
-                                    <div class="contacts-card__detail">
-                                        <a href="tel:+78123857220" itemprop="telephone">+7 (812) 385-72-20</a> (доб 2) 
-                                        <span class="multi-channel">многоканальный</span>
-                                    </div>
-                                    <div class="contacts-card__detail">
-                                        <a href="tel:+79112556464" itemprop="telephone">+7 (911) 255-64-64</a>
-                                    </div>
-                                </div>
-
-                                <!-- Контакт 2 -->
-                                <div class="contacts-card__item">
-                                    <div class="contacts-card__name">Менеджер</div>
-                                    <div class="contacts-card__detail">
-                                        <a href="mailto:salespb@rox.ru" itemprop="email">salespb@rox.ru</a>
-                                    </div>
-                                    <div class="contacts-card__detail">
-                                        <a href="tel:+78123857220" itemprop="telephone">+7 (812) 385-72-20</a> (доб 3) 
-                                        <span class="multi-channel">многоканальный</span>
-                                    </div>
-                                    <div class="contacts-card__detail">
-                                        <a href="tel:+79112556464" itemprop="telephone">+7 (911) 255-64-64</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Отдел кадров -->
-                        <div class="contacts-card__section">
-                            <div class="contacts-card__title">Отдел кадров:</div>
-                            <div class="contacts-card__value">
-                                <div class="contacts-card__item" itemprop="employee" itemscope itemtype="https://schema.org/Person">
-                                    <div class="contacts-card__name" itemprop="name">Воробьева Александра Вячеславовна</div>
-                                    <div class="contacts-card__detail">
-                                        <a href="mailto:office@rox.ru" itemprop="email">office@rox.ru</a>
-                                    </div>
-                                    <div class="contacts-card__detail">
-                                        <a href="tel:+78123857220" itemprop="telephone">+7 (812) 385-72-20</a> (доб 5) 
-                                        <span class="multi-channel">многоканальный</span>
-                                    </div>
-                                    <div class="contacts-card__detail">
-                                        <a href="tel:+79112556464" itemprop="telephone">+7 (911) 255-64-64</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Директор -->
-                        <div class="contacts-card__section">
-                            <div class="contacts-card__title">Директор:</div>
-                            <div class="contacts-card__value" itemprop="employee" itemscope itemtype="https://schema.org/Person">
-                                <div class="contacts-card__name" itemprop="name">Хайруллина Галина Николаевна</div>
-                                <div class="contacts-card__detail">
-                                    <a href="mailto:director@rox.ru" itemprop="email">director@rox.ru</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Интернет-магазин -->
-                        <div class="contacts-card__section">
-                            <div class="contacts-card__title">Интернет-магазин:</div>
-                            <div class="contacts-card__value">
-                                <a href="tel:+79875760018" itemprop="telephone">+7 (987) 576-00-18</a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="contacts-bottom-wrap">
-                        <div class="form-wrap">
-                            <form class="main-form">
-                                <h3 class="main-form__title">Заказать обратный звонок</h3>
-                                <p class="main-form__text">
-                                    Есть вопросы? Оставьте телефон, и наш специалист перезвонит и проконсультирует вас
-                                </p>
-
-                                <label for="name" class="visually-hidden">Имя</label>
-                                <input class="main-form__input" id="name" type="text" name="name" placeholder="Имя*" required>
-
-                                <label for="phone" class="visually-hidden">Телефон</label>
-                                <input class="main-form__input" id="phone" type="tel" name="phone" placeholder="Телефон*" required>
-
-                                <div class="main-form__agreement">
-                                    <input class="main-form__checkbox" type="checkbox" id="check" name="consent" required checked>
-                                    <label for="check">
-                                        Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных
-                                        данных и принимаю <a href="#">условия соглашения</a>
-                                    </label>
-                                </div>
-
-                                <button class="accent-btn" type="submit">Отправить</button>
-                            </form>
-                            <!-- <div class="form-wrap__box">
-                                <span class="form-wrap__box-text">или напишите нам через мессенджер:</span>
-                                <ul class="social">
-                                    <li class="social__item">
-                                        <a class="social__link" href="whatsapp://+79112556464" target="_blank">
-                                            <img src="img/icons/wa.svg" alt="">
-                                        </a>
-                                    </li>
-                                    <li class="social__item">
-                                        <a class="social__link" href="//max.ru/u/f9LHodD0cOIFUrugutiGpJuRJ8TARsbzSevhgqJAIDQ2o-sbtvv9sSAxkxc" target="_blank">
-                                            <img src="img/icons/max.svg" alt="">
-                                        </a>
-                                    </li>
-                                    <li class="social__item">
-                                        <a class="social__link" href="//t.me/+79112556464" target="_blank">
-                                            <img src="img/icons/tg.svg" alt="">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div> -->
-                        </div>
-                        <iframe src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=1505450414" width="560" height="400" frameborder="0"></iframe>
                     </div>
                 </section>
 
@@ -627,8 +488,14 @@
                         <li>
                             <a href="mailto:office@rox.ru">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M22 7.13867V17.1387C22 17.8017 21.7366 18.4376 21.2678 18.9064C20.7989 19.3753 20.163 19.6387 19.5 19.6387H4.5C3.83696 19.6387 3.20107 19.3753 2.73223 18.9064C2.26339 18.4376 2 17.8017 2 17.1387V7.13867" stroke="#120D31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M22 7.13867C22 6.47563 21.7366 5.83975 21.2678 5.37091C20.7989 4.90206 20.163 4.63867 19.5 4.63867H4.5C3.83696 4.63867 3.20107 4.90206 2.73223 5.37091C2.26339 5.83975 2 6.47563 2 7.13867L10.675 12.5553C11.0723 12.8037 11.5314 12.9353 12 12.9353C12.4686 12.9353 12.9277 12.8037 13.325 12.5553L22 7.13867Z" stroke="#120D31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M22 7.13867V17.1387C22 17.8017 21.7366 18.4376 21.2678 18.9064C20.7989 19.3753 20.163 19.6387 19.5 19.6387H4.5C3.83696 19.6387 3.20107 19.3753 2.73223 18.9064C2.26339 18.4376 2 17.8017 2 17.1387V7.13867"
+                                        stroke="#120D31" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M22 7.13867C22 6.47563 21.7366 5.83975 21.2678 5.37091C20.7989 4.90206 20.163 4.63867 19.5 4.63867H4.5C3.83696 4.63867 3.20107 4.90206 2.73223 5.37091C2.26339 5.83975 2 6.47563 2 7.13867L10.675 12.5553C11.0723 12.8037 11.5314 12.9353 12 12.9353C12.4686 12.9353 12.9277 12.8037 13.325 12.5553L22 7.13867Z"
+                                        stroke="#120D31" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
                                 </svg>
                                 office@rox.ru
                             </a>
@@ -696,20 +563,26 @@
     <!-- Лайтбокс (попап галереи) -->
     <div class="lightbox" id="lightbox" aria-hidden="true">
         <button class="lightbox__close" id="lbClose" aria-label="Закрыть">
-            <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            <svg viewBox="0 0 24 24">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
         </button>
-        
+
         <div class="lightbox__viewer">
             <img id="lbImg" src="" alt="Просмотр">
         </div>
-        
+
         <button class="lb-btn lb-prev" id="lbPrev" aria-label="Назад">
-            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18l-6-6 6-6" />
+            </svg>
         </button>
         <button class="lb-btn lb-next" id="lbNext" aria-label="Вперёд">
-            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            <svg viewBox="0 0 24 24">
+                <path d="M9 18l6-6-6-6" />
+            </svg>
         </button>
-        
+
         <div class="lightbox__thumbs" id="lbThumbs"></div>
     </div>
 
@@ -728,13 +601,16 @@
                         </p>
 
                         <label for="name-callback" class="visually-hidden">Имя</label>
-                        <input class="main-form__input" id="name-callback" type="text" name="name-callback" placeholder="Имя*" required>
+                        <input class="main-form__input" id="name-callback" type="text" name="name-callback"
+                            placeholder="Имя*" required>
 
                         <label for="phone-callback" class="visually-hidden">Телефон</label>
-                        <input class="main-form__input" id="phone-callback" type="tel" name="phone-callback" placeholder="Телефон*" required>
+                        <input class="main-form__input" id="phone-callback" type="tel" name="phone-callback"
+                            placeholder="Телефон*" required>
 
                         <div class="main-form__agreement">
-                            <input class="main-form__checkbox" type="checkbox" id="check-callback" name="consent-callback" required checked>
+                            <input class="main-form__checkbox" type="checkbox" id="check-callback"
+                                name="consent-callback" required checked>
                             <label for="check-callback">
                                 Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных
                                 данных и принимаю <a href="#">условия соглашения</a>
@@ -775,19 +651,22 @@
             <button class="modal-close" aria-label="Закрыть">&times;</button>
             <div class="bitrix-form-wrapper">
                 <!-- Сюда при интеграции вставится компонент Bitrix -->
-                
+
                 <div class="form-wrap">
                     <form class="main-form main-form--order">
                         <h3 class="main-form__title">Оформить заказ</h3>
 
                         <label class="visually-hidden" for="name-order">Имя</label>
-                        <input class="main-form__input" id="name-order" type="text" name="name-order" placeholder="Имя*" required>
+                        <input class="main-form__input" id="name-order" type="text" name="name-order" placeholder="Имя*"
+                            required>
 
                         <label class="visually-hidden" for="email-order">E-mail</label>
-                        <input class="main-form__input" id="email-order" type="email" name="email-order" placeholder="E-mail">
+                        <input class="main-form__input" id="email-order" type="email" name="email-order"
+                            placeholder="E-mail">
 
                         <label class="visually-hidden" for="phone-order">Телефон</label>
-                        <input class="main-form__input" id="phone-order" type="tel" name="phone-order" placeholder="Телефон*" required>
+                        <input class="main-form__input" id="phone-order" type="tel" name="phone-order"
+                            placeholder="Телефон*" required>
 
                         <p class="main-form__text">
                             Как с вами связаться по уточнению деталей?
@@ -816,10 +695,12 @@
                         </div>
 
                         <label class="visually-hidden" for="comment-order">Комментарий к заказу</label>
-                        <textarea class="main-form__input" id="comment-order" rows="4" name="comment-order" placeholder="Комментарий к заказу"></textarea>
+                        <textarea class="main-form__input" id="comment-order" rows="4" name="comment-order"
+                            placeholder="Комментарий к заказу"></textarea>
 
                         <div class="main-form__agreement">
-                            <input class="main-form__checkbox" type="checkbox" id="check-order" name="consent-order" required checked>
+                            <input class="main-form__checkbox" type="checkbox" id="check-order" name="consent-order"
+                                required checked>
                             <label for="check-order">
                                 Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных
                                 данных и принимаю <a href="#">условия соглашения</a>
@@ -837,7 +718,9 @@
                                 </a>
                             </li>
                             <li class="social__item">
-                                <a class="social__link" href="//max.ru/u/f9LHodD0cOIFUrugutiGpJuRJ8TARsbzSevhgqJAIDQ2o-sbtvv9sSAxkxc" target="_blank">
+                                <a class="social__link"
+                                    href="//max.ru/u/f9LHodD0cOIFUrugutiGpJuRJ8TARsbzSevhgqJAIDQ2o-sbtvv9sSAxkxc"
+                                    target="_blank">
                                     <img src="img/icons/max.svg" alt="">
                                 </a>
                             </li>
@@ -860,30 +743,35 @@
             <button class="modal-close" aria-label="Закрыть">&times;</button>
             <div class="bitrix-form-wrapper">
                 <!-- Сюда при интеграции вставится компонент Bitrix -->
-                
+
                 <div class="form-wrap">
                     <form class="main-form main-form--order">
                         <h3 class="main-form__title">Получить прайс</h3>
 
                         <label class="visually-hidden" for="name-getprice">Имя</label>
-                        <input class="main-form__input" id="name-getprice" type="text" name="name-getprice" placeholder="Имя*" required>
+                        <input class="main-form__input" id="name-getprice" type="text" name="name-getprice"
+                            placeholder="Имя*" required>
 
                         <label class="visually-hidden" for="email-getprice">E-mail</label>
-                        <input class="main-form__input" id="email-getprice" type="email" name="email-getprice" placeholder="E-mail">
+                        <input class="main-form__input" id="email-getprice" type="email" name="email-getprice"
+                            placeholder="E-mail">
 
                         <label class="visually-hidden" for="phone-getprice">Телефон</label>
-                        <input class="main-form__input" id="phone-getprice" type="tel" name="phone-getprice" placeholder="Телефон*" required>
+                        <input class="main-form__input" id="phone-getprice" type="tel" name="phone-getprice"
+                            placeholder="Телефон*" required>
 
                         <p class="main-form__text">
                             Куда вам выслать прайс?
                         </p>
                         <div class="radio-group">
                             <div class="radio-group__item">
-                                <input type="radio" id="radio-email-getprice" name="contact-getprice" value="email" checked>
+                                <input type="radio" id="radio-email-getprice" name="contact-getprice" value="email"
+                                    checked>
                                 <label for="radio-email-getprice">E-mail</label>
                             </div>
                             <div class="radio-group__item">
-                                <input type="radio" id="radio-telegram-getprice" name="contact-getprice" value="telegram">
+                                <input type="radio" id="radio-telegram-getprice" name="contact-getprice"
+                                    value="telegram">
                                 <label for="radio-telegram-getprice">Telegram</label>
                             </div>
                             <div class="radio-group__item">
@@ -897,7 +785,8 @@
                         </div>
 
                         <div class="main-form__agreement">
-                            <input class="main-form__checkbox" type="checkbox" id="check-getprice" name="consent-getprice" required checked>
+                            <input class="main-form__checkbox" type="checkbox" id="check-getprice"
+                                name="consent-getprice" required checked>
                             <label for="check-getprice">
                                 Нажимая кнопку «Отправить», я даю свое согласие на обработку персональных
                                 данных и принимаю <a href="#">условия соглашения</a>
@@ -936,7 +825,7 @@
     <!-- здесь js всех плагинов -->
     <script src="js/splide.min.js"></script>
     <script src="js/gallery.js"></script>
-    <script src="js/forms.js"></script> 
+    <script src="js/forms.js"></script>
     <script src="js/main.js"></script>
 
 </body>
