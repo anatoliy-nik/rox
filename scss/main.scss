@@ -2028,4 +2028,19 @@
     display: block;
 }
 
+/* =========================================
+   адаптив для Фэнсибокс
+   ========================================= */
+
+@media (max-width: 767px) {
+    .fancybox__content img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .fancybox__container {
+        max-width: 100vw !important;
+    }
+}
+
 @import '_media.scss'
