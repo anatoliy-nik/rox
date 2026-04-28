@@ -2004,4 +2004,28 @@
     }
 }
 
+/* =========================================
+   .scrollTop
+   ========================================= */
+
+#scrollTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+#scrollTop.show {
+    display: block;
+}
+
 @import '_media.scss'

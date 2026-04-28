@@ -1,11 +1,21 @@
 $(function(){
 
-    /*---- бургер кнопка и меню ----*/
-    // $('.burger-btn').on('click', function() {
-    //     $('.menu__list').toggleClass('menu__list--active');
-    //     $('.burger-btn').toggleClass('burger-btn--active');
-    // });
+/*---- скролл наверх ----*/
+const btn = document.getElementById('scrollTop');
 
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        btn.classList.add('show');
+    } else {
+        btn.classList.remove('show');
+    }
+});
+
+btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/*---- фотогалерея Фэнсибокс ----*/
 if (typeof Fancybox !== 'undefined') {
     Fancybox.bind("[data-fancybox]", { 
         // Your custom options 
